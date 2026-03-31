@@ -4,84 +4,62 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>WebArsenal — The Ultimate Web Extraction Toolkit</title>
-<meta name="description" content="110 battle-hardened modules to scrape, mirror, extract, analyze, export and monitor any deployed web target."/>
+<meta name="description" content="110 battle-hardened modules to scrape, mirror, extract, analyze, export and monitor any deployed web target. Zero config. MIT licensed."/>
 <meta property="og:title" content="WebArsenal — 110 Web Extraction Modules"/>
 <meta property="og:description" content="Scrape. Mirror. Extract. Analyze. Export. Integrate. Monitor. Any deployed web target."/>
+<meta property="og:image" content="https://webarsenal.vercel.app/og.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="WebArsenal — The Ultimate Web Extraction Toolkit"/>
+<meta name="twitter:description" content="110 battle-hardened JS modules. Zero config. MIT licensed."/>
 
-<!-- FAVICON — SVG inline data URI -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a09'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23e8390e' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23e8390e'/%3E%3Cline x1='10' y1='16' x2='5' y2='16' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='16' x2='27' y2='16' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='10' x2='16' y2='5' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='22' x2='16' y2='27' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='9.2' cy='9.2' r='1.5' fill='%23e8390e' opacity='0.5'/%3E%3Ccircle cx='22.8' cy='9.2' r='1.5' fill='%23e8390e' opacity='0.5'/%3E%3Ccircle cx='9.2' cy='22.8' r='1.5' fill='%23e8390e' opacity='0.5'/%3E%3Ccircle cx='22.8' cy='22.8' r='1.5' fill='%23e8390e' opacity='0.5'/%3E%3C/svg%3E"/>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a09'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23e8390e' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23e8390e'/%3E%3Cline x1='10' y1='16' x2='5' y2='16' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='22' y1='16' x2='27' y2='16' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='10' x2='16' y2='5' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3Cline x1='16' y1='22' x2='16' y2='27' stroke='%23e8390e' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"/>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Fraunces:ital,opsz,wght@0,9..144,300;1,9..144,300&display=swap" rel="stylesheet"/>
 
 <style>
-:root {
-  --ink:     #0a0a09;
-  --paper:   #f2f0e8;
-  --bone:    #e0ddd0;
-  --dust:    #b5b2a3;
-  --fog:     #787570;
-  --fire:    #e8390e;
-  --ember:   #ff6b3d;
-  --ice:     #b8eeff;
-  --gold:    #d4a843;
-  --leaf:    #5af78e;
-  --ff-d: 'Syne', sans-serif;
-  --ff-s: 'Fraunces', serif;
-  --ff-m: 'DM Mono', monospace;
-  --ease: cubic-bezier(0.16,1,0.3,1);
+:root{
+  --ink:#0a0a09;--paper:#f2f0e8;--bone:#e0ddd0;--dust:#b5b2a3;--fog:#787570;
+  --fire:#e8390e;--ember:#ff6b3d;--ice:#b8eeff;--gold:#d4a843;--leaf:#5af78e;
+  --ff-d:'Syne',sans-serif;--ff-s:'Fraunces',serif;--ff-m:'DM Mono',monospace;
+  --ease:cubic-bezier(0.16,1,0.3,1);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  background:var(--ink);color:var(--paper);
-  font-family:var(--ff-m);font-weight:300;
-  line-height:1.6;overflow-x:hidden;cursor:none;
-}
+body{background:var(--ink);color:var(--paper);font-family:var(--ff-m);font-weight:300;line-height:1.6;overflow-x:hidden;cursor:none;}
 a{color:inherit;text-decoration:none}
 button{border:none;background:none;cursor:none;font:inherit;color:inherit}
 
-/* Noise */
-body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:0.25;
+/* Noise overlay */
+body::after{content:'';position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:0.22;
 background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");}
 
-/* Cursor */
+/* Custom cursor */
 #cur{position:fixed;width:10px;height:10px;background:var(--fire);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:exclusion;transition:width .25s var(--ease),height .25s var(--ease),background .2s;}
 #cur.h{width:44px;height:44px;background:var(--paper);}
-#curt{position:fixed;width:34px;height:34px;border:1px solid rgba(232,57,14,0.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .2s var(--ease);}
+#curt{position:fixed;width:34px;height:34px;border:1px solid rgba(232,57,14,0.45);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:left .12s var(--ease),top .12s var(--ease);}
 
 ::-webkit-scrollbar{width:2px}::-webkit-scrollbar-track{background:var(--ink)}::-webkit-scrollbar-thumb{background:var(--fire)}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:500;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.3rem 2.5rem;
-  border-bottom:1px solid rgba(242,240,232,0.06);
-  backdrop-filter:blur(24px) saturate(160%);
-  background:rgba(10,10,9,0.8);
-}
-.nlogo{font-family:var(--ff-d);font-weight:800;font-size:1.1rem;letter-spacing:-0.03em;display:flex;align-items:center;gap:0.55rem;}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:1.3rem 2.5rem;border-bottom:1px solid rgba(242,240,232,0.06);backdrop-filter:blur(24px) saturate(160%);background:rgba(10,10,9,0.82);}
+.nlogo{font-family:var(--ff-d);font-weight:800;font-size:1.1rem;letter-spacing:-0.03em;display:flex;align-items:center;gap:0.55rem;cursor:none;}
 .nlogo-ic{width:26px;height:26px;background:var(--fire);border-radius:5px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .nlogo-ic svg{width:14px;height:14px;}
 .nlogo em{color:var(--fire);font-style:normal;}
 .nlinks{display:flex;gap:2.5rem;list-style:none;position:absolute;left:50%;transform:translateX(-50%);}
-.nlinks a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fog);transition:color .2s;}
+.nlinks a{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fog);transition:color .2s;cursor:none;}
 .nlinks a:hover,.nlinks a.on{color:var(--paper);}
 .nstar{display:flex;align-items:center;gap:0.4rem;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.5rem 1rem;border:1px solid rgba(232,57,14,0.45);border-radius:2px;color:var(--fire);transition:all .2s;}
 .nstar:hover{background:var(--fire);color:var(--paper);border-color:var(--fire);}
 .nstar svg{width:12px;height:12px;fill:currentColor;}
 
-/* PAGES */
+/* ── PAGES ── */
 .page{display:none;}.page.on{display:block;}
 
 /* ── HERO ── */
-.hero{
-  min-height:100vh;display:grid;grid-template-columns:1fr 1fr;
-  align-items:center;gap:3rem;
-  padding:8rem 2.5rem 4rem;max-width:1400px;margin:0 auto;
-}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:8rem 2.5rem 4rem;max-width:1400px;margin:0 auto;}
 .hkick{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--fire);margin-bottom:1.75rem;padding:0.35rem 0.8rem;border:1px solid rgba(232,57,14,0.3);border-radius:2px;}
 .hkick-dot{width:5px;height:5px;border-radius:50%;background:var(--fire);animation:pd 2s ease-in-out infinite;}
 @keyframes pd{0%,100%{opacity:1}50%{opacity:.3}}
@@ -103,32 +81,16 @@ nav{
 
 /* ── HERO VISUAL ── */
 .hvisual{position:relative;display:flex;align-items:center;justify-content:center;}
-.hvwrap{
-  position:relative;width:100%;max-width:560px;aspect-ratio:1/1.02;
-  border:1px solid rgba(232,57,14,.2);border-radius:4px;
-  background:linear-gradient(135deg,rgba(232,57,14,.04) 0%,transparent 50%,rgba(184,238,255,.025) 100%);
-  overflow:visible;
-}
-/* Corner brackets */
+.hvwrap{position:relative;width:100%;max-width:560px;aspect-ratio:1/1.02;border:1px solid rgba(232,57,14,.2);border-radius:4px;background:linear-gradient(135deg,rgba(232,57,14,.04) 0%,transparent 50%,rgba(184,238,255,.025) 100%);overflow:visible;}
 .co{position:absolute;width:14px;height:14px;border-color:var(--fire);border-style:solid;border-width:0;}
 .co.tl{top:-1px;left:-1px;border-top-width:2px;border-left-width:2px;}
 .co.tr{top:-1px;right:-1px;border-top-width:2px;border-right-width:2px;}
 .co.bl{bottom:-1px;left:-1px;border-bottom-width:2px;border-left-width:2px;}
 .co.br{bottom:-1px;right:-1px;border-bottom-width:2px;border-right-width:2px;}
-/* Scanline */
 .sl{position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(232,57,14,.25),transparent);animation:scan 5s linear infinite;pointer-events:none;}
 @keyframes scan{0%{top:-1%}100%{top:102%}}
-/* Central art */
 .hvart{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
-
-/* Terminal cards */
-.tc{
-  position:absolute;background:rgba(8,8,6,.93);
-  border:1px solid rgba(242,240,232,.09);border-radius:4px;
-  padding:.9rem 1.1rem;font-family:var(--ff-m);font-size:.68rem;line-height:1.75;
-  backdrop-filter:blur(10px);box-shadow:0 24px 56px rgba(0,0,0,.55);
-  min-width:200px;z-index:10;
-}
+.tc{position:absolute;background:rgba(8,8,6,.93);border:1px solid rgba(242,240,232,.09);border-radius:4px;padding:.9rem 1.1rem;font-family:var(--ff-m);font-size:.68rem;line-height:1.75;backdrop-filter:blur(10px);box-shadow:0 24px 56px rgba(0,0,0,.55);min-width:200px;z-index:10;}
 .tc1{top:3%;left:-10%;animation:fc1 7s ease-in-out infinite;}
 .tc2{top:28%;right:-12%;animation:fc2 8s ease-in-out infinite;}
 .tc3{bottom:20%;left:-8%;animation:fc1 6.5s ease-in-out infinite .5s;}
@@ -157,7 +119,7 @@ nav{
 
 /* MODULE GRID */
 .mgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;margin-top:3.5rem;background:rgba(242,240,232,.06);border:1px solid rgba(242,240,232,.06);border-radius:4px;overflow:hidden;}
-.mc{background:var(--ink);padding:1.75rem 1.5rem;transition:background .25s;position:relative;}
+.mc{background:var(--ink);padding:1.75rem 1.5rem;transition:background .25s;position:relative;cursor:none;}
 .mc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--fire);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease);}
 .mc:hover{background:rgba(242,240,232,.025);}
 .mc:hover::after{transform:scaleX(1);}
@@ -172,7 +134,7 @@ nav{
 
 /* SCENARIOS */
 .scwrap{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:3.5rem;}
-.sc{border:1px solid rgba(242,240,232,.07);border-radius:4px;overflow:hidden;transition:border-color .2s;}
+.sc{border:1px solid rgba(242,240,232,.07);border-radius:4px;overflow:hidden;transition:border-color .2s;cursor:none;}
 .sc:hover{border-color:rgba(232,57,14,.35);}
 .schead{padding:1.1rem 1.4rem;border-bottom:1px solid rgba(242,240,232,.06);display:flex;align-items:center;gap:.8rem;background:rgba(242,240,232,.015);}
 .scind{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
@@ -189,7 +151,7 @@ nav{
 .finame{font-family:var(--ff-d);font-weight:700;font-size:.95rem;letter-spacing:-.02em;margin-bottom:.45rem;}
 .fidesc{font-size:.78rem;color:var(--fog);line-height:1.65;}
 
-/* DOCS LAYOUT */
+/* DOCS */
 .dlayout{display:grid;grid-template-columns:210px 1fr;gap:4rem;max-width:1400px;margin:0 auto;padding:8rem 2.5rem 4rem;min-height:100vh;}
 .dside{position:sticky;top:5.5rem;height:fit-content;}
 .dnavh{font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:var(--fog);margin-bottom:.6rem;margin-top:1.25rem;}
@@ -222,71 +184,77 @@ nav{
 .stkdot{width:5px;height:5px;border-radius:50%;background:var(--fire);}
 
 /* FOOTER */
-.ft{border-top:1px solid rgba(242,240,232,.06);max-width:1400px;margin:0 auto;padding:2.25rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
-.ftlogo{font-family:var(--ff-d);font-weight:800;font-size:.95rem;letter-spacing:-.02em;}
+.ft{border-top:1px solid rgba(242,240,232,.06);padding:3rem 2.5rem;max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;}
+.ftlogo{font-family:var(--ff-d);font-weight:800;font-size:1.1rem;letter-spacing:-.03em;}
 .ftlogo em{color:var(--fire);font-style:normal;}
-.ftlinks{display:flex;gap:1.75rem;list-style:none;}
-.ftlinks a{font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fog);transition:color .2s;}
+.ftlinks{list-style:none;display:flex;gap:2rem;}
+.ftlinks a{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--fog);transition:color .2s;}
 .ftlinks a:hover{color:var(--paper);}
-.ftcopy{font-size:.67rem;color:var(--fog);}
+.ftcopy{font-size:.67rem;color:var(--fog);letter-spacing:.06em;}
 
 /* REVEAL */
-.rv{opacity:0;transform:translateY(28px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);}
 .rv.in{opacity:1;transform:translateY(0);}
-.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
 
-/* CTA */
-.cta{text-align:center;padding:7rem 2.5rem;background:radial-gradient(ellipse 65% 55% at 50% 100%,rgba(232,57,14,.07) 0%,transparent 70%);}
-.cta h2{font-family:var(--ff-d);font-weight:800;font-size:clamp(2.5rem,5.5vw,4.5rem);letter-spacing:-.05em;line-height:.95;margin-bottom:1.25rem;}
-.cta h2 em{color:var(--fire);font-style:normal;}
-.cta p{font-size:.88rem;color:var(--fog);margin-bottom:2.25rem;}
-.ctaacts{display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap;}
+/* ── NEW: PIPELINE SECTION ── */
+.pipeline{max-width:1400px;margin:0 auto;padding:0 2.5rem 6.5rem;}
+.pl-track{display:grid;grid-template-columns:repeat(6,1fr);gap:0;position:relative;margin-top:3.5rem;}
+.pl-step{display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;}
+.pl-step::after{content:'→';position:absolute;right:-10px;top:18px;color:rgba(232,57,14,.4);font-size:1rem;z-index:2;}
+.pl-step:last-child::after{display:none;}
+.pl-node{width:40px;height:40px;border-radius:50%;border:1px solid rgba(232,57,14,.5);background:rgba(232,57,14,.07);display:flex;align-items:center;justify-content:center;margin-bottom:.75rem;font-size:.62rem;color:var(--fire);font-family:var(--ff-d);font-weight:800;transition:all .25s;}
+.pl-step:hover .pl-node{background:var(--fire);color:var(--paper);border-color:var(--fire);}
+.pl-label{font-size:.63rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fog);}
 
-/* BADGE ROW */
-.badges{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:3rem;}
-.badge{font-size:.6rem;letter-spacing:.06em;padding:.22rem .6rem;border-radius:1px;background:rgba(242,240,232,.05);border:1px solid rgba(242,240,232,.08);color:var(--fog);}
-.badge.hot{background:rgba(232,57,14,.1);border-color:rgba(232,57,14,.28);color:var(--ember);}
-.badge.new{background:rgba(184,238,255,.06);border-color:rgba(184,238,255,.18);color:var(--ice);}
+/* ── NEW: STATS BAR ── */
+.statsbar{background:rgba(242,240,232,.025);border:1px solid rgba(242,240,232,.06);border-radius:4px;padding:2rem 2.5rem;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:3.5rem;}
+.sb-item{text-align:center;border-right:1px solid rgba(242,240,232,.06);}
+.sb-item:last-child{border:none;}
+.sb-n{font-family:var(--ff-d);font-weight:800;font-size:2.4rem;letter-spacing:-.05em;color:var(--fire);}
+.sb-l{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--fog);margin-top:.3rem;}
+
+/* ── NEW: INSTALL BAND ── */
+.install-band{background:rgba(232,57,14,.06);border:1px solid rgba(232,57,14,.15);border-radius:4px;padding:2rem 2.5rem;margin-top:4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;}
+.ib-code{font-family:var(--ff-m);font-size:.85rem;color:var(--paper);display:flex;align-items:center;gap:1rem;}
+.ib-code span{color:var(--fire);}
+.ib-copy{padding:.5rem 1rem;border:1px solid rgba(232,57,14,.4);border-radius:2px;font-size:.67rem;letter-spacing:.08em;text-transform:uppercase;color:var(--fire);transition:all .2s;cursor:none;}
+.ib-copy:hover{background:var(--fire);color:var(--paper);}
 
 /* RESPONSIVE */
-@media(max-width:1100px){
+@media(max-width:900px){
   .hero{grid-template-columns:1fr;}.hvisual{display:none;}
   .mgrid{grid-template-columns:repeat(2,1fr);}
-  .fgrid{grid-template-columns:repeat(2,1fr);}
-  .abody{grid-template-columns:1fr;gap:3rem;}
-  .dlayout{grid-template-columns:1fr;padding-top:7rem;}
-  .dside{position:static;}
-}
-@media(max-width:700px){
-  nav{padding:1rem 1.25rem;}.nlinks{display:none;}
-  .mgrid{grid-template-columns:1fr;}
   .scwrap{grid-template-columns:1fr;}
-  .fgrid{grid-template-columns:1fr;}
-  .sec{padding:4rem 1.25rem;}
-  .hero{padding:7rem 1.25rem 3rem;}
-  .ahero{padding:7rem 1.25rem 3rem;}
-  .abody{padding:3rem 1.25rem;}
-  .ft{flex-direction:column;text-align:center;}
-  .ftlinks{justify-content:center;}
+  .fgrid{grid-template-columns:1fr 1fr;}
+  .pl-track{grid-template-columns:repeat(3,1fr);}
+  .pl-step::after{display:none;}
+  .statsbar{grid-template-columns:repeat(3,1fr);}
+  .abody{grid-template-columns:1fr;}
+  .dlayout{grid-template-columns:1fr;}
+  .dside{display:none;}
+  .nlinks{display:none;}
+  .ft{flex-direction:column;gap:1.5rem;text-align:center;}
+  .install-band{flex-direction:column;text-align:center;}
 }
 </style>
 </head>
 <body>
+
 <div id="cur"></div>
 <div id="curt"></div>
 
 <!-- ── NAV ── -->
 <nav>
-  <a href="#" class="nlogo" onclick="go('home');return false;">
+  <div class="nlogo" onclick="go('home')">
     <div class="nlogo-ic">
-      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="7" cy="7" r="3" stroke="#f2f0e8" stroke-width="1.2"/>
-        <circle cx="7" cy="7" r="1" fill="#f2f0e8"/>
-        <path d="M4 7H1M13 7H10M7 4V1M7 13V10" stroke="#f2f0e8" stroke-width="1.2" stroke-linecap="round"/>
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f2f0e8" stroke-width="2" stroke-linecap="round">
+        <circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/>
+        <line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/>
       </svg>
     </div>
     Web<em>Arsenal</em>
-  </a>
+  </div>
   <ul class="nlinks">
     <li><a href="#" id="n-home" class="on" onclick="go('home');return false;">Home</a></li>
     <li><a href="#" id="n-modules" onclick="go('modules');return false;">Modules</a></li>
@@ -302,16 +270,15 @@ nav{
 <!-- ════════════════════ PAGE: HOME ════════════════════ -->
 <div class="page on" id="p-home">
 
-  <!-- HERO -->
   <div class="hero">
     <div>
-      <div class="hkick"><span class="hkick-dot"></span>v4.0.0 &nbsp;·&nbsp; Open Source &nbsp;·&nbsp; MIT</div>
+      <div class="hkick"><span class="hkick-dot"></span>v4.0.0 &nbsp;·&nbsp; Open Source &nbsp;·&nbsp; MIT Licensed</div>
       <h1 class="hh1">
         The Web<br/>
         Is Your<br/>
         <em>Database.</em>
       </h1>
-      <p class="hp">110 battle-hardened JavaScript modules to scrape, mirror, extract, analyze, export, integrate, and monitor any deployed web target.</p>
+      <p class="hp">110 battle-hardened JavaScript modules to scrape, mirror, extract, analyze, export, integrate, and monitor any deployed web target. Zero config. Pipe anywhere.</p>
       <div class="hacts">
         <a href="https://github.com/edwinnyandika/webarsenal" class="btn-f" target="_blank">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
@@ -333,8 +300,6 @@ nav{
         <div class="co tl"></div><div class="co tr"></div>
         <div class="co bl"></div><div class="co br"></div>
         <div class="sl"></div>
-
-        <!-- SVG art: network visualization -->
         <div class="hvart">
           <svg width="100%" viewBox="0 0 380 400" xmlns="http://www.w3.org/2000/svg">
             <defs>
@@ -351,96 +316,80 @@ nav{
                 <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
               </filter>
             </defs>
-            <!-- Ambient -->
             <circle cx="190" cy="200" r="155" fill="url(#rg)"/>
             <circle cx="190" cy="200" r="75" fill="url(#rgb)"/>
-            <!-- Rings -->
             <circle cx="190" cy="200" r="145" fill="none" stroke="rgba(232,57,14,.1)" stroke-width="1" stroke-dasharray="3 7"/>
             <circle cx="190" cy="200" r="96" fill="none" stroke="rgba(242,240,232,.05)" stroke-width="1" stroke-dasharray="1 9"/>
-            <!-- Spokes -->
             <line x1="190" y1="200" x2="190" y2="57" stroke="rgba(232,57,14,.28)" stroke-width="1"/>
             <line x1="190" y1="200" x2="318" y2="274" stroke="rgba(232,57,14,.18)" stroke-width="1"/>
             <line x1="190" y1="200" x2="62" y2="274" stroke="rgba(232,57,14,.18)" stroke-width="1"/>
             <line x1="190" y1="200" x2="318" y2="126" stroke="rgba(242,240,232,.09)" stroke-width="1"/>
             <line x1="190" y1="200" x2="62" y2="126" stroke="rgba(242,240,232,.09)" stroke-width="1"/>
             <line x1="190" y1="200" x2="190" y2="343" stroke="rgba(242,240,232,.07)" stroke-width="1"/>
-            <!-- Outer nodes -->
-            <!-- Top: Core -->
             <g filter="url(#gl)">
               <circle cx="190" cy="57" r="26" fill="rgba(8,8,6,.96)" stroke="rgba(232,57,14,.7)" stroke-width="1.5"/>
               <circle cx="190" cy="57" r="5" fill="#e8390e"/>
             </g>
             <text x="190" y="96" text-anchor="middle" fill="rgba(242,240,232,.45)" font-family="'DM Mono',monospace" font-size="8" letter-spacing="0.1em">CORE</text>
-            <!-- Bottom-right: Scrapers -->
             <circle cx="318" cy="274" r="22" fill="rgba(8,8,6,.96)" stroke="rgba(232,57,14,.45)" stroke-width="1.5"/>
             <circle cx="318" cy="274" r="4" fill="rgba(232,57,14,.7)"/>
             <text x="318" y="306" text-anchor="middle" fill="rgba(242,240,232,.38)" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing="0.08em">SCRAPERS</text>
-            <!-- Bottom-left: Exporters -->
             <circle cx="62" cy="274" r="22" fill="rgba(8,8,6,.96)" stroke="rgba(184,238,255,.3)" stroke-width="1.5"/>
             <circle cx="62" cy="274" r="4" fill="rgba(184,238,255,.7)"/>
             <text x="62" y="306" text-anchor="middle" fill="rgba(242,240,232,.38)" font-family="'DM Mono',monospace" font-size="7.5" letter-spacing="0.08em">EXPORT</text>
-            <!-- Top-right: Auth -->
             <circle cx="318" cy="126" r="18" fill="rgba(8,8,6,.96)" stroke="rgba(212,168,67,.35)" stroke-width="1"/>
             <circle cx="318" cy="126" r="3.5" fill="rgba(212,168,67,.8)"/>
             <text x="318" y="152" text-anchor="middle" fill="rgba(242,240,232,.32)" font-family="'DM Mono',monospace" font-size="7" letter-spacing="0.08em">AUTH</text>
-            <!-- Top-left: Monitors -->
             <circle cx="62" cy="126" r="18" fill="rgba(8,8,6,.96)" stroke="rgba(90,247,142,.3)" stroke-width="1"/>
             <circle cx="62" cy="126" r="3.5" fill="rgba(90,247,142,.7)"/>
             <text x="62" y="152" text-anchor="middle" fill="rgba(242,240,232,.32)" font-family="'DM Mono',monospace" font-size="7" letter-spacing="0.08em">MONITOR</text>
-            <!-- Bottom: Integrations -->
             <circle cx="190" cy="343" r="18" fill="rgba(8,8,6,.96)" stroke="rgba(242,240,232,.15)" stroke-width="1"/>
             <circle cx="190" cy="343" r="3.5" fill="rgba(184,238,255,.55)"/>
             <text x="190" y="372" text-anchor="middle" fill="rgba(242,240,232,.3)" font-family="'DM Mono',monospace" font-size="7" letter-spacing="0.08em">INTEGRATIONS</text>
-            <!-- Center hub -->
             <circle cx="190" cy="200" r="36" fill="rgba(8,8,6,.98)" stroke="rgba(232,57,14,.55)" stroke-width="1.5"/>
             <circle cx="190" cy="200" r="27" fill="none" stroke="rgba(232,57,14,.12)" stroke-width="1"/>
             <circle cx="190" cy="200" r="7" fill="#e8390e" filter="url(#gl)"/>
             <text x="190" y="195" text-anchor="middle" fill="rgba(242,240,232,.45)" font-family="'DM Mono',monospace" font-size="6.5" letter-spacing="0.15em">WEB</text>
             <text x="190" y="207" text-anchor="middle" fill="rgba(242,240,232,.45)" font-family="'DM Mono',monospace" font-size="6.5" letter-spacing="0.15em">ARSENAL</text>
-            <!-- Animated dots on orbit -->
-            <circle r="4" fill="rgba(232,57,14,.95)" filter="url(#gl)">
-              <animateMotion dur="9s" repeatCount="indefinite">
-                <mpath href="#op1"/>
-              </animateMotion>
+            <circle cx="190" cy="57" r="145" fill="none" stroke="none">
+              <animateTransform attributeName="transform" type="rotate" from="0 190 200" to="360 190 200" dur="18s" repeatCount="indefinite"/>
             </circle>
-            <path id="op1" d="M190,55 A145,145 0 1,1 189.99,55" fill="none"/>
-            <circle r="2.5" fill="rgba(184,238,255,.85)">
-              <animateMotion dur="5.5s" repeatCount="indefinite" keyPoints="1;0" keyTimes="0;1" calcMode="linear">
-                <mpath href="#op2"/>
-              </animateMotion>
-            </circle>
-            <path id="op2" d="M190,104 A96,96 0 1,1 189.99,104" fill="none"/>
-            <!-- Cross-hairs -->
-            <line x1="0" y1="200" x2="380" y2="200" stroke="rgba(242,240,232,.025)" stroke-width="1"/>
-            <line x1="190" y1="0" x2="190" y2="400" stroke="rgba(242,240,232,.025)" stroke-width="1"/>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="0 190 200" to="360 190 200" dur="18s" repeatCount="indefinite"/>
+              <circle cx="190" cy="55" r="3" fill="var(--fire)" opacity="0.8"/>
+            </g>
+            <g>
+              <animateTransform attributeName="transform" type="rotate" from="180 190 200" to="540 190 200" dur="12s" repeatCount="indefinite"/>
+              <circle cx="190" cy="104" r="2.5" fill="rgba(184,238,255,.8)"/>
+            </g>
           </svg>
         </div>
 
-        <!-- Floating terminal cards -->
+        <!-- Terminal cards -->
         <div class="tc tc1">
-          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="tlbl">mirror.js</span></div>
-          <div><span class="cc">node</span> core/super-mirror.js</div>
-          <div><span class="cm">--url</span> <span class="cy">https://target.com</span></div>
-          <div><span class="cm">--depth</span> <span class="cg">4</span></div>
-          <div class="cg">✓ 2,841 assets cloned</div>
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><div class="tlbl">mirror.js</div></div>
+          <div><span class="cm">$</span> <span class="cc">node</span> <span class="cg">core/super-mirror.js</span></div>
+          <div><span class="cm">  --url</span> <span class="cy">https://target.com</span></div>
+          <div><span class="cm">  --depth</span> <span class="cy">4</span></div>
+          <div style="margin-top:.4rem;color:var(--leaf);">✓ Mirrored 1,247 assets</div>
         </div>
         <div class="tc tc2">
-          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="tlbl">spa-scraper</span></div>
-          <div><span class="cc">node</span> scrapers/spa-scraper.js</div>
-          <div><span class="cm">--wait-for</span> <span class="cy">'#app'</span></div>
-          <div class="cg">✓ JSON exported</div>
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><div class="tlbl">bypass.js</div></div>
+          <div><span class="cm">$</span> <span class="cc">node</span> <span class="cg">auth-helpers/cf-clearance-puller.js</span></div>
+          <div style="color:var(--gold);margin-top:.3rem;">⟳ Extracting clearance token...</div>
+          <div style="color:var(--leaf);">✓ cf_clearance obtained</div>
         </div>
         <div class="tc tc3">
-          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="tlbl">monitor</span></div>
-          <div><span class="cm"># change detected</span></div>
-          <div><span class="cc">price</span> <span class="cy">$49</span> → <span class="cg">$39</span></div>
-          <div><span class="cc">discord</span> alert <span class="cg">✓</span></div>
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><div class="tlbl">analyze.js</div></div>
+          <div><span class="cm">$</span> <span class="cc">node</span> <span class="cg">analyzers/seo-auditor.js</span></div>
+          <div style="color:var(--ice);margin-top:.3rem;">Score: 94/100</div>
+          <div style="color:var(--fog);">Issues: 2 warnings</div>
         </div>
         <div class="tc tc4">
-          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><span class="tlbl">s3-push</span></div>
-          <div><span class="cc">node</span> integrations/s3.js</div>
-          <div><span class="cm">--bucket</span> <span class="cy">backups</span></div>
-          <div class="cg">✓ Uploaded to S3</div>
+          <div class="tbar"><div class="td r"></div><div class="td y"></div><div class="td g"></div><div class="tlbl">export.js</div></div>
+          <div><span class="cm">$</span> <span class="cc">node</span> <span class="cg">exporters/to-sqlite.js</span></div>
+          <div><span class="cm">  --input</span> <span class="cy">data.json</span></div>
+          <div style="color:var(--leaf);margin-top:.3rem;">✓ 8,432 rows written</div>
         </div>
       </div>
     </div>
@@ -449,94 +398,214 @@ nav{
   <!-- TICKER -->
   <div class="ticker">
     <div class="ttrack">
-      <div class="ti">Web Scraping</div><div class="ti">Site Mirroring</div><div class="ti">DOM Analysis</div>
-      <div class="ti">SEO Audits</div><div class="ti">Auth Bypass</div><div class="ti">Data Export</div>
-      <div class="ti">Cloud Sync</div><div class="ti">Change Monitoring</div><div class="ti">Proxy Rotation</div>
-      <div class="ti">Puppeteer</div><div class="ti">Playwright</div><div class="ti">110 Modules</div>
-      <div class="ti">Web Scraping</div><div class="ti">Site Mirroring</div><div class="ti">DOM Analysis</div>
-      <div class="ti">SEO Audits</div><div class="ti">Auth Bypass</div><div class="ti">Data Export</div>
-      <div class="ti">Cloud Sync</div><div class="ti">Change Monitoring</div><div class="ti">Proxy Rotation</div>
-      <div class="ti">Puppeteer</div><div class="ti">Playwright</div><div class="ti">110 Modules</div>
+      <div class="ti">Scrape</div><div class="ti">Mirror</div><div class="ti">Extract</div><div class="ti">Analyze</div>
+      <div class="ti">Export</div><div class="ti">Integrate</div><div class="ti">Monitor</div><div class="ti">Bypass Auth</div>
+      <div class="ti">Push to Cloud</div><div class="ti">Rotate Proxies</div><div class="ti">Crawl SPAs</div><div class="ti">Clone Full Sites</div>
+      <!-- duplicate for seamless loop -->
+      <div class="ti">Scrape</div><div class="ti">Mirror</div><div class="ti">Extract</div><div class="ti">Analyze</div>
+      <div class="ti">Export</div><div class="ti">Integrate</div><div class="ti">Monitor</div><div class="ti">Bypass Auth</div>
+      <div class="ti">Push to Cloud</div><div class="ti">Rotate Proxies</div><div class="ti">Crawl SPAs</div><div class="ti">Clone Full Sites</div>
     </div>
   </div>
 
-  <!-- Module preview -->
+  <!-- STATS -->
   <section class="sec rv">
-    <div class="slabel">Arsenal Overview</div>
-    <h2 class="stitle">8 Weapons.<br/>Every Operation.</h2>
-    <p class="ssub">Each module is standalone and CLI-first. Pipe them together or run them solo.</p>
+    <div class="slabel">By the numbers</div>
+    <h2 class="stitle">Built to be<br/>comprehensive.</h2>
+    <div class="statsbar">
+      <div class="sb-item"><div class="sb-n">110</div><div class="sb-l">Total Modules</div></div>
+      <div class="sb-item"><div class="sb-n">8</div><div class="sb-l">Categories</div></div>
+      <div class="sb-item"><div class="sb-n">0</div><div class="sb-l">Required Config</div></div>
+      <div class="sb-item"><div class="sb-n">5</div><div class="sb-l">Cloud Integrations</div></div>
+      <div class="sb-item"><div class="sb-n">MIT</div><div class="sb-l">License</div></div>
+    </div>
+  </section>
+
+  <!-- PIPELINE -->
+  <div class="pipeline rv d1">
+    <div class="slabel">How it works</div>
+    <h2 class="stitle">Full extraction<br/>pipeline, end-to-end.</h2>
+    <div class="pl-track">
+      <div class="pl-step"><div class="pl-node">01</div><div class="pl-label">Auth &amp; Bypass</div></div>
+      <div class="pl-step"><div class="pl-node">02</div><div class="pl-label">Mirror / Crawl</div></div>
+      <div class="pl-step"><div class="pl-node">03</div><div class="pl-label">Scrape Data</div></div>
+      <div class="pl-step"><div class="pl-node">04</div><div class="pl-label">Analyze DOM</div></div>
+      <div class="pl-step"><div class="pl-node">05</div><div class="pl-label">Export Format</div></div>
+      <div class="pl-step"><div class="pl-node">06</div><div class="pl-label">Push to Cloud</div></div>
+    </div>
+    <div class="install-band">
+      <div class="ib-code">
+        <span>$</span>
+        git clone https://github.com/edwinnyandika/webarsenal.git &amp;&amp; cd webarsenal &amp;&amp; npm install
+      </div>
+      <button class="ib-copy" onclick="navigator.clipboard.writeText('git clone https://github.com/edwinnyandika/webarsenal.git && cd webarsenal && npm install').then(()=>{this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)})">Copy</button>
+    </div>
+  </div>
+
+  <!-- MODULES OVERVIEW -->
+  <section class="sec rv d2">
+    <div class="slabel">Module categories</div>
+    <h2 class="stitle">8 focused categories.<br/>110 sharp tools.</h2>
+    <p class="ssub">Each module does one job, exposes a clean CLI, and pipes output to the next. No frameworks to learn.</p>
     <div class="mgrid">
       <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/></svg></div>
-        <div class="mnum">01</div><div class="mname">Core Mirrors</div><div class="mdir">core/</div>
-        <div class="mdesc">Recursively clone entire deployed sites with every asset.</div>
-        <div class="mpills"><span class="mpill">Puppeteer</span><span class="mpill">Playwright</span></div>
+        <div class="mic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
+        <div class="mnum">01 / 08</div>
+        <div class="mname">Core Mirrors</div>
+        <div class="mdir">core/</div>
+        <div class="mdesc">Recursive site cloners powered by Puppeteer and Playwright. Full asset download with depth control.</div>
+        <div class="mpills"><span class="mpill">Puppeteer</span><span class="mpill">Playwright</span><span class="mpill">Recursive</span></div>
       </div>
       <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg></div>
-        <div class="mnum">02</div><div class="mname">Scrapers</div><div class="mdir">scrapers/</div>
-        <div class="mdesc">SPA-aware extraction for React/Vue, e-commerce and APIs.</div>
-        <div class="mpills"><span class="mpill">SPA</span><span class="mpill">XHR sniff</span></div>
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="mnum">02 / 08</div>
+        <div class="mname">Scrapers</div>
+        <div class="mdir">scrapers/</div>
+        <div class="mdesc">Targeted extraction. SPA support, e-commerce pricing, pagination crawlers, API sniffers.</div>
+        <div class="mpills"><span class="mpill">SPA</span><span class="mpill">Cheerio</span><span class="mpill">E-commerce</span></div>
       </div>
       <div class="mc">
         <div class="mic"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
-        <div class="mnum">03</div><div class="mname">Analyzers</div><div class="mdir">analyzers/</div>
-        <div class="mdesc">SEO audits, unused CSS, DOM mapping, performance.</div>
-        <div class="mpills"><span class="mpill">SEO</span><span class="mpill">Perf</span></div>
+        <div class="mnum">03 / 08</div>
+        <div class="mname">Analyzers</div>
+        <div class="mdir">analyzers/</div>
+        <div class="mdesc">SEO audits, DOM tree inspection, unused CSS detection, accessibility scoring, performance profiling.</div>
+        <div class="mpills"><span class="mpill">SEO</span><span class="mpill">A11y</span><span class="mpill">Perf</span></div>
       </div>
       <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg></div>
-        <div class="mnum">06</div><div class="mname">Integrations</div><div class="mdir">integrations/</div>
-        <div class="mdesc">Push to S3, Airtable, Supabase, Notion, Slack instantly.</div>
-        <div class="mpills"><span class="mpill">S3</span><span class="mpill">Notion</span></div>
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="mnum">04 / 08</div>
+        <div class="mname">Auth Helpers</div>
+        <div class="mdir">auth-helpers/</div>
+        <div class="mdesc">Cloudflare bypass, cookie cloning, session capture, token extraction from authorized targets.</div>
+        <div class="mpills"><span class="mpill">Cloudflare</span><span class="mpill">Cookies</span><span class="mpill">Sessions</span></div>
       </div>
-    </div>
-    <div style="text-align:center;margin-top:2.25rem;">
-      <a href="#" class="btn-o" onclick="go('modules');return false;" style="display:inline-flex;">All 8 module categories <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-left:.4rem"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+      <div class="mc">
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div>
+        <div class="mnum">05 / 08</div>
+        <div class="mname">Exporters</div>
+        <div class="mdir">exporters/</div>
+        <div class="mdesc">Convert scrape output to JSON, SQLite, CSV, WARC, Markdown, PDF. Pipe anywhere.</div>
+        <div class="mpills"><span class="mpill">SQLite</span><span class="mpill">WARC</span><span class="mpill">CSV</span></div>
+      </div>
+      <div class="mc">
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <div class="mnum">06 / 08</div>
+        <div class="mname">Integrations</div>
+        <div class="mdir">integrations/</div>
+        <div class="mdesc">Push to AWS S3, Airtable, Notion, Slack, Discord. Direct cloud delivery from any scrape job.</div>
+        <div class="mpills"><span class="mpill">AWS S3</span><span class="mpill">Notion</span><span class="mpill">Airtable</span></div>
+      </div>
+      <div class="mc">
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div>
+        <div class="mnum">07 / 08</div>
+        <div class="mname">Monitors</div>
+        <div class="mdir">monitors/</div>
+        <div class="mdesc">Scheduled change detection, XPath watchers, price trackers, Discord/Slack alert pipelines.</div>
+        <div class="mpills"><span class="mpill">Cron</span><span class="mpill">XPath</span><span class="mpill">Alerts</span></div>
+      </div>
+      <div class="mc">
+        <div class="mic"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="mnum">08 / 08</div>
+        <div class="mname">Utils</div>
+        <div class="mdir">utils/</div>
+        <div class="mdesc">Proxy rotator, rate limiters, user-agent pools, cookie jars, link normalizers. Infrastructure glue.</div>
+        <div class="mpills"><span class="mpill">Proxies</span><span class="mpill">Rate Limit</span><span class="mpill">UA Pool</span></div>
+      </div>
     </div>
   </section>
 
-  <!-- Scenarios preview -->
-  <section class="sec rv" style="padding-top:0;">
-    <div class="slabel">Real Workflows</div>
-    <h2 class="stitle">Chain modules.<br/>Automate everything.</h2>
-    <p class="ssub">WebArsenal is built for orchestration. Combine scripts into complete extraction pipelines.</p>
+  <!-- WHY FEATURES -->
+  <section class="sec rv" style="border-top:1px solid rgba(242,240,232,.06);padding-top:5rem;">
+    <div class="slabel">Why WebArsenal</div>
+    <h2 class="stitle">No SaaS. No dashboards.<br/>Just scripts that work.</h2>
+    <div class="fgrid">
+      <div class="fi">
+        <div class="fiic" style="background:rgba(232,57,14,.07);color:var(--fire);"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
+        <div class="finame">Zero Config</div>
+        <div class="fidesc">Every module works immediately after `npm install`. Flags, not files. Stdout, not dashboards.</div>
+      </div>
+      <div class="fi">
+        <div class="fiic" style="background:rgba(90,247,142,.07);color:var(--leaf);"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7"/></svg></div>
+        <div class="finame">CLI-First Design</div>
+        <div class="fidesc">Every script accepts flags. Pipe output into the next module. Chain into shell scripts or cron jobs.</div>
+      </div>
+      <div class="fi">
+        <div class="fiic" style="background:rgba(184,238,255,.06);color:var(--ice);"><svg viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+        <div class="finame">Composable Pipeline</div>
+        <div class="fidesc">Output of one module is the natural input of the next. Build extraction pipelines in minutes.</div>
+      </div>
+      <div class="fi">
+        <div class="fiic" style="background:rgba(212,168,67,.07);color:var(--gold);"><svg viewBox="0 0 24 24"><path d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg></div>
+        <div class="finame">Cloud-Ready</div>
+        <div class="fidesc">Built-in integrations for S3, Airtable, Notion, Slack. Plug your extracted data directly to the cloud.</div>
+      </div>
+      <div class="fi">
+        <div class="fiic" style="background:rgba(232,57,14,.07);color:var(--ember);"><svg viewBox="0 0 24 24"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div>
+        <div class="finame">Full-Stack Extraction</div>
+        <div class="fidesc">From static HTML to SPA, Cloudflare-protected, auth-gated — WebArsenal covers the full spectrum.</div>
+      </div>
+      <div class="fi">
+        <div class="fiic" style="background:rgba(90,247,142,.05);color:var(--leaf);"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
+        <div class="finame">MIT Licensed</div>
+        <div class="fidesc">Use in commercial products, fork it, modify it. No royalties, no registration, no nonsense.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENARIOS -->
+  <section class="sec rv d1" style="border-top:1px solid rgba(242,240,232,.06);padding-top:5rem;">
+    <div class="slabel">Real workflows</div>
+    <h2 class="stitle">Chain modules.<br/>Automate anything.</h2>
     <div class="scwrap">
       <div class="sc">
-        <div class="schead"><div class="scind ind-r"></div><div class="sctitle">Mirror CF-protected site → S3</div></div>
+        <div class="schead"><div class="scind ind-r"></div><div class="sctitle">Full Site Clone + S3 Backup</div></div>
         <div class="scbody">
-          <div class="c-c"># bypass cloudflare</div>
-          <div><span class="c-b">node</span> auth-helpers/cf-clearance-puller.js <span class="c-a">--url</span> <span class="c-v">https://store.com</span></div>
-          <div><span class="c-b">node</span> core/super-mirror.js <span class="c-a">--depth</span> <span class="c-v">3</span> <span class="c-a">--cookie-jar</span> <span class="c-v">cf.json</span></div>
-          <div><span class="c-b">node</span> integrations/aws-s3-uploader.js <span class="c-a">--bucket</span> <span class="c-v">backups</span></div>
+          <div><span class="c-a"># Bypass Cloudflare</span></div>
+          <div><span class="c-b">node</span> auth-helpers/cf-clearance-puller.js <span class="c-v">--url https://site.com</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Mirror 3 levels deep</span></div>
+          <div><span class="c-b">node</span> core/super-mirror.js <span class="c-v">--url https://site.com --depth 3</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Push to S3</span></div>
+          <div><span class="c-b">node</span> integrations/aws-s3-uploader.js <span class="c-v">--bucket backups</span></div>
         </div>
       </div>
       <div class="sc">
-        <div class="schead"><div class="scind ind-g"></div><div class="sctitle">SPA price monitor → Discord</div></div>
+        <div class="schead"><div class="scind ind-g"></div><div class="sctitle">E-commerce Price Monitor</div></div>
         <div class="scbody">
-          <div class="c-c"># extract react spa data</div>
-          <div><span class="c-b">node</span> scrapers/spa-scraper.js <span class="c-a">--wait-for</span> <span class="c-v">'.products'</span></div>
-          <div><span class="c-b">node</span> exporters/to-sqlite.js <span class="c-a">--input</span> <span class="c-v">data.json</span></div>
-          <div><span class="c-b">node</span> monitors/discord-webhook.js <span class="c-a">--webhook</span> <span class="c-v">HOOK_URL</span></div>
+          <div><span class="c-a"># Scrape prices daily</span></div>
+          <div><span class="c-b">node</span> scrapers/ecommerce-scraper.js <span class="c-v">--url https://store.com</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Detect changes</span></div>
+          <div><span class="c-b">node</span> monitors/change-detector.js <span class="c-v">--xpath "//span[@class='price']"</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Alert on Discord</span></div>
+          <div><span class="c-b">node</span> monitors/discord-webhook.js <span class="c-v">--webhook $HOOK</span></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="schead"><div class="scind ind-b"></div><div class="sctitle">SPA Scrape → SQLite → Airtable</div></div>
+        <div class="scbody">
+          <div><span class="c-a"># Scrape React/Vue app</span></div>
+          <div><span class="c-b">node</span> scrapers/spa-scraper.js <span class="c-v">--url https://app.com --wait-for '#app'</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Export to SQLite</span></div>
+          <div><span class="c-b">node</span> exporters/to-sqlite.js <span class="c-v">--input data.json</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Sync to Airtable</span></div>
+          <div><span class="c-b">node</span> integrations/airtable-sync.js <span class="c-v">--token $KEY</span></div>
+        </div>
+      </div>
+      <div class="sc">
+        <div class="schead"><div class="scind ind-l"></div><div class="sctitle">SEO Audit Pipeline</div></div>
+        <div class="scbody">
+          <div><span class="c-a"># Crawl all pages</span></div>
+          <div><span class="c-b">node</span> scrapers/link-crawler.js <span class="c-v">--url https://site.com --depth 2</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Audit each URL</span></div>
+          <div><span class="c-b">node</span> analyzers/seo-auditor.js <span class="c-v">--input sitemap.json</span></div>
+          <div style="margin-top:.5rem"><span class="c-a"># Export CSV report</span></div>
+          <div><span class="c-b">node</span> exporters/to-csv.js <span class="c-v">--input audit.json --out report.csv</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <div class="cta">
-    <h2>Ready to extract<br/><em>everything?</em></h2>
-    <p>One repo. 110 modules. Infinite possibilities.</p>
-    <div class="ctaacts">
-      <a href="https://github.com/edwinnyandika/webarsenal" class="btn-f" target="_blank">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        Clone Repository
-      </a>
-      <a href="#" class="btn-o" onclick="go('docs');return false;">Read the Docs →</a>
-    </div>
-  </div>
-
-  <footer class="ft">
+  <footer class="ft rv">
     <div class="ftlogo">Web<em>Arsenal</em></div>
     <ul class="ftlinks">
       <li><a href="#" onclick="go('modules');return false;">Modules</a></li>
@@ -550,101 +619,96 @@ nav{
 
 <!-- ════════════════════ PAGE: MODULES ════════════════════ -->
 <div class="page" id="p-modules">
-  <section class="sec" style="padding-top:9rem;">
-    <div class="slabel">Full Arsenal</div>
-    <h2 class="stitle">110 modules.<br/>8 categories.</h2>
-    <p class="ssub">Every directory is a weapons category. Every script is self-contained, CLI-first, and ready to chain.</p>
-    <div class="mgrid rv" style="grid-template-columns:repeat(2,1fr);margin-top:3rem;">
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.66 0 3-4.03 3-9s-1.34-9-3-9m0 18c-1.66 0-3-4.03-3-9s1.34-9 3-9m-9 9a9 9 0 019-9"/></svg></div>
-        <div class="mnum">01</div><div class="mname">Core Mirrors</div><div class="mdir">core/</div>
-        <div class="mdesc">High-performance recursive site downloaders. Clone entire deployed websites with Puppeteer & Playwright — every asset, every route, every depth level you specify.</div>
-        <div class="mpills"><span class="mpill">super-mirror.js</span><span class="mpill">grab-playwright.js</span><span class="mpill">asset-grabber.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg></div>
-        <div class="mnum">02</div><div class="mname">Targeted Scrapers</div><div class="mdir">scrapers/</div>
-        <div class="mdesc">Purpose-built for SPAs (React/Vue), e-commerce, social profiles, and API endpoint sniffing. Waits for JS hydration before extracting data.</div>
-        <div class="mpills"><span class="mpill">spa-scraper.js</span><span class="mpill">ecommerce-scraper.js</span><span class="mpill">api-sniffer.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div>
-        <div class="mnum">03</div><div class="mname">DOM Analyzers</div><div class="mdir">analyzers/</div>
-        <div class="mdesc">Full SEO audits, unused CSS detection, performance profiling, and deep DOM tree mapping. Know exactly what's on any deployed page.</div>
-        <div class="mpills"><span class="mpill">seo-auditor.js</span><span class="mpill">unused-css.js</span><span class="mpill">perf-check.js</span><span class="mpill">dom-mapper.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg></div>
-        <div class="mnum">04</div><div class="mname">Auth Helpers</div><div class="mdir">auth-helpers/</div>
-        <div class="mdesc">Cloudflare bypass, Chrome cookie cloning, Bearer token extraction, session replay. For use on systems you own or are authorized to test.</div>
-        <div class="mpills"><span class="mpill">cf-clearance-puller.js</span><span class="mpill">cookie-cloner.js</span><span class="mpill">token-extractor.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div>
-        <div class="mnum">05</div><div class="mname">Data Exporters</div><div class="mdir">exporters/</div>
-        <div class="mdesc">Instantly convert extracted data to SQLite, WARC archives, CSV, Markdown, XML. Your data, your format, your pipeline.</div>
-        <div class="mpills"><span class="mpill">to-sqlite.js</span><span class="mpill">to-warc.js</span><span class="mpill">to-csv.js</span><span class="mpill">to-markdown.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/></svg></div>
-        <div class="mnum">06</div><div class="mname">Cloud Integrations</div><div class="mdir">integrations/</div>
-        <div class="mdesc">Push directly to AWS S3, Airtable, Supabase, Notion, Slack, Discord. Route extracted data straight into your cloud stack.</div>
-        <div class="mpills"><span class="mpill">aws-s3-uploader.js</span><span class="mpill">airtable-sync.js</span><span class="mpill">notion-sync.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div>
-        <div class="mnum">07</div><div class="mname">Change Monitors</div><div class="mdir">monitors/</div>
-        <div class="mdesc">Cron jobs, screenshot diffs, XPath-targeted change detection. Discord and Slack alerts the moment anything on a page changes.</div>
-        <div class="mpills"><span class="mpill">change-detector.js</span><span class="mpill">screenshot-diff.js</span><span class="mpill">discord-webhook.js</span></div>
-      </div>
-      <div class="mc">
-        <div class="mic"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
-        <div class="mnum">08</div><div class="mname">Core Utils</div><div class="mdir">utils/</div>
-        <div class="mdesc">Proxy rotation, rate limiters, request interceptors, user-agent spoofing. Infrastructure backbone for large-scale scraping operations.</div>
-        <div class="mpills"><span class="mpill">proxy-rotator.js</span><span class="mpill">rate-limiter.js</span><span class="mpill">ua-spoofing.js</span></div>
-      </div>
-    </div>
-    <div class="badges">
-      <span class="badge hot">Puppeteer</span><span class="badge hot">Playwright</span>
-      <span class="badge">Cheerio</span><span class="badge">Axios</span><span class="badge">SQLite3</span>
-      <span class="badge new">AWS SDK</span><span class="badge">node-cron</span><span class="badge new">Supabase</span>
-      <span class="badge">sharp</span><span class="badge">Node.js v18+</span><span class="badge hot">JavaScript</span>
+  <section class="sec" style="padding-top:8rem;">
+    <div class="slabel rv">All 8 Categories</div>
+    <h1 class="stitle rv">110 modules.<br/>Every extraction need covered.</h1>
+    <p class="ssub rv d1">One file. One job. One clean CLI. Composable by design.</p>
+    <div class="mgrid" style="margin-top:3rem;grid-template-columns:repeat(2,1fr);">
+      <div class="mc rv"><div class="mic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div><div class="mnum">01 / core/</div><div class="mname">Heavy-Duty Mirrors</div><div class="mdesc">super-mirror.js, grab-playwright.js, wget-clone.js. Full recursive download with asset bundling, depth control, and cookie auth. Supports static and JavaScript-rendered sites.</div><div class="mpills"><span class="mpill">super-mirror.js</span><span class="mpill">grab-playwright.js</span><span class="mpill">wget-clone.js</span></div></div>
+      <div class="mc rv d1"><div class="mic"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div><div class="mnum">02 / scrapers/</div><div class="mname">Targeted Extractors</div><div class="mdesc">spa-scraper.js for React/Vue, ecommerce-scraper.js for product data, link-crawler.js for sitemaps, api-sniffer.js for discovering undocumented endpoints. 35+ scripts.</div><div class="mpills"><span class="mpill">spa-scraper.js</span><span class="mpill">api-sniffer.js</span><span class="mpill">ecommerce-scraper.js</span></div></div>
+      <div class="mc rv"><div class="mic"><svg viewBox="0 0 24 24"><path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg></div><div class="mnum">03 / analyzers/</div><div class="mname">DOM &amp; SEO Analyzers</div><div class="mdesc">Full SEO audit with scoring, unused CSS detection, DOM tree diff, accessibility scanner, Core Web Vitals profiler, dead link finder. Output JSON or human-readable reports.</div><div class="mpills"><span class="mpill">seo-auditor.js</span><span class="mpill">unused-css.js</span><span class="mpill">a11y-scanner.js</span></div></div>
+      <div class="mc rv d1"><div class="mic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><div class="mnum">04 / auth-helpers/</div><div class="mname">Auth &amp; Bypass Tools</div><div class="mdesc">Cloudflare clearance puller, cookie cloner from browser profiles, session hijacker for authorized test targets, token extractor, basic/digest auth handler. Use responsibly.</div><div class="mpills"><span class="mpill">cf-clearance-puller.js</span><span class="mpill">cookie-cloner.js</span><span class="mpill">token-extractor.js</span></div></div>
+      <div class="mc rv"><div class="mic"><svg viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/></svg></div><div class="mnum">05 / exporters/</div><div class="mname">Data Format Exporters</div><div class="mdesc">to-sqlite.js, to-csv.js, to-warc.js, to-markdown.js, to-pdf.js. Transform any scrape output into any format. Chain directly after scraper scripts.</div><div class="mpills"><span class="mpill">to-sqlite.js</span><span class="mpill">to-warc.js</span><span class="mpill">to-csv.js</span></div></div>
+      <div class="mc rv d1"><div class="mic"><svg viewBox="0 0 24 24"><path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div><div class="mnum">06 / integrations/</div><div class="mname">Cloud Integrations</div><div class="mdesc">airtable-sync.js, aws-s3-uploader.js, notion-push.js, slack-alerter.js, discord-webhook.js. Direct delivery from extraction jobs to cloud storage and messaging platforms.</div><div class="mpills"><span class="mpill">aws-s3-uploader.js</span><span class="mpill">notion-push.js</span><span class="mpill">airtable-sync.js</span></div></div>
+      <div class="mc rv"><div class="mic"><svg viewBox="0 0 24 24"><path d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg></div><div class="mnum">07 / monitors/</div><div class="mname">Change Monitors</div><div class="mdesc">change-detector.js with XPath targeting, price-tracker.js, availability-watcher.js, cron-runner.js. Get notified the moment a page changes.</div><div class="mpills"><span class="mpill">change-detector.js</span><span class="mpill">price-tracker.js</span><span class="mpill">cron-runner.js</span></div></div>
+      <div class="mc rv d1"><div class="mic"><svg viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg></div><div class="mnum">08 / utils/</div><div class="mname">Core Utilities</div><div class="mdesc">proxy-rotator.js, user-agent-pool.js, rate-limiter.js, cookie-jar.js, link-normalizer.js. The infrastructure every serious scraping operation needs.</div><div class="mpills"><span class="mpill">proxy-rotator.js</span><span class="mpill">rate-limiter.js</span><span class="mpill">ua-pool.js</span></div></div>
     </div>
   </section>
-  <footer class="ft"><div class="ftlogo">Web<em>Arsenal</em></div><ul class="ftlinks"><li><a href="#" onclick="go('home');return false;">Home</a></li><li><a href="#" onclick="go('docs');return false;">Docs</a></li><li><a href="https://github.com/edwinnyandika/webarsenal" target="_blank">GitHub</a></li></ul><div class="ftcopy">MIT © Edwin Nyandika 2026</div></footer>
+  <footer class="ft"><div class="ftlogo">Web<em>Arsenal</em></div><ul class="ftlinks"><li><a href="#" onclick="go('home');return false;">Home</a></li><li><a href="https://github.com/edwinnyandika/webarsenal" target="_blank">GitHub</a></li></ul><div class="ftcopy">MIT © Edwin Nyandika 2026</div></footer>
 </div>
 
 <!-- ════════════════════ PAGE: DOCS ════════════════════ -->
 <div class="page" id="p-docs">
   <div class="dlayout">
-    <aside class="dside rv">
+    <div class="dside">
       <div class="dnavh">Getting Started</div>
-      <ul class="dnavl"><li><a href="#" class="on">Installation</a></li><li><a href="#">Prerequisites</a></li><li><a href="#">Quick Start</a></li></ul>
+      <ul class="dnavl">
+        <li><a href="#" class="on" onclick="return false;">Prerequisites</a></li>
+        <li><a href="#" onclick="return false;">Installation</a></li>
+        <li><a href="#" onclick="return false;">Quickstart</a></li>
+      </ul>
       <div class="dnavh">Modules</div>
-      <ul class="dnavl"><li><a href="#">core/</a></li><li><a href="#">scrapers/</a></li><li><a href="#">analyzers/</a></li><li><a href="#">auth-helpers/</a></li><li><a href="#">exporters/</a></li><li><a href="#">integrations/</a></li><li><a href="#">monitors/</a></li><li><a href="#">utils/</a></li></ul>
-      <div class="dnavh">Guides</div>
-      <ul class="dnavl"><li><a href="#">Orchestration</a></li><li><a href="#">Proxy Setup</a></li><li><a href="#">Cloud Push</a></li><li><a href="#">Contributing</a></li></ul>
-    </aside>
-    <div class="dcontent rv d1">
-      <h2>Installation</h2>
-      <p>WebArsenal requires Node.js v18 or higher. Clone the repo and install dependencies.</p>
-      <pre><code><span style="color:var(--fire)">$</span> git clone https://github.com/edwinnyandika/webarsenal.git
-<span style="color:var(--fire)">$</span> cd webarsenal
-<span style="color:var(--fire)">$</span> npm install</code></pre>
-      <div class="dnote">Puppeteer and Playwright download browser binaries (~300MB) on first install. Expected and required.</div>
-      <h2>Quick Start</h2>
-      <h3>Mirror a full site</h3>
-      <pre><code>node core/super-mirror.js --url https://example.com --depth 4</code></pre>
-      <h3>Scrape a React SPA</h3>
-      <pre><code>node scrapers/spa-scraper.js --url https://app.example.com --wait-for '#root'</code></pre>
-      <h3>Run a full SEO audit</h3>
-      <pre><code>node analyzers/seo-auditor.js --url https://example.com --output report.json</code></pre>
-      <h3>Export data to SQLite</h3>
-      <pre><code>node exporters/to-sqlite.js --input data.json --db scrape.db</code></pre>
-      <h3>Push to AWS S3</h3>
-      <pre><code>node integrations/aws-s3-uploader.js --dir ./site_data --bucket my-bucket</code></pre>
-      <h2>Full Orchestration Example</h2>
-      <p>Chain scripts into a complete extraction pipeline:</p>
+      <ul class="dnavl">
+        <li><a href="#" onclick="return false;">core/</a></li>
+        <li><a href="#" onclick="return false;">scrapers/</a></li>
+        <li><a href="#" onclick="return false;">analyzers/</a></li>
+        <li><a href="#" onclick="return false;">auth-helpers/</a></li>
+        <li><a href="#" onclick="return false;">exporters/</a></li>
+        <li><a href="#" onclick="return false;">integrations/</a></li>
+        <li><a href="#" onclick="return false;">monitors/</a></li>
+        <li><a href="#" onclick="return false;">utils/</a></li>
+      </ul>
+      <div class="dnavh">Advanced</div>
+      <ul class="dnavl">
+        <li><a href="#" onclick="return false;">Pipeline Orchestration</a></li>
+        <li><a href="#" onclick="return false;">Dependencies</a></li>
+        <li><a href="#" onclick="return false;">Ethics</a></li>
+      </ul>
+    </div>
+    <div class="dcontent">
+      <h2>Getting Started</h2>
+      <p>WebArsenal requires <code>Node.js v18+</code>. No global installs needed — all 110 modules run directly via <code>node</code>.</p>
+      <h3>Installation</h3>
+      <pre><code>git clone https://github.com/edwinnyandika/webarsenal.git
+cd webarsenal
+npm install</code></pre>
+      <h3>Verify</h3>
+      <pre><code>node core/super-mirror.js --help</code></pre>
+      <div class="dnote">All flags are documented via <code>--help</code> on every module. No man pages or docs required.</div>
+
+      <h2>Core Modules</h2>
+      <p>Heavy-duty recursive cloners. Download an entire deployed site including assets, CSS, JS, images, fonts.</p>
+      <pre><code><span style="color:var(--fog)"># Full mirror with depth 4</span>
+node core/super-mirror.js --url https://example.com --depth 4
+
+<span style="color:var(--fog)"># Playwright-powered mirror (for SPA, CSR sites)</span>
+node core/grab-playwright.js --url https://example.com --pdf</code></pre>
+
+      <h2>Scrapers</h2>
+      <p>Granular, targeted extraction. Use these for structured data, not full-site cloning.</p>
+      <pre><code><span style="color:var(--fog)"># SPA scraper — waits for element before extracting</span>
+node scrapers/spa-scraper.js --url https://app.com --wait-for '#app'
+
+<span style="color:var(--fog)"># E-commerce price scraper</span>
+node scrapers/ecommerce-scraper.js --url https://store.com</code></pre>
+
+      <h2>Analyzers</h2>
+      <pre><code><span style="color:var(--fog)"># Full SEO audit with score</span>
+node analyzers/seo-auditor.js --url https://mysite.com
+
+<span style="color:var(--fog)"># Detect and report unused CSS</span>
+node analyzers/unused-css.js --url https://mysite.com</code></pre>
+
+      <h2>Auth Helpers</h2>
+      <div class="dnote">Only use on systems you own or have explicit written permission to test.</div>
+      <pre><code><span style="color:var(--fog)"># Pull Cloudflare clearance token</span>
+node auth-helpers/cf-clearance-puller.js --url https://protected.com
+
+<span style="color:var(--fog)"># Clone cookies from a Chrome profile</span>
+node auth-helpers/cookie-cloner.js --profile "C:\Users\You\AppData\Local\Google\Chrome\Default"</code></pre>
+
+      <h2>Pipeline Orchestration</h2>
+      <p>Chain modules together for complete extraction pipelines. This example bypasses Cloudflare, mirrors a protected site, uploads to S3, and alerts Slack.</p>
       <pre><code><span style="color:var(--fog)"># Step 1: Bypass Cloudflare</span>
 node auth-helpers/cf-clearance-puller.js --url https://store.com
 
@@ -656,16 +720,16 @@ node integrations/aws-s3-uploader.js --dir ./super-mirrored-site --bucket websit
 
 <span style="color:var(--fog)"># Step 4: Alert team on Slack</span>
 node integrations/slack-alerter.js --webhook YOUR_WEBHOOK --message "Mirror complete ✓"</code></pre>
+
       <h2>Dependencies</h2>
-      <p>All dependencies are widely-trusted open-source packages. No proprietary SDKs required.</p>
       <pre><code>puppeteer    — Headless Chrome automation
-playwright   — Cross-browser automation
-cheerio      — Fast server-side HTML parsing
+playwright   — Cross-browser automation (Chrome, Firefox, WebKit)
+cheerio      — Fast server-side HTML parsing (jQuery syntax)
 axios        — HTTP request engine
 sqlite3      — Local database exports
 aws-sdk      — S3 and AWS integrations
 node-cron    — Recurring job scheduling
-sharp        — Image processing</code></pre>
+sharp        — Image processing and optimization</code></pre>
     </div>
   </div>
 </div>
@@ -680,7 +744,7 @@ sharp        — Image processing</code></pre>
   <div class="abody rv d1">
     <div class="ablk">
       <h2 class="stitle" style="font-size:1.65rem;margin-bottom:1.1rem;">The problem<br/>it solves</h2>
-      <p>Web extraction is fragmented. Developers stitch together Puppeteer snippets, Cheerio tutorials, half-finished proxy scripts, and manual Postman exports just to get data out of a site they own.</p>
+      <p>Web extraction is fragmented. Developers stitch together Puppeteer snippets, Cheerio tutorials, half-finished proxy scripts, and manual exports just to get data out of a site they own.</p>
       <p>There was no single, well-organized toolkit that handles the full pipeline — from "clone this site" through to "push results to Notion." WebArsenal solves that.</p>
       <ul class="alist">
         <li>Self-contained scripts — one job per file, no hidden state</li>
@@ -717,46 +781,42 @@ sharp        — Image processing</code></pre>
       <div class="fi">
         <div class="fiic" style="background:rgba(90,247,142,.07);color:#5af78e;"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg></div>
         <div class="finame">Respect robots.txt</div>
-        <div class="fidesc">The rate-limiter is specifically designed to prevent server overload.</div>
+        <div class="fidesc">The rate-limiter is specifically designed to prevent server overload on your authorized targets.</div>
       </div>
       <div class="fi">
         <div class="fiic" style="background:rgba(212,168,67,.07);color:var(--gold);"><svg viewBox="0 0 24 24"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></div>
         <div class="finame">Permission first</div>
-        <div class="fidesc">Auth modules are for legitimate session management on systems you own.</div>
+        <div class="fidesc">Auth modules are for legitimate session management on systems you own or are authorized to access.</div>
       </div>
       <div class="fi">
         <div class="fiic" style="background:rgba(184,238,255,.06);color:var(--ice);"><svg viewBox="0 0 24 24"><path d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
         <div class="finame">MIT Open Source</div>
-        <div class="fidesc">Fully open. Use, fork, and ship in commercial products — keep it ethical.</div>
+        <div class="fidesc">Fully open. Use, fork, and ship in commercial products — just keep it ethical and legal.</div>
       </div>
     </div>
   </section>
-  <footer class="ft"><div class="ftlogo">Web<em>Arsenal</em></div><ul class="ftlinks"><li><a href="#" onclick="go('home');return false;">Home</a></li><li><a href="#" onclick="go('modules');return false;">Modules</a></li><li><a href="https://github.com/edwinnyandika/webarsenal" target="_blank">GitHub</a></li></ul><div class="ftcopy">MIT © Edwin Nyandika 2026</div></footer>
+  <footer class="ft"><div class="ftlogo">Web<em>Arsenal</em></div><ul class="ftlinks"><li><a href="#" onclick="go('home');return false;">Home</a></li><li><a href="https://github.com/edwinnyandika/webarsenal" target="_blank">GitHub</a></li></ul><div class="ftcopy">MIT © Edwin Nyandika 2026</div></footer>
 </div>
 
 <script>
 // ── Cursor ──
 const cur=document.getElementById('cur'),curt=document.getElementById('curt');
-let mx=0,my=0,tx=0,ty=0;
-document.addEventListener('mousemove',e=>{
-  mx=e.clientX;my=e.clientY;
-  cur.style.left=mx+'px';cur.style.top=my+'px';
-});
+let mx=window.innerWidth/2,my=window.innerHeight/2,tx=mx,ty=my;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
 (function anim(){tx+=(mx-tx)*.13;ty+=(my-ty)*.13;curt.style.left=tx+'px';curt.style.top=ty+'px';requestAnimationFrame(anim);})();
 document.querySelectorAll('a,button,.mc,.sc,.fi').forEach(el=>{
   el.addEventListener('mouseenter',()=>cur.classList.add('h'));
   el.addEventListener('mouseleave',()=>cur.classList.remove('h'));
 });
 
-// ── Page router ──
+// ── Router ──
 function go(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
   document.getElementById('p-'+name).classList.add('on');
   document.querySelectorAll('.nlinks a').forEach(a=>a.classList.remove('on'));
-  const n=document.getElementById('n-'+name);
-  if(n)n.classList.add('on');
-  window.scrollTo(0,0);
-  setTimeout(rev,60);
+  const n=document.getElementById('n-'+name);if(n)n.classList.add('on');
+  window.scrollTo({top:0,behavior:'instant'});
+  setTimeout(rev,80);
 }
 
 // ── Reveal ──
