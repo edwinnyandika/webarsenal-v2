@@ -6,7 +6,8 @@
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
-'use strict';\n// [WebArsenal 3.0.0 Enhancements applied: robots.txt compliance, Link Graph JSON, CSV Reports]
+'use strict';
+// [WebArsenal 3.0.0 Enhancements applied: robots.txt compliance, Link Graph JSON, CSV Reports]
 
 const puppeteer     = require('puppeteer-extra');
 const StealthPlugin = require('puppeteer-extra-plugin-stealth');
@@ -39,7 +40,8 @@ program
   .option('--retry <n>',                  'Retry attempts',              parseInt, 2)
     .option('--respect-robots', 'Adhere to robots.txt limits', true)
   .option('--link-graph', 'Generate link dependency graph')
-  .option('--csv', 'Export report as CSV')\n  .parse(process.argv);
+  .option('--csv', 'Export report as CSV')
+  .parse(process.argv);
 
 const opts       = program.opts();
 const START_URL  = opts.url;

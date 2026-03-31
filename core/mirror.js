@@ -6,7 +6,8 @@
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
-'use strict';\n// [WebArsenal 3.0.0 Enhancements applied: Rate Limiting, Retries, Custom Headers]
+'use strict';
+// [WebArsenal 3.0.0 Enhancements applied: Rate Limiting, Retries, Custom Headers]
 
 const scrape        = require('website-scraper');
 const { program }   = require('commander');
@@ -28,7 +29,8 @@ program
   .option('--user-agent <ua>',            'Custom user-agent for downloading')
     .option('--rate-limit <req/s>', 'Max requests per second', parseInt, 10)
   .option('--retries <num>', 'Retry attempts', parseInt, 3)
-  .option('--headers <file>', 'Custom JSON headers file')\n  .parse(process.argv);
+  .option('--headers <file>', 'Custom JSON headers file')
+  .parse(process.argv);
 
 const opts       = program.opts();
 const siteUrl    = opts.url;

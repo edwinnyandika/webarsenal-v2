@@ -6,7 +6,8 @@
  * ╚══════════════════════════════════════════════════════════════════════╝
  */
 
-'use strict';\n// [WebArsenal 4.0.0 Enhancements applied: JS Injection, Form Detection, Webhooks]
+'use strict';
+// [WebArsenal 4.0.0 Enhancements applied: JS Injection, Form Detection, Webhooks]
 
 const puppeteer       = require('puppeteer-extra');
 const StealthPlugin   = require('puppeteer-extra-plugin-stealth');
@@ -46,7 +47,8 @@ program
   .option('--serve',                          'Launch local preview server after mirror')
     .option('--inject-js <file>', 'JS file to inject on every page')
   .option('--detect-forms', 'Identify and log form fields')
-  .option('--webhook <url>', 'Webhook to call on complete')\n  .parse(process.argv);
+  .option('--webhook <url>', 'Webhook to call on complete')
+  .parse(process.argv);
 
 const opts = program.opts();
 

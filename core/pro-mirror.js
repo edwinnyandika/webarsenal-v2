@@ -6,7 +6,8 @@
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
-'use strict';\n// [WebArsenal 3.0.0 Enhancements applied: Cookie Jar, Multi-URL Seed]
+'use strict';
+// [WebArsenal 3.0.0 Enhancements applied: Cookie Jar, Multi-URL Seed]
 
 const scrape          = require('website-scraper');
 const PuppeteerPlugin = require('website-scraper-puppeteer');
@@ -29,7 +30,8 @@ program
   .option('--include-external',                 'Also download external assets', false)
     .option('--cookie-jar <file>', 'Load/save session cookies')
   .option('--seed-list <file>', 'Read starting URLs from text file')
-  .option('--auth-env', 'Load HTTP auth from .env')\n  .parse(process.argv);
+  .option('--auth-env', 'Load HTTP auth from .env')
+  .parse(process.argv);
 
 const opts       = program.opts();
 const OUTPUT_DIR = path.resolve(opts.output);

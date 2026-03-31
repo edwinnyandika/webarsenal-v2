@@ -6,7 +6,8 @@
  * ╚═══════════════════════════════════════════════════════════════╝
  */
 
-'use strict';\n// [WebArsenal 3.0.0 Enhancements applied: BFS Queue, Proxy Support, Cookies, PDF Export]
+'use strict';
+// [WebArsenal 3.0.0 Enhancements applied: BFS Queue, Proxy Support, Cookies, PDF Export]
 
 const { chromium }  = require('playwright-extra');
 const stealth       = require('puppeteer-extra-plugin-stealth')();
@@ -30,7 +31,8 @@ program
     .option('--proxy <server>', 'Proxy server')
   .option('--cookies <file>', 'Inject cookies from JSON file')
   .option('--pdf', 'Export pages as PDF')
-  .option('--wait-selector <xpath>', 'Custom wait selector')\n  .parse(process.argv);
+  .option('--wait-selector <xpath>', 'Custom wait selector')
+  .parse(process.argv);
 
 const opts = program.opts();
 const START_URL = opts.url;
