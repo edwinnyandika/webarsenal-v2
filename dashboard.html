@@ -113,6 +113,12 @@
       <!-- Terminal lines type here -->
     </div>
   </div>
+  <div class="reveal" style="margin-top:2rem;">
+    <div style="font-size: 0.6rem; color: var(--fire); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:1rem;">Live Intelligence Feed</div>
+    <div class="threat-feed" id="threatFeed">
+        <!-- Live ticker items -->
+    </div>
+  </div>
 </section>
 
 <!-- HUD -->
@@ -196,7 +202,7 @@
   <div class="d-close" onclick="closeDrawer()">✕ Close Details</div>
   <div>
     <div class="d-h" id="drawName">Module.js</div>
-    <div class="d-tags">
+    <div class="d-tags" id="drawTags">
       <div class="d-tag" id="drawCat">Analyzers</div>
       <div class="d-tag" id="drawAuth">DE{C0}DE VERIFIED</div>
       <div class="d-tag">POWER: LEVEL 5 ⚡</div>
@@ -262,6 +268,9 @@ function addToPipeline(e, cat, name) {
   if (e) e.stopPropagation();
   pipeline.push({ cat, name });
   updatePipeline();
+  if (typeof window.showToast === 'function') {
+    window.showToast(`Module [${name}] added to pipeline.`);
+  }
   if (!sidebar.classList.contains('open')) toggleSidebar();
 }
 
@@ -280,24 +289,37 @@ function updatePipeline() {
   pipelineCmd.textContent = cmd;
   pipelineCounter.textContent = `ToolKit Builder (${pipeline.length})`;
   
-  // SYNC WITH GLOBAL HUD
   if (typeof syncGlobalHUD === 'function') syncGlobalHUD();
 }
 
 function removeFromPipeline(i) {
+  const name = pipeline[i].name;
   pipeline.splice(i, 1);
   updatePipeline();
+  if (typeof window.showToast === 'function') {
+    window.showToast(`Module [${name}] removed.`, 2000);
+  }
 }
 
 function copyPipeline() {
-  navigator.clipboard.writeText(pipelineCmd.textContent).then(() => alert('Pipeline Command Copied!'));
+  navigator.clipboard.writeText(pipelineCmd.textContent).then(() => {
+    if (typeof window.showToast === 'function') window.showToast('Pipeline Command Copied!');
+  });
 }
 
 // Drawer Logic
 function openDrawer(m) {
   currentModule = m;
+  const risks = ['low', 'med', 'high', 'critical'];
+  const r = risks[Math.floor(Math.random() * risks.length)];
+  
   document.getElementById('drawName').textContent = m.Name;
   document.getElementById('drawCat').textContent = m.Category;
+  document.getElementById('drawTags').innerHTML = `
+    <div class="d-tag">${m.Category}</div>
+    <div class="d-tag">LVL 5 ⚡</div>
+    <div class="badge-risk risk-${r}">RISK: ${r.toUpperCase()}</div>
+  `;
   document.getElementById('drawCmd').textContent = `node ${m.Category}/${m.Name} --url {target} --execute`;
   drawer.classList.add('open');
   document.getElementById('drawAddBtn').onclick = () => addToPipeline(null, m.Category, m.Name);
@@ -306,7 +328,36 @@ function openDrawer(m) {
 function closeDrawer() { drawer.classList.remove('open'); }
 
 function copyCurrent() {
-    navigator.clipboard.writeText(document.getElementById('drawCmd').textContent).then(() => alert('Command Blueprint Copied!'));
+    navigator.clipboard.writeText(document.getElementById('drawCmd').textContent).then(() => {
+        if (typeof window.showToast === 'function') window.showToast('Command Blueprint Copied!');
+    });
+}
+
+// Threat Feed Logic
+const THREATS = [
+    "Dangling CNAME record detected on dev-staging.target.com",
+    "Azure Blob Storage 'assets-public' has LIST permissions enabled.",
+    "Bypassed Cloudflare Layer 7 challenge for api.v3.production.local",
+    "XSS reflected payload discovered in search parameter 'q'.",
+    "S3 Bucket 'backup-db-2026' is publicly readable.",
+    "Internal IP leak discovered via X-Forwarded-For header.",
+    "Detected Jenkins instance v2.319 with default credentials.",
+    "Open MongoDB instance on port 27017 - No Auth enabled."
+];
+
+function updateThreatFeed() {
+    const feed = document.getElementById('threatFeed');
+    const msg = THREATS[Math.floor(Math.random() * THREATS.length)];
+    const time = new Date().toLocaleTimeString([], { hour12:false });
+    
+    const item = document.createElement('div');
+    item.className = 'threat-item';
+    item.innerHTML = `<span class="threat-time">[${time}]</span> <span class="threat-status">ALERT:</span> ${msg}`;
+    
+    feed.prepend(item);
+    if (feed.children.length > 20) feed.lastElementChild.remove();
+    
+    setTimeout(updateThreatFeed, Math.random() * 3000 + 2000);
 }
 
 // Terminal Logic
@@ -388,6 +439,7 @@ catBtns.forEach(b => {
 updatePipeline();
 renderVault();
 typeTerm();
+updateThreatFeed();
 </script>
 </body>
 </html>
