@@ -1,6 +1,6 @@
 # About WebArsenal
 
-**WebArsenal** is an open-source developer toolkit for full-spectrum web data extraction. Built by [Edwin Nyandika](https://github.com/edwinnyandika), it packages 110 focused JavaScript modules into a single cloneable repo — covering every phase of working with deployed web targets.
+**WebArsenal** is an open-source developer toolkit for full-spectrum web data extraction. Built by **de{c0}de by edwin dev**, it packages 320 focused JavaScript modules into a single cloneable repo — covering every phase of working with deployed web targets.
 
 ## The Problem It Solves
 
@@ -64,4 +64,4 @@ MIT — free to use in personal projects, commercial products, and internal tool
 
 ---
 
-*Built by [Edwin Nyandika](https://github.com/edwinnyandika) · [GitHub](https://github.com/edwinnyandika/webarsenal) · MIT License*
+*Built by de{c0}de by edwin dev · [GitHub](https://github.com/edwinnyandika/webarsenal) · MIT License*

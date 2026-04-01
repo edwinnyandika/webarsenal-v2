@@ -1,24 +1,37 @@
 {
   "name": "webarsenal",
-  "version": "3.0.0",
-  "description": "The Ultimate Web Scraping & Mirroring Toolkit",
+  "version": "4.0.0",
+  "description": "The Ultimate Web Scraping, Mirroring, Extraction, and Monitoring Toolkit",
+  "author": "de{c0}de by edwin dev",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
-    "start": "node core/super-mirror.js --help"
+    "start": "node core/super-mirror.js --help",
+    "generate:modules": "node tools/generate-modules.js",
+    "validate:modules": "node tools/validate-modules.js",
+    "test": "node --test",
+    "ci": "npm run validate:modules && npm test"
   },
   "dependencies": {
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.8.4",
     "chalk": "^4.1.2",
-    "cheerio": "^1.0.0-rc.12",
+    "cheerio": "^1.0.0",
     "cli-progress": "^3.12.0",
     "commander": "^11.1.0",
     "mime-types": "^2.1.35",
+    "node-cron": "^3.0.3",
     "p-limit": "^3.1.0",
-    "puppeteer": "^21.6.0",
+    "playwright": "^1.52.0",
+    "puppeteer": "^21.11.0",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-adblocker": "^2.13.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "sharp": "^0.33.5",
+    "sqlite3": "^5.1.7",
     "website-scraper": "^5.3.1",
     "website-scraper-puppeteer": "^1.1.0"
-  },
-  "author": "edwinnyandika",
-  "license": "MIT"
+  }
 }

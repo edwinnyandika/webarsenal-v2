@@ -1,1 +1,23 @@
-#!/usr/bin/env node\n/**\n * ╔═════════════════════════════════════════════════════════════════╗\n * ║  WebArsenal: sitemap-gen.js                                     ║\n * ║  Category: utils                                                ║\n * ╚═════════════════════════════════════════════════════════════════╝\n */\n\n'use strict';\n\nconst { program } = require('commander');\nconst chalk = require('chalk');\n\nprogram\n  .name('sitemap-gen.js')\n  .description('Sitemap XML generator.')\n  .version('3.0.0')\n  .requiredOption('-i, --input <json>', 'Input URLs JSON')\n  .parse(process.argv);\n\nconst opts = program.opts();\n\nasync function run() {\n  console.log(chalk.bold.magenta('\n╔════════════════════════════════════════════╗'));\n  console.log(chalk.bold.magenta(  '║  WebArsenal Module: ' + 'sitemap-gen.js'.padEnd(23) + '║'));\n  console.log(chalk.bold.magenta(  '╚════════════════════════════════════════════╝\n'));\n  \n  console.log(chalk.cyan('[*] Starting Execution...'));\n  \n  if (Object.keys(opts).length > 0) {\n    console.log(chalk.gray('[*] Options Provided:'), Object.keys(opts).length);\n  } else {\n    console.log(chalk.yellow('[!] No specific options triggered (run with --help for details)'));\n  }\n  \n  try {\n    await new Promise(resolve => setTimeout(resolve, 800));\n    console.log(chalk.green('[-] Execution completed successfully!'));\n  } catch (err) {\n    console.error(chalk.red('[x] Execution Failed: '), err.message);\n    process.exit(1);\n  }\n}\n\nif (require.main === module) {\n  run().catch(console.error);\n}\n\nmodule.exports = { run };
+#!/usr/bin/env node
+'use strict';
+
+const { getModuleById } = require('../lib/module-catalog');
+const { runModuleCli } = require('../lib/module-runner');
+
+const definition = getModuleById('utils/sitemap-gen');
+
+async function run(argv = process.argv) {
+  return runModuleCli(definition, argv);
+}
+
+if (require.main === module) {
+  run().catch((error) => {
+    process.stderr.write(`${error.stack || error.message}\n`);
+    process.exitCode = 1;
+  });
+}
+
+module.exports = {
+  definition,
+  run,
+};

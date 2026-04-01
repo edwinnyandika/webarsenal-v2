@@ -1,1 +1,9 @@
-node_modules/\n*.log\n.DS_Store\ndownloads/\nmirrored-sites/\n
+node_modules/
+coverage/
+test-output/
+output/
+.webarsenal-state/
+*.log
+.DS_Store
+downloads/
+mirrored-sites/
