@@ -1,9 +1,9 @@
 <div align="center">
 
 <!-- BANNER -->
-<img src="og-banner.jpg" alt="WebArsenal Banner" width="100%" />
+<img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="WebArsenal Banner" width="100%" />
 
-<br
+<br>
 
 # 🛡️ WebArsenal v4.0.0
 **The Ultimate High-Power Security Research & Automation Arsenal**
