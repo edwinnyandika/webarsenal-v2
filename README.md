@@ -1,4 +1,9 @@
-![WebArsenal Hero Banner](file:///c:/Users/hp/webarsenal-1/images/OIUGRK0.jpg)
+<div align="center">
+
+<!-- BANNER -->
+<img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="WebArsenal Banner" width="100%" />
+
+<br>
 
 # 🛡️ WebArsenal v5.0.0
 **The Ultimate High-Power Security Research & Automation Arsenal**
