@@ -1,4 +1,9 @@
-![WebArsenal Hero Banner](OIUGRK0.jpg)
+<div align="center">
+
+<!-- BANNER -->
+<img src="og-banner.jpg" alt="WebArsenal Banner" width="100%" />
+
+<br
 
 # 🛡️ WebArsenal v4.0.0
 **The Ultimate High-Power Security Research & Automation Arsenal**
