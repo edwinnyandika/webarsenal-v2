@@ -9,28 +9,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
 <script src="js/layout.js"></script>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <main class="container" style="transition: opacity 0.4s var(--ease);">
   <section class="h-hero">
     <div class="reveal">
-      <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">WEB-ARSENAL CONSOLIDATION PHASE</div>
+      <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">WEB-ARSENAL CONSOLIDATION PHASE v5.2.0</div>
       <h1 class="sec-h">One Toolkit. <br/><span>Infinite Power.</span></h1>
-      <p class="sec-p" style="margin: 2rem auto;">Combine 320+ specialized security scripts into a single, high-performance orchestration layer. Built for the modern security researcher.</p>
+      <p class="sec-p" style="margin: 2rem auto;">Combine 413 specialized security scripts into a single, high-performance orchestration layer. Built for the modern security researcher.</p>
       
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-        <a href="/vault" class="btn-fire spa-link">Enter the Command Vault</a>
-        <a href="/docs" class="btn-outline spa-link">Read Documentation</a>
+        <a href="dashboard.html" class="btn-fire spa-link">Enter the Command Vault</a>
+        <a href="docs.html" class="btn-outline spa-link">Read Documentation</a>
       </div>
 
-      <div class="teaser-wrap reveal" style="margin-left: auto; margin-right: auto;">
-        <div class="t-box">
-          <div>> Starting WebArsenal Global Scan...</div>
-          <div style="color:var(--fog)">[INFO] 320 modules loaded.</div>
-          <div style="color:var(--fire)">[WARN] 12 targets detected in scope.</div>
-          <div>> node core/super-mirror.js --url target.local</div>
-          <div style="color:#fde68a">[SEC] Bypassing anti-bot checks... SUCCESS.</div>
+      <div class="teaser-wrap reveal" style="margin-left: auto; margin-right: auto; max-width:600px; margin-top:4rem;">
+        <div class="terminal-vault" style="min-height:auto;">
+            <div class="term-header">
+                <div class="term-dots">
+                    <div class="dot r"></div><div class="dot y"></div><div class="dot g"></div>
+                </div>
+                <div class="t-mode active">Live Preview</div>
+            </div>
+            <div class="term-body" style="height:200px;">
+                <div class="term-line">> Starting WebArsenal Global Scan...</div>
+                <div class="term-line t-dim">[INFO] 413 modules loaded.</div>
+                <div class="term-line t-red">[WARN] 12 targets detected in scope.</div>
+                <div class="term-line">> node core/super-mirror.js --url target.local</div>
+                <div class="term-line t-gold">[SEC] Bypassing anti-bot checks... SUCCESS.</div>
+            </div>
         </div>
       </div>
     </div>
@@ -38,31 +47,39 @@
 
   <section id="features">
     <h2 class="sec-h" style="text-align: center;">Precision. <span>Automation.</span> Scale.</h2>
-    <div class="feature-grid">
+    <div class="feature-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap:2rem; margin-top:4rem;">
       <div class="f-card reveal glass-box">
-        <span class="f-icon">🕵️</span>
-        <div class="f-title">Advanced Recon</div>
+        <div class="f-icon-container">
+            <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="f-title" style="font-family:var(--ff-d); font-weight:800; font-size:1.5rem; margin-bottom:1rem;">Advanced Recon</div>
         <p style="color: var(--fog); font-size: 0.9rem;">From subdomain takeovers to port discovery, our 93 analyzers map every inch of the attack surface.</p>
       </div>
       <div class="f-card reveal glass-box" style="transition-delay: 0.1s;">
-        <span class="f-icon">⚡</span>
-        <div class="f-title">Rapid Extraction</div>
+        <div class="f-icon-container">
+            <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="f-title" style="font-family:var(--ff-d); font-weight:800; font-size:1.5rem; margin-bottom:1rem;">Rapid Extraction</div>
         <p style="color: var(--fog); font-size: 0.9rem;">High-speed scrapers built for SPAs, APIs, and mobile endpoints. Mirror entire sites in seconds.</p>
       </div>
       <div class="f-card reveal glass-box" style="transition-delay: 0.2s;">
-        <span class="f-icon">⛓️</span>
-        <div class="f-title">Smart Pipelines</div>
+        <div class="f-icon-container">
+            <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
+        <div class="f-title" style="font-family:var(--ff-d); font-weight:800; font-size:1.5rem; margin-bottom:1rem;">Smart Pipelines</div>
         <p style="color: var(--fog); font-size: 0.9rem;">Chain your modules into complex exfiltration workflows with our interactive ToolKit Builder.</p>
       </div>
     </div>
   </section>
 
   <section class="cta-banner reveal">
-    <h2>Ready to Deploy?</h2>
-    <p style="margin-bottom: 3rem; font-size: 1.2rem; opacity: 0.9;">Join the elite researchers using WebArsenal for high-stakes site auditing.</p>
-    <div style="display: flex; gap: 1.5rem; justify-content: center;">
-      <a href="/vault" class="btn-outline spa-link" style="border-color: #fff; color: #fff;">Open The Arsenal</a>
-      <a href="https://github.com/edwinnyandika/webarsenal-v2" target="_blank" class="btn-outline" style="border-color: #fff; color: #fff;">View on GitHub</a>
+    <div class="glass-box" style="text-align:center; padding:5rem; border-color:var(--fire);">
+        <h2 class="sec-h">Ready to <span>Deploy?</span></h2>
+        <p style="margin: 2rem auto 3rem; font-size: 1.2rem; opacity: 0.9; max-width:600px;">Join the elite researchers using WebArsenal for high-stakes site auditing and automated reconnaissance.</p>
+        <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap:wrap;">
+          <a href="dashboard.html" class="btn-fire spa-link">Launch The Arsenal</a>
+          <a href="https://github.com/edwinnyandika/webarsenal-v2" target="_blank" class="btn-outline">View on GitHub</a>
+        </div>
     </div>
   </section>
 </main>
@@ -70,7 +87,5 @@
 <script>
 // Content reloading logic handled by layout.js
 </script>
-</body>
-</html>
 </body>
 </html>

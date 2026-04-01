@@ -1,7 +1,17 @@
 /**
- * WEBARSENAL UNIFIED LAYOUT ENGINE v1.1.0 (SPA EDITION)
+ * WEBARSENAL UNIFIED LAYOUT ENGINE v1.2.0 (UNIVERSAL NAVIGATION)
  * (c) 2026 de{c0}de by edwin dev
  */
+
+const ICONS = {
+    shield: `<svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+    search: `<svg class="icon-svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>`,
+    terminal: `<svg class="icon-svg" viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>`,
+    zap: `<svg class="icon-svg" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    layers: `<svg class="icon-svg" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+    link: `<svg class="icon-svg" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
+    info: `<svg class="icon-svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>`
+};
 
 document.addEventListener('DOMContentLoaded', () => {
     initLayout();
@@ -11,29 +21,28 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function initLayout() {
-    if (document.querySelector('nav')) return; // Avoid double injection
+    if (document.querySelector('nav')) return;
 
     const currentPath = window.location.pathname;
-    const isVault = currentPath.includes('vault') || currentPath.includes('dashboard');
     
     const header = `
     <nav>
-        <a href="/" class="logo spa-link">Web<span>Arsenal</span></a>
+        <a href="index.html" class="logo spa-link">Web<span>Arsenal</span></a>
         <ul class="n-links">
-            <li><a href="/" class="spa-link ${currentPath === '/' || currentPath.includes('index') ? 'active' : ''}">Home</a></li>
-            <li><a href="/vault" class="spa-link ${isVault ? 'active' : ''}">Vault</a></li>
-            <li><a href="/modules" class="spa-link ${currentPath.includes('modules') ? 'active' : ''}">Modules</a></li>
-            <li><a href="/docs" class="spa-link ${currentPath.includes('docs') ? 'active' : ''}">Docs</a></li>
-            <li><a href="/about" class="spa-link ${currentPath.includes('about') ? 'active' : ''}">About</a></li>
+            <li><a href="index.html" class="spa-link ${currentPath.includes('index') || currentPath === '/' ? 'active' : ''}">Home</a></li>
+            <li><a href="dashboard.html" class="spa-link ${currentPath.includes('dashboard') ? 'active' : ''}">Vault</a></li>
+            <li><a href="modules.html" class="spa-link ${currentPath.includes('modules') ? 'active' : ''}">Modules</a></li>
+            <li><a href="docs.html" class="spa-link ${currentPath.includes('docs') ? 'active' : ''}">Docs</a></li>
+            <li><a href="about.html" class="spa-link ${currentPath.includes('about') ? 'active' : ''}">About</a></li>
         </ul>
         <div class="h-hud">
             <div id="intelCluster" style="display:flex; gap:1.5rem; margin-right:2rem; font-size:0.55rem; color:var(--fog); letter-spacing:0.1em; text-transform:uppercase; border-right:1px solid rgba(242,240,232,0.1); padding-right:1.5rem;">
-                <div>Scans: <span id="activeScans" style="color:var(--fire); font-weight:800;">12</span></div>
-                <div>Threats: <span id="detectedThreats" style="color:var(--fire); font-weight:800;">1,293</span></div>
+                <div style="display:flex; align-items:center; gap:0.5rem;">${ICONS.search} Scans: <span id="activeScans" style="color:var(--fire); font-weight:800;">12</span></div>
+                <div style="display:flex; align-items:center; gap:0.5rem;">${ICONS.shield} Threats: <span id="detectedThreats" style="color:var(--fire); font-weight:800;">1,293</span></div>
             </div>
             <div id="pipelineBadge" class="hud-badge" style="display:none;">Pipeline Active</div>
-            <div class="hud-count">320 Modules</div>
-            ${!isVault ? '<a href="/vault" class="btn-fire spa-link" style="padding: 0.5rem 1rem; font-size: 0.6rem; margin-left:1rem;">Launch Vault</a>' : '<div class="toolkit-trigger" onclick="toggleSidebar()" id="pipelineCounter">ToolKit Builder (0)</div>'}
+            <div class="hud-count">413 Modules</div>
+            ${!currentPath.includes('dashboard') ? '<a href="dashboard.html" class="btn-fire spa-link" style="padding: 0.5rem 1rem; font-size: 0.6rem; margin-left:1rem;">Launch Vault</a>' : '<div class="toolkit-trigger" onclick="toggleSidebar()" id="pipelineCounter">ToolKit Builder (0)</div>'}
         </div>
     </nav>
     <div id="cursor"></div>
@@ -54,12 +63,10 @@ function initLayout() {
         document.body.insertAdjacentHTML('beforeend', footer);
     }
     
-    // Inject Commander & Toaster
     initCommander();
     initToaster();
     initIntelLoop();
 
-    // Init Cursor (Global)
     const cursor = document.getElementById('cursor');
     document.addEventListener('mousemove', e => {
         if(cursor) {
@@ -82,7 +89,7 @@ function initCommander() {
     const html = `
     <div id="commander">
         <div class="com-wrap">
-            <input type="text" id="comSearch" placeholder="SEARCH THE ARSENAL (320+ MODULES)..." autocomplete="off">
+            <input type="text" id="comSearch" placeholder="SEARCH THE ARSENAL (413+ MODULES)..." autocomplete="off">
             <div class="com-results" id="comResults"></div>
             <div style="margin-top:1.5rem; text-align:center; font-size:0.6rem; color:var(--fog); letter-spacing:0.1em;">
                 [ESC] TO CLOSE | [ENTER] TO NAVIGATE | [CTRL+K] TO TRIGGER
@@ -112,25 +119,28 @@ function initCommander() {
         if (!query) { results.innerHTML = ''; return; }
         
         let filtered = [
-            { name: 'Command Vault', cat: 'Core', url: '/vault' },
-            { name: 'Module Catalog', cat: 'Index', url: '/modules' },
-            { name: 'Documentation', cat: 'Docs', url: '/docs' },
-            { name: 'Contact Architect', cat: 'Social', url: '/contact' }
+            { name: 'Command Vault', cat: 'Core', url: 'dashboard.html', icon: ICONS.terminal },
+            { name: 'Module Catalog', cat: 'Index', url: 'modules.html', icon: ICONS.layers },
+            { name: 'Documentation', cat: 'Docs', url: 'docs.html', icon: ICONS.info },
+            { name: 'About The Creator', cat: 'About', url: 'about.html', icon: ICONS.info },
+            { name: 'Contact Architect', cat: 'Contact', url: 'contact.html', icon: ICONS.info }
         ].filter(p => p.name.toLowerCase().includes(query));
         
-        // Dynamic search from actual modules if available
         if (window.MODULES && query.length > 1) {
             const mods = window.MODULES.filter(m => m.Name.toLowerCase().includes(query))
-                                     .slice(0, 10)
-                                     .map(m => ({ name: m.Name, cat: m.Category, url: '/vault' }));
+                                     .slice(0, 8)
+                                     .map(m => ({ name: m.Name, cat: m.Category, url: 'dashboard.html', icon: ICONS.zap }));
             filtered = [...filtered, ...mods];
         }
 
         results.innerHTML = filtered.map(p => `
-            <div class="com-item" onclick="navigateTo('${p.url}'); document.getElementById('commander').classList.remove('open');">
-                <span class="name">${p.name}</span>
+            <a href="${p.url}" class="com-item spa-link" onclick="document.getElementById('commander').classList.remove('open');">
+                <div style="display:flex; align-items:center; gap:1rem;">
+                    <div style="color:var(--fire); opacity:0.8;">${p.icon}</div>
+                    <span class="name">${p.name}</span>
+                </div>
                 <span class="cat">${p.cat}</span>
-            </div>
+            </a>
         `).join('');
     });
 }
@@ -188,23 +198,26 @@ function initSPA() {
             !link.href.includes('#')) {
             
             e.preventDefault();
-            const url = new URL(link.href).pathname;
-            navigateTo(url);
+            const urlPath = new URL(link.href).pathname;
+            const filename = urlPath === '/' ? 'index.html' : urlPath.split('/').pop();
+            navigateTo(filename);
         }
     });
 
     window.addEventListener('popstate', () => {
-        loadPage(window.location.pathname, false);
+        const urlPath = window.location.pathname;
+        const filename = urlPath === '/' ? 'index.html' : urlPath.split('/').pop();
+        loadPage(filename, false);
     });
 }
 
-async function navigateTo(url) {
-    if (url === window.location.pathname) return;
-    await loadPage(url);
-    window.history.pushState({}, '', url);
+async function navigateTo(filename) {
+    if (filename === window.location.pathname.split('/').pop()) return;
+    await loadPage(filename);
+    window.history.pushState({}, '', filename);
 }
 
-async function loadPage(url, animate = true) {
+async function loadPage(filename, animate = true) {
     const loader = document.getElementById('page-loader');
     const main = document.querySelector('main');
     
@@ -214,11 +227,8 @@ async function loadPage(url, animate = true) {
     }
 
     try {
-        // Resolve internal paths for local file access if needed
-        let fetchUrl = url === '/' ? '/index.html' : (url.endsWith('.html') ? url : url + '.html');
-        if (fetchUrl === '/vault.html') fetchUrl = '/dashboard.html';
-
-        const response = await fetch(fetchUrl);
+        const response = await fetch(filename);
+        if (!response.ok) throw new Error('Network response was not ok');
         const html = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(html, 'text/html');
@@ -226,11 +236,8 @@ async function loadPage(url, animate = true) {
 
         if (newMain) {
             if (animate) loader.style.width = '70%';
-            
-            // Update Title
             document.title = doc.title;
 
-            // Wait a moment for fade out
             setTimeout(() => {
                 main.innerHTML = newMain.innerHTML;
                 main.className = newMain.className;
@@ -238,13 +245,8 @@ async function loadPage(url, animate = true) {
                     main.setAttribute('style', newMain.getAttribute('style'));
                 }
 
-                // Update Nav Active State
-                updateNavActive(url);
-
-                // Re-run Scripts
+                updateNavActive(filename);
                 executeScripts(doc);
-
-                // Re-init HUD and Transitions
                 syncGlobalHUD();
                 initTransitions();
 
@@ -259,32 +261,29 @@ async function loadPage(url, animate = true) {
         }
     } catch (err) {
         console.error('SPA Loading Error:', err);
-        window.location.href = url; // Fallback
+        window.location.href = filename;
     }
 }
 
-function updateNavActive(url) {
+function updateNavActive(filename) {
     document.querySelectorAll('.n-links a').forEach(a => {
         const h = a.getAttribute('href');
         a.classList.remove('active');
-        if (h === url || (url === '/' && h === '/') || (url === '/vault' && h === '/vault')) {
+        if (h === filename || (filename === 'index.html' && h === 'index.html')) {
             a.classList.add('active');
         }
     });
 }
 
 function executeScripts(doc) {
-    // Extract script tags and execute them
     const scripts = doc.querySelectorAll('script');
     scripts.forEach(oldScript => {
-        if (oldScript.src && oldScript.src.includes('layout.js')) return; // Don't re-run layout
+        if (oldScript.src && (oldScript.src.includes('layout.js'))) return;
         
         const newScript = document.createElement('script');
         Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
         newScript.textContent = oldScript.textContent;
         document.body.appendChild(newScript);
-        // Optional: remove them after execution if they are one-offs
-        // newScript.parentNode.removeChild(newScript); 
     });
 }
 

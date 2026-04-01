@@ -8,64 +8,58 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="css/main.css">
-<style>
-/* About Page Specific */
-.a-hero { min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 10rem; }
-.a-img { position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(1); z-index: -1; }
-
-.pillar-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4rem; margin: 6rem 0; }
-.p-card h3 { font-family: var(--ff-d); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; color: var(--fire); }
-
-@media (max-width: 900px) {
-  .pillar-grid { grid-template-columns: 1fr; }
-  .a-img { width: 100%; opacity: 0.2; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 <script src="js/layout.js"></script>
 </head>
 <body>
 
-
-<main class="container">
-  <section class="a-hero reveal">
-    <img src="file:///c:/Users/hp/webarsenal-1/images/digital-art-style-illustration-graphic-designer.jpg" class="a-img" alt="The Architect">
+<main class="container" style="transition: opacity 0.4s var(--ease);">
+  <section class="a-hero reveal" style="min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 10rem;">
+    <img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="The Architect" style="position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(1); z-index: -1;">
     <div style="max-width: 700px;">
-      <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">MISSION & VISION</div>
+      <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">MISSION & VISION v5.2.0</div>
       <h1 class="sec-h">Architecting <br/><span>Digital Sovereignty.</span></h1>
       <p class="sec-p">WebArsenal wasn't built to just scrape data. It was built to empower researchers to understand the full structural complexity of the modern web through automated, high-precision security orchestration.</p>
     </div>
   </section>
 
-  <section class="pillar-grid">
+  <section class="pillar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin: 6rem 0;">
     <div class="p-card reveal glass-box">
-      <h3>The Genesis</h3>
-      <p style="color: var(--fog);">Born from a need to consolidate fragmented tools, WebArsenal evolved from a simple site-grabber into a 320-module powerhouse. Every script is a result of years of research into web architecture and vulnerability patterns.</p>
+      <div class="f-icon-container">
+        <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <h3 style="font-family: var(--ff-d); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; color: var(--fire);">The Genesis</h3>
+      <p style="color: var(--fog);">Born from a need to consolidate fragmented tools, WebArsenal evolved from a simple site-grabber into a 413-module powerhouse. Every script is a result of years of research into web architecture.</p>
     </div>
     <div class="p-card reveal glass-box" style="transition-delay: 0.1s;">
-      <h3>The Philosophy</h3>
-      <p style="color: var(--fog);">We believe security is com-posable. By breaking down complex audits into atomic tasks—analyzing headers, scraping endpoints, fuzzing parameters—we allow researchers to build bespoke exfiltration pipelines with surgical precision.</p>
+      <div class="f-icon-container">
+        <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      </div>
+      <h3 style="font-family: var(--ff-d); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; color: var(--fire);">The Philosophy</h3>
+      <p style="color: var(--fog);">We believe security is composable. By breaking down complex audits into atomic tasks, we allow researchers to build bespoke exfiltration pipelines with surgical precision.</p>
     </div>
   </section>
 
   <section class="reveal" style="padding: 8rem 0; border-top: 1px solid rgba(242, 240, 232, 0.05);">
      <h2 class="sec-h">Meet the <span>Architect.</span></h2>
-     <div style="display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: center;">
+     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 6rem; align-items: center;">
         <div class="glass-box" style="padding: 0; overflow: hidden; border-radius: 8px;">
-           <img src="file:///c:/Users/hp/webarsenal-1/images/digital-art-style-illustration-graphic-designer.jpg" style="width: 100%; filter: grayscale(1);" alt="Edwin Dev">
+           <img src="images/digital-art-style-illustration-graphic-designer.jpg" style="width: 100%; filter: grayscale(1); display:block;" alt="Edwin Dev">
         </div>
         <div>
            <h3 style="font-family: var(--ff-d); font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Edwin Dev <span style="color: var(--fire); font-size: 1rem; vertical-align: middle;">de{c0}de creator</span></h3>
-           <p style="color: var(--fog); font-size: 1.1rem; line-height: 1.8;">Edwin is a lead security researcher and tool developer specializing in automated reconnaissance and data exfiltration. With a background in full-stack architecture, he built WebArsenal to solve the problem of fragmented security tooling, creating a unified workspace for the "modern-day architect."</p>
-           <div style="margin-top: 3rem; display: flex; gap: 2rem;">
+           <p style="color: var(--fog); font-size: 1.1rem; line-height: 1.8;">Edwin is a lead security researcher and tool developer specializing in automated reconnaissance and data exfiltration. He built WebArsenal to solve the problem of fragmented security tooling.</p>
+           <div style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap:wrap;">
               <a href="https://github.com/edwinnyandika" target="_blank" class="btn-outline">GitHub Profile</a>
-              <a href="/contact" class="btn-fire">Contact Edwin</a>
+              <a href="contact.html" class="btn-fire spa-link">Contact Edwin</a>
            </div>
         </div>
      </div>
   </section>
 </main>
 
-
+<script>
+// Content handled by layout.js
+</script>
 </body>
 </html>
