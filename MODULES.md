@@ -1,52 +1,123 @@
 # Module Catalog
 
-WebArsenal currently ships 250 scripts across 8 categories.
+WebArsenal currently ships 413 scripts across 8 categories.
 
-## Core (5)
+## Core (18)
 
-- `core/grab-playwright.js` - Grab Playwright is a high-power core workflow for large crawling and mirroring jobs.
+- `core/attack-graph-viz.js` - Attack Graph Viz is a high-power core workflow for large crawling and mirroring jobs.
+- `core/automatic-bug-hunter.js` - Automatic Bug Hunter is a high-power core workflow for large crawling and mirroring jobs.
+- `core/exploit-path-finder.js` - Exploit Path Finder is a high-power core workflow for large crawling and mirroring jobs.
 - `core/grab.js` - Grab is a high-power core workflow for large crawling and mirroring jobs.
+- `core/grab-playwright.js` - Grab Playwright is a high-power core workflow for large crawling and mirroring jobs.
+- `core/headless-recorder.js` - Headless Recorder is a high-power core workflow for large crawling and mirroring jobs.
 - `core/mirror.js` - Mirror is a high-power core workflow for large crawling and mirroring jobs.
+- `core/multi-target-mirror.js` - Multi Target Mirror is a high-power core workflow for large crawling and mirroring jobs.
+- `core/parallel-target-fuzzer.js` - Parallel Target Fuzzer is a high-power core workflow for large crawling and mirroring jobs.
+- `core/payload-permutation-engine.js` - Payload Permutation Engine is a high-power core workflow for large crawling and mirroring jobs.
 - `core/pro-mirror.js` - Pro Mirror is a high-power core workflow for large crawling and mirroring jobs.
+- `core/recon-workflow-orchestrator.js` - Recon Workflow Orchestrator is a high-power core workflow for large crawling and mirroring jobs.
+- `core/recursive-domain-mapper.js` - Recursive Domain Mapper is a high-power core workflow for large crawling and mirroring jobs.
+- `core/stealth-bypass-runner.js` - Stealth Bypass Runner is a high-power core workflow for large crawling and mirroring jobs.
+- `core/stealth-crawler.js` - Stealth Crawler is a high-power core workflow for large crawling and mirroring jobs.
 - `core/super-mirror.js` - Super Mirror is a high-power core workflow for large crawling and mirroring jobs.
+- `core/threat-model-generator.js` - Threat Model Generator is a high-power core workflow for large crawling and mirroring jobs.
+- `core/vulnerability-autopilot.js` - Vulnerability Autopilot is a high-power core workflow for large crawling and mirroring jobs.
 
-## Analyzers (35)
+## Analyzers (93)
 
 - `analyzers/a11y-checker.js` - A11y Checker inspects general signals and produces a structured audit summary.
+- `analyzers/android-intent-auditor.js` - Android Intent Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/ansible-vault-cracker.js` - Ansible Vault Cracker inspects general signals and produces a structured audit summary.
+- `analyzers/api-key-validator.js` - Api Key Validator inspects api signals and produces a structured audit summary.
+- `analyzers/asn-ip-extractor.js` - Asn Ip Extractor inspects general signals and produces a structured audit summary.
 - `analyzers/asset-inventory.js` - Asset Inventory inspects assets signals and produces a structured audit summary.
+- `analyzers/aws-iam-policy-auditor.js` - Aws Iam Policy Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/azure-ad-app-auditor.js` - Azure Ad App Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/azure-functions-miner.js` - Azure Functions Miner inspects general signals and produces a structured audit summary.
 - `analyzers/broken-image-checker.js` - Broken Image Checker inspects images signals and produces a structured audit summary.
+- `analyzers/cache-poisoning-fuzzer.js` - Cache Poisoning Fuzzer inspects general signals and produces a structured audit summary.
 - `analyzers/canonical-auditor.js` - Canonical Auditor inspects canonical signals and produces a structured audit summary.
+- `analyzers/clickjacking-auditor.js` - Clickjacking Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/cloud-metadata-pivot.js` - Cloud Metadata Pivot inspects metadata signals and produces a structured audit summary.
 - `analyzers/color-palette-extractor.js` - Color Palette Extractor inspects colors signals and produces a structured audit summary.
 - `analyzers/content-gap-analyzer.js` - Content Gap Analyzer inspects content signals and produces a structured audit summary.
+- `analyzers/cookie-attribute-auditor.js` - Cookie Attribute Auditor inspects cookies signals and produces a structured audit summary.
 - `analyzers/cookie-auditor.js` - Cookie Auditor inspects cookies signals and produces a structured audit summary.
+- `analyzers/cookie-security-mapper.js` - Cookie Security Mapper inspects cookies signals and produces a structured audit summary.
 - `analyzers/core-web-vitals-probe.js` - Core Web Vitals Probe inspects general signals and produces a structured audit summary.
+- `analyzers/cors-misconfig-advanced.js` - Cors Misconfig Advanced inspects general signals and produces a structured audit summary.
 - `analyzers/css-coverage-analyzer.js` - Css Coverage Analyzer inspects general signals and produces a structured audit summary.
 - `analyzers/dead-link-spider.js` - Dead Link Spider inspects links signals and produces a structured audit summary.
+- `analyzers/dns-dmarc-auditor.js` - Dns Dmarc Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/dns-spf-checker.js` - Dns Spf Checker inspects general signals and produces a structured audit summary.
+- `analyzers/docker-config-auditor.js` - Docker Config Auditor inspects general signals and produces a structured audit summary.
 - `analyzers/dom-diff.js` - Dom Diff inspects dom signals and produces a structured audit summary.
+- `analyzers/ec2-instance-meta.js` - Ec2 Instance Meta inspects metadata signals and produces a structured audit summary.
 - `analyzers/email-spider.js` - Email Spider inspects emails signals and produces a structured audit summary.
+- `analyzers/error-detail-miner.js` - Error Detail Miner inspects general signals and produces a structured audit summary.
+- `analyzers/expo-dev-config-auditor.js` - Expo Dev Config Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/favicon-hash-finder.js` - Favicon Hash Finder inspects general signals and produces a structured audit summary.
+- `analyzers/form-action-auditor.js` - Form Action Auditor inspects forms signals and produces a structured audit summary.
+- `analyzers/gcp-cloud-run-auditor.js` - Gcp Cloud Run Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/gcp-iam-leak-checker.js` - Gcp Iam Leak Checker inspects general signals and produces a structured audit summary.
+- `analyzers/github-secrets-miner.js` - Github Secrets Miner inspects general signals and produces a structured audit summary.
+- `analyzers/gitlab-ci-auditor.js` - Gitlab Ci Auditor inspects general signals and produces a structured audit summary.
 - `analyzers/heading-auditor.js` - Heading Auditor inspects headings signals and produces a structured audit summary.
+- `analyzers/hidden-directory-bruter.js` - Hidden Directory Bruter inspects directory signals and produces a structured audit summary.
+- `analyzers/host-header-injection.js` - Host Header Injection inspects headers signals and produces a structured audit summary.
 - `analyzers/html5-validator.js` - Html5 Validator inspects html signals and produces a structured audit summary.
+- `analyzers/idor-fuzzer.js` - Idor Fuzzer inspects general signals and produces a structured audit summary.
 - `analyzers/internal-link-auditor.js` - Internal Link Auditor inspects links signals and produces a structured audit summary.
+- `analyzers/invisible-param-finder.js` - Invisible Param Finder inspects general signals and produces a structured audit summary.
+- `analyzers/ios-deep-link-fuzzer.js` - Ios Deep Link Fuzzer inspects links signals and produces a structured audit summary.
 - `analyzers/javascript-footprint-analyzer.js` - Javascript Footprint Analyzer inspects general signals and produces a structured audit summary.
+- `analyzers/jenkins-info-leak.js` - Jenkins Info Leak inspects general signals and produces a structured audit summary.
+- `analyzers/jenkins-plugin-scanner.js` - Jenkins Plugin Scanner inspects general signals and produces a structured audit summary.
+- `analyzers/k8s-dashboard-checker.js` - K8s Dashboard Checker inspects general signals and produces a structured audit summary.
+- `analyzers/k8s-rbac-mapper.js` - K8s Rbac Mapper inspects general signals and produces a structured audit summary.
+- `analyzers/k8s-secret-exporter.js` - K8s Secret Exporter inspects general signals and produces a structured audit summary.
 - `analyzers/keyword-density-analyzer.js` - Keyword Density Analyzer inspects keywords signals and produces a structured audit summary.
+- `analyzers/lambda-function-enumerator.js` - Lambda Function Enumerator inspects general signals and produces a structured audit summary.
+- `analyzers/lambda-metadata-hunter.js` - Lambda Metadata Hunter inspects metadata signals and produces a structured audit summary.
+- `analyzers/lfi-path-traversal.js` - Lfi Path Traversal inspects general signals and produces a structured audit summary.
 - `analyzers/malware-scanner.js` - Malware Scanner inspects security signals and produces a structured audit summary.
 - `analyzers/meta-duplication-checker.js` - Meta Duplication Checker inspects metadata signals and produces a structured audit summary.
+- `analyzers/mobile-endpoint-mapper.js` - Mobile Endpoint Mapper inspects general signals and produces a structured audit summary.
 - `analyzers/mobile-readiness-checker.js` - Mobile Readiness Checker inspects general signals and produces a structured audit summary.
+- `analyzers/oauth-redirect-fuzzer.js` - Oauth Redirect Fuzzer inspects auth signals and produces a structured audit summary.
 - `analyzers/open-graph-auditor.js` - Open Graph Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/open-redirect-v2.js` - Open Redirect V2 inspects redirects signals and produces a structured audit summary.
+- `analyzers/parameter-pollution-adv.js` - Parameter Pollution Adv inspects general signals and produces a structured audit summary.
 - `analyzers/payload-size-analyzer.js` - Payload Size Analyzer inspects general signals and produces a structured audit summary.
+- `analyzers/postmessage-logger.js` - Postmessage Logger inspects general signals and produces a structured audit summary.
+- `analyzers/prototype-pollution-finder.js` - Prototype Pollution Finder inspects general signals and produces a structured audit summary.
+- `analyzers/rce-fuzzer.js` - Rce Fuzzer inspects general signals and produces a structured audit summary.
 - `analyzers/readability-scorer.js` - Readability Scorer inspects general signals and produces a structured audit summary.
 - `analyzers/redirect-auditor.js` - Redirect Auditor inspects redirects signals and produces a structured audit summary.
 - `analyzers/response-header-auditor.js` - Response Header Auditor inspects headers signals and produces a structured audit summary.
 - `analyzers/schema-validator.js` - Schema Validator inspects schema signals and produces a structured audit summary.
 - `analyzers/security-headers-auditor.js` - Security Headers Auditor inspects headers signals and produces a structured audit summary.
+- `analyzers/security-headers-ranker.js` - Security Headers Ranker inspects headers signals and produces a structured audit summary.
 - `analyzers/semantic-structure-analyzer.js` - Semantic Structure Analyzer inspects general signals and produces a structured audit summary.
 - `analyzers/seo-auditor.js` - Seo Auditor inspects seo signals and produces a structured audit summary.
+- `analyzers/session-timeout-checker.js` - Session Timeout Checker inspects sessions signals and produces a structured audit summary.
+- `analyzers/shodan-vuln-mapper.js` - Shodan Vuln Mapper inspects general signals and produces a structured audit summary.
 - `analyzers/site-taxonomy-mapper.js` - Site Taxonomy Mapper inspects site signals and produces a structured audit summary.
+- `analyzers/software-version-mapper.js` - Software Version Mapper inspects general signals and produces a structured audit summary.
+- `analyzers/sqli-fuzzer.js` - Sqli Fuzzer inspects database signals and produces a structured audit summary.
+- `analyzers/ssl-cipher-auditor.js` - Ssl Cipher Auditor inspects tls signals and produces a structured audit summary.
+- `analyzers/ssrf-hunter.js` - Ssrf Hunter inspects general signals and produces a structured audit summary.
+- `analyzers/ssti-auditor.js` - Ssti Auditor inspects general signals and produces a structured audit summary.
+- `analyzers/subdomain-takeover-v2.js` - Subdomain Takeover V2 inspects dom signals and produces a structured audit summary.
+- `analyzers/sub-takeover-checker.js` - Sub Takeover Checker inspects general signals and produces a structured audit summary.
 - `analyzers/tech-fingerprinter.js` - Tech Fingerprinter inspects general signals and produces a structured audit summary.
+- `analyzers/terraform-drift-detector.js` - Terraform Drift Detector inspects forms signals and produces a structured audit summary.
 - `analyzers/tracker-radar.js` - Tracker Radar inspects tracking signals and produces a structured audit summary.
 - `analyzers/typography-analyzer.js` - Typography Analyzer inspects general signals and produces a structured audit summary.
 - `analyzers/unused-css.js` - Unused Css inspects general signals and produces a structured audit summary.
+- `analyzers/vulnerability-fingerprinter.js` - Vulnerability Fingerprinter inspects general signals and produces a structured audit summary.
 - `analyzers/xss-fuzzer.js` - Xss Fuzzer inspects security signals and produces a structured audit summary.
+- `analyzers/xss-scanner.js` - Xss Scanner inspects security signals and produces a structured audit summary.
 
 ## Auth Helpers (35)
 
@@ -65,6 +136,7 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `auth-helpers/hcaptcha-solver.js` - Hcaptcha Solver prepares and validates general data for authenticated scraping flows.
 - `auth-helpers/header-token-miner.js` - Header Token Miner prepares and validates headers data for authenticated scraping flows.
 - `auth-helpers/headless-login-bot.js` - Headless Login Bot prepares and validates general data for authenticated scraping flows.
+- `auth-helpers/jwt-brute-forcer.js` - Jwt Brute Forcer prepares and validates general data for authenticated scraping flows.
 - `auth-helpers/jwt-extractor.js` - Jwt Extractor prepares and validates general data for authenticated scraping flows.
 - `auth-helpers/login-form-detector.js` - Login Form Detector prepares and validates forms data for authenticated scraping flows.
 - `auth-helpers/mfa-code-helper.js` - Mfa Code Helper prepares and validates general data for authenticated scraping flows.
@@ -72,7 +144,6 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `auth-helpers/oauth-state-decoder.js` - Oauth State Decoder prepares and validates auth data for authenticated scraping flows.
 - `auth-helpers/password-spray-simulator.js` - Password Spray Simulator prepares and validates general data for authenticated scraping flows.
 - `auth-helpers/pkce-generator.js` - Pkce Generator prepares and validates general data for authenticated scraping flows.
-- `auth-helpers/proxy-auth-tester.js` - Proxy Auth Tester prepares and validates auth data for authenticated scraping flows.
 - `auth-helpers/request-signer.js` - Request Signer prepares and validates general data for authenticated scraping flows.
 - `auth-helpers/session-cookie-auditor.js` - Session Cookie Auditor prepares and validates cookies data for authenticated scraping flows.
 - `auth-helpers/session-keepalive.js` - Session Keepalive prepares and validates sessions data for authenticated scraping flows.
@@ -124,24 +195,32 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `exporters/yaml-exporter.js` - Yaml Exporter converts collected yaml data into reusable output artifacts.
 - `exporters/zip-manifest-builder.js` - Zip Manifest Builder converts collected archives data into reusable output artifacts.
 
-## Integrations (35)
+## Integrations (45)
 
 - `integrations/airtable-sync.js` - Airtable Sync packages tables results for downstream services and delivery targets.
 - `integrations/algolia-sync.js` - Algolia Sync packages general results for downstream services and delivery targets.
+- `integrations/argocd-config-hunter.js` - Argocd Config Hunter packages general results for downstream services and delivery targets.
 - `integrations/aws-s3-uploader.js` - Aws S3 Uploader packages general results for downstream services and delivery targets.
 - `integrations/azure-blob-uploader.js` - Azure Blob Uploader packages general results for downstream services and delivery targets.
+- `integrations/azure-devops-auditor.js` - Azure Devops Auditor packages general results for downstream services and delivery targets.
 - `integrations/bigquery-loader.js` - Bigquery Loader packages general results for downstream services and delivery targets.
+- `integrations/bitbucket-pipeline-miner.js` - Bitbucket Pipeline Miner packages general results for downstream services and delivery targets.
+- `integrations/circle-ci-leak-hunter.js` - Circle Ci Leak Hunter packages general results for downstream services and delivery targets.
 - `integrations/clickhouse-writer.js` - Clickhouse Writer packages general results for downstream services and delivery targets.
 - `integrations/datadog-event-pusher.js` - Datadog Event Pusher packages events results for downstream services and delivery targets.
 - `integrations/discord-webhook.js` - Discord Webhook packages notifications results for downstream services and delivery targets.
+- `integrations/drone-ci-scanner.js` - Drone Ci Scanner packages general results for downstream services and delivery targets.
 - `integrations/dropbox-backup.js` - Dropbox Backup packages general results for downstream services and delivery targets.
 - `integrations/elastic-ingester.js` - Elastic Ingester packages general results for downstream services and delivery targets.
 - `integrations/firebase-sink.js` - Firebase Sink packages general results for downstream services and delivery targets.
 - `integrations/ftp-sync.js` - Ftp Sync packages general results for downstream services and delivery targets.
 - `integrations/gcs-uploader.js` - Gcs Uploader packages general results for downstream services and delivery targets.
 - `integrations/github-pages-deploy.js` - Github Pages Deploy packages general results for downstream services and delivery targets.
+- `integrations/github-workflow-auditor.js` - Github Workflow Auditor packages general results for downstream services and delivery targets.
+- `integrations/gitlab-ci-scanner.js` - Gitlab Ci Scanner packages general results for downstream services and delivery targets.
 - `integrations/google-sheets-pusher.js` - Google Sheets Pusher packages general results for downstream services and delivery targets.
 - `integrations/hubspot-sync.js` - Hubspot Sync packages general results for downstream services and delivery targets.
+- `integrations/jenkins-job-parser.js` - Jenkins Job Parser packages jobs results for downstream services and delivery targets.
 - `integrations/kafka-producer.js` - Kafka Producer packages general results for downstream services and delivery targets.
 - `integrations/meilisearch-loader.js` - Meilisearch Loader packages search results for downstream services and delivery targets.
 - `integrations/mongo-importer.js` - Mongo Importer packages general results for downstream services and delivery targets.
@@ -158,7 +237,9 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `integrations/sentry-release-note.js` - Sentry Release Note packages general results for downstream services and delivery targets.
 - `integrations/slack-alerter.js` - Slack Alerter packages notifications results for downstream services and delivery targets.
 - `integrations/snowflake-loader.js` - Snowflake Loader packages general results for downstream services and delivery targets.
+- `integrations/spinnaker-leak-auditor.js` - Spinnaker Leak Auditor packages general results for downstream services and delivery targets.
 - `integrations/teams-notifier.js` - Teams Notifier packages general results for downstream services and delivery targets.
+- `integrations/travis-ci-checker.js` - Travis Ci Checker packages general results for downstream services and delivery targets.
 - `integrations/webdav-sync.js` - Webdav Sync packages general results for downstream services and delivery targets.
 - `integrations/zapier-webhook.js` - Zapier Webhook packages api results for downstream services and delivery targets.
 
@@ -200,50 +281,108 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `monitors/webhook-retry-monitor.js` - Webhook Retry Monitor tracks monitoring changes and emits compact state snapshots for automation.
 - `monitors/word-count-monitor.js` - Word Count Monitor tracks monitoring changes and emits compact state snapshots for automation.
 
-## Scrapers (35)
+## Reporters (9)
 
+- `reporters/csv-vuln-exporter.js` - Csv Vuln Exporter generates detailed tabular findings and transmits security reports.
+- `reporters/diff-reporter.js` - Diff Reporter generates detailed reports findings and transmits security reports.
+- `reporters/discord-webhook-notifier.js` - Discord Webhook Notifier generates detailed notifications findings and transmits security reports.
+- `reporters/final-master-runner.js` - Final Master Runner generates detailed general findings and transmits security reports.
+- `reporters/jira-ticket-creator.js` - Jira Ticket Creator generates detailed general findings and transmits security reports.
+- `reporters/pdf-recon-summary.js` - Pdf Recon Summary generates detailed documents findings and transmits security reports.
+- `reporters/scope-mapper.js` - Scope Mapper generates detailed general findings and transmits security reports.
+- `reporters/slack-notification-hook.js` - Slack Notification Hook generates detailed notifications findings and transmits security reports.
+- `reporters/vuln-reporter.js` - Vuln Reporter generates detailed reports findings and transmits security reports.
+
+## Scrapers (78)
+
+- `scrapers/android-manifest-checker.js` - Android Manifest Checker extracts general data from live pages with resilient parsing defaults.
 - `scrapers/api-scraper.js` - Api Scraper extracts api data from live pages with resilient parsing defaults.
 - `scrapers/auth-scraper.js` - Auth Scraper extracts auth data from live pages with resilient parsing defaults.
+- `scrapers/azure-blob-checker.js` - Azure Blob Checker extracts general data from live pages with resilient parsing defaults.
+- `scrapers/azure-storage-miner.js` - Azure Storage Miner extracts general data from live pages with resilient parsing defaults.
+- `scrapers/bing-dorker.js` - Bing Dorker extracts general data from live pages with resilient parsing defaults.
 - `scrapers/blog-scraper.js` - Blog Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/catalog-scraper.js` - Catalog Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/certificate-transparency-miner.js` - Certificate Transparency Miner extracts spa data from live pages with resilient parsing defaults.
+- `scrapers/comment-sensitive-data.js` - Comment Sensitive Data extracts general data from live pages with resilient parsing defaults.
+- `scrapers/common-crawl-miner.js` - Common Crawl Miner extracts general data from live pages with resilient parsing defaults.
 - `scrapers/contact-scraper.js` - Contact Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/couchdb-user-auditor.js` - Couchdb User Auditor extracts general data from live pages with resilient parsing defaults.
+- `scrapers/crtsh-subdomain-monitor.js` - Crtsh Subdomain Monitor extracts dom data from live pages with resilient parsing defaults.
 - `scrapers/dark-web-scraper.js` - Dark Web Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/directory-scraper.js` - Directory Scraper extracts directory data from live pages with resilient parsing defaults.
+- `scrapers/docker-registry-scanner.js` - Docker Registry Scanner extracts general data from live pages with resilient parsing defaults.
 - `scrapers/docs-scraper.js` - Docs Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/ecommerce-scraper.js` - Ecommerce Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/elasticsearch-index-lister.js` - Elasticsearch Index Lister extracts search data from live pages with resilient parsing defaults.
 - `scrapers/event-scraper.js` - Event Scraper extracts events data from live pages with resilient parsing defaults.
 - `scrapers/faq-scraper.js` - Faq Scraper extracts faq data from live pages with resilient parsing defaults.
+- `scrapers/firebase-db-auditor.js` - Firebase Db Auditor extracts general data from live pages with resilient parsing defaults.
+- `scrapers/flutter-api-extractor.js` - Flutter Api Extractor extracts api data from live pages with resilient parsing defaults.
 - `scrapers/form-mapper.js` - Form Mapper extracts forms data from live pages with resilient parsing defaults.
 - `scrapers/forum-scraper.js` - Forum Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/gcp-bucket-hunter.js` - Gcp Bucket Hunter extracts general data from live pages with resilient parsing defaults.
+- `scrapers/github-action-leak.js` - Github Action Leak extracts general data from live pages with resilient parsing defaults.
+- `scrapers/google-dorker.js` - Google Dorker extracts general data from live pages with resilient parsing defaults.
+- `scrapers/graphql-batch-scanner.js` - Graphql Batch Scanner extracts general data from live pages with resilient parsing defaults.
+- `scrapers/grpc-endpoint-discovery.js` - Grpc Endpoint Discovery extracts general data from live pages with resilient parsing defaults.
 - `scrapers/headless-recorder.js` - Headless Recorder extracts general data from live pages with resilient parsing defaults.
 - `scrapers/image-scraper.js` - Image Scraper extracts images data from live pages with resilient parsing defaults.
+- `scrapers/influxdb-leak-checker.js` - Influxdb Leak Checker extracts general data from live pages with resilient parsing defaults.
 - `scrapers/job-board-scraper.js` - Job Board Scraper extracts jobs data from live pages with resilient parsing defaults.
+- `scrapers/js-map-file-hunter.js` - Js Map File Hunter extracts general data from live pages with resilient parsing defaults.
 - `scrapers/knowledge-base-scraper.js` - Knowledge Base Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/link-harvester.js` - Link Harvester extracts links data from live pages with resilient parsing defaults.
+- `scrapers/link-health-checker.js` - Link Health Checker extracts links data from live pages with resilient parsing defaults.
 - `scrapers/listing-scraper.js` - Listing Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/map-result-scraper.js` - Map Result Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/memcached-item-sniffer.js` - Memcached Item Sniffer extracts general data from live pages with resilient parsing defaults.
+- `scrapers/mobile-endpoint-extractor.js` - Mobile Endpoint Extractor extracts general data from live pages with resilient parsing defaults.
+- `scrapers/mobile-plist-auditor.js` - Mobile Plist Auditor extracts general data from live pages with resilient parsing defaults.
+- `scrapers/mobile-secret-harvester.js` - Mobile Secret Harvester extracts general data from live pages with resilient parsing defaults.
+- `scrapers/mongodb-schema-miner.js` - Mongodb Schema Miner extracts schema data from live pages with resilient parsing defaults.
 - `scrapers/news-scraper.js` - News Scraper extracts articles data from live pages with resilient parsing defaults.
+- `scrapers/open-s3-hunter.js` - Open S3 Hunter extracts general data from live pages with resilient parsing defaults.
+- `scrapers/param-miner-v2.js` - Param Miner V2 extracts general data from live pages with resilient parsing defaults.
 - `scrapers/pdf-scraper.js` - Pdf Scraper extracts documents data from live pages with resilient parsing defaults.
 - `scrapers/podcast-scraper.js` - Podcast Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/pricing-page-scraper.js` - Pricing Page Scraper extracts general data from live pages with resilient parsing defaults.
 - `scrapers/product-review-scraper.js` - Product Review Scraper extracts products data from live pages with resilient parsing defaults.
 - `scrapers/property-scraper.js` - Property Scraper extracts properties data from live pages with resilient parsing defaults.
 - `scrapers/qa-scraper.js` - Qa Scraper extracts answers data from live pages with resilient parsing defaults.
+- `scrapers/rabbitmq-queue-sniffer.js` - Rabbitmq Queue Sniffer extracts queue data from live pages with resilient parsing defaults.
+- `scrapers/react-native-bundle-miner.js` - React Native Bundle Miner extracts general data from live pages with resilient parsing defaults.
+- `scrapers/redis-key-dumper.js` - Redis Key Dumper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/robots-txt-analyzer.js` - Robots Txt Analyzer extracts general data from live pages with resilient parsing defaults.
 - `scrapers/rss-scraper.js` - Rss Scraper extracts feed data from live pages with resilient parsing defaults.
+- `scrapers/s3-bucket-lister.js` - S3 Bucket Lister extracts general data from live pages with resilient parsing defaults.
 - `scrapers/search-result-scraper.js` - Search Result Scraper extracts search data from live pages with resilient parsing defaults.
+- `scrapers/shodan-dorker.js` - Shodan Dorker extracts general data from live pages with resilient parsing defaults.
+- `scrapers/shodan-ip-history.js` - Shodan Ip History extracts general data from live pages with resilient parsing defaults.
+- `scrapers/sitemap-harvester.js` - Sitemap Harvester extracts site data from live pages with resilient parsing defaults.
+- `scrapers/smtp-relay-bruter.js` - Smtp Relay Bruter extracts general data from live pages with resilient parsing defaults.
+- `scrapers/snmp-community-bruter.js` - Snmp Community Bruter extracts general data from live pages with resilient parsing defaults.
+- `scrapers/soap-wsdl-parser.js` - Soap Wsdl Parser extracts general data from live pages with resilient parsing defaults.
 - `scrapers/social-scraper.js` - Social Scraper extracts profiles data from live pages with resilient parsing defaults.
 - `scrapers/spa-scraper.js` - Spa Scraper extracts spa data from live pages with resilient parsing defaults.
 - `scrapers/table-scraper.js` - Table Scraper extracts tables data from live pages with resilient parsing defaults.
-- `scrapers/testimonial-scraper.js` - Testimonial Scraper extracts general data from live pages with resilient parsing defaults.
+- `scrapers/terraform-state-hunter.js` - Terraform State Hunter extracts forms data from live pages with resilient parsing defaults.
+- `scrapers/tftp-file-harvester.js` - Tftp File Harvester extracts general data from live pages with resilient parsing defaults.
+- `scrapers/vault-kv-scanner.js` - Vault Kv Scanner extracts general data from live pages with resilient parsing defaults.
 - `scrapers/video-scraper.js` - Video Scraper extracts videos data from live pages with resilient parsing defaults.
+- `scrapers/wayback-machine-url-miner.js` - Wayback Machine Url Miner extracts urls data from live pages with resilient parsing defaults.
+- `scrapers/whois-history-parser.js` - Whois History Parser extracts general data from live pages with resilient parsing defaults.
 - `scrapers/wp-scraper.js` - Wp Scraper extracts wordpress data from live pages with resilient parsing defaults.
 
-## Utils (35)
+## Utils (65)
 
 - `utils/asset-cache.js` - Asset Cache provides reusable assets helpers to support large scraping runs efficiently.
 - `utils/backoff-helper.js` - Backoff Helper provides reusable general helpers to support large scraping runs efficiently.
 - `utils/batch-runner.js` - Batch Runner provides reusable general helpers to support large scraping runs efficiently.
 - `utils/captcha-solver.js` - Captcha Solver provides reusable general helpers to support large scraping runs efficiently.
+- `utils/censys-lookup.js` - Censys Lookup provides reusable general helpers to support large scraping runs efficiently.
+- `utils/cidr-expander.js` - Cidr Expander provides reusable general helpers to support large scraping runs efficiently.
+- `utils/cidr-to-hostnames.js` - Cidr To Hostnames provides reusable general helpers to support large scraping runs efficiently.
 - `utils/cli-banner.js` - Cli Banner provides reusable general helpers to support large scraping runs efficiently.
 - `utils/concurrency-tuner.js` - Concurrency Tuner provides reusable general helpers to support large scraping runs efficiently.
 - `utils/config-merger.js` - Config Merger provides reusable general helpers to support large scraping runs efficiently.
@@ -251,28 +390,55 @@ WebArsenal currently ships 250 scripts across 8 categories.
 - `utils/cookie-normalizer.js` - Cookie Normalizer provides reusable cookies helpers to support large scraping runs efficiently.
 - `utils/css-rewriter.js` - Css Rewriter provides reusable general helpers to support large scraping runs efficiently.
 - `utils/csv-flattener.js` - Csv Flattener provides reusable tabular helpers to support large scraping runs efficiently.
+- `utils/dedup-urls.js` - Dedup Urls provides reusable urls helpers to support large scraping runs efficiently.
+- `utils/dns-record-auditor.js` - Dns Record Auditor provides reusable general helpers to support large scraping runs efficiently.
+- `utils/dns-resolver.js` - Dns Resolver provides reusable general helpers to support large scraping runs efficiently.
 - `utils/domain-groupper.js` - Domain Groupper provides reusable dom helpers to support large scraping runs efficiently.
+- `utils/elasticsearch-head-auditor.js` - Elasticsearch Head Auditor provides reusable search helpers to support large scraping runs efficiently.
+- `utils/final-audit-summary.js` - Final Audit Summary provides reusable general helpers to support large scraping runs efficiently.
 - `utils/header-builder.js` - Header Builder provides reusable headers helpers to support large scraping runs efficiently.
+- `utils/html-report-generator.js` - Html Report Generator provides reusable html helpers to support large scraping runs efficiently.
 - `utils/html-rewriter.js` - Html Rewriter provides reusable html helpers to support large scraping runs efficiently.
+- `utils/internal-host-mapper.js` - Internal Host Mapper provides reusable general helpers to support large scraping runs efficiently.
+- `utils/ip-geolocation-mapper.js` - Ip Geolocation Mapper provides reusable general helpers to support large scraping runs efficiently.
+- `utils/ip-to-asn-lookup.js` - Ip To Asn Lookup provides reusable general helpers to support large scraping runs efficiently.
 - `utils/json-flattener.js` - Json Flattener provides reusable json helpers to support large scraping runs efficiently.
+- `utils/json-output-cleaner.js` - Json Output Cleaner provides reusable json helpers to support large scraping runs efficiently.
 - `utils/link-extractor.js` - Link Extractor provides reusable links helpers to support large scraping runs efficiently.
+- `utils/memcached-dumper.js` - Memcached Dumper provides reusable general helpers to support large scraping runs efficiently.
 - `utils/mime-sniffer.js` - Mime Sniffer provides reusable general helpers to support large scraping runs efficiently.
+- `utils/mongodb-noauth-checker.js` - Mongodb Noauth Checker provides reusable auth helpers to support large scraping runs efficiently.
+- `utils/nmap-xml-parser.js` - Nmap Xml Parser provides reusable general helpers to support large scraping runs efficiently.
+- `utils/output-merger.js` - Output Merger provides reusable general helpers to support large scraping runs efficiently.
 - `utils/output-organizer.js` - Output Organizer provides reusable general helpers to support large scraping runs efficiently.
+- `utils/port-info-grabber.js` - Port Info Grabber provides reusable general helpers to support large scraping runs efficiently.
+- `utils/port-scanner.js` - Port Scanner provides reusable general helpers to support large scraping runs efficiently.
+- `utils/port-scanner-pro.js` - Port Scanner Pro provides reusable general helpers to support large scraping runs efficiently.
+- `utils/private-ip-discovery.js` - Private Ip Discovery provides reusable general helpers to support large scraping runs efficiently.
 - `utils/progress-ui.js` - Progress Ui provides reusable general helpers to support large scraping runs efficiently.
 - `utils/proxy-rotator.js` - Proxy Rotator provides reusable network helpers to support large scraping runs efficiently.
 - `utils/queue-manager.js` - Queue Manager provides reusable queue helpers to support large scraping runs efficiently.
 - `utils/rate-limiter.js` - Rate Limiter provides reusable throttling helpers to support large scraping runs efficiently.
+- `utils/recon-data-merger.js` - Recon Data Merger provides reusable general helpers to support large scraping runs efficiently.
+- `utils/redirect-tracer.js` - Redirect Tracer provides reusable redirects helpers to support large scraping runs efficiently.
+- `utils/redis-info-grabber.js` - Redis Info Grabber provides reusable general helpers to support large scraping runs efficiently.
 - `utils/report-gen.js` - Report Gen provides reusable reports helpers to support large scraping runs efficiently.
 - `utils/request-profiler.js` - Request Profiler provides reusable general helpers to support large scraping runs efficiently.
 - `utils/retry-helper.js` - Retry Helper provides reusable general helpers to support large scraping runs efficiently.
 - `utils/robot-parser.js` - Robot Parser provides reusable general helpers to support large scraping runs efficiently.
-- `utils/selector-tester.js` - Selector Tester provides reusable general helpers to support large scraping runs efficiently.
+- `utils/screenshot-diff.js` - Screenshot Diff provides reusable snapshots helpers to support large scraping runs efficiently.
+- `utils/shodan-wrapper.js` - Shodan Wrapper provides reusable general helpers to support large scraping runs efficiently.
 - `utils/sitemap-gen.js` - Sitemap Gen provides reusable site helpers to support large scraping runs efficiently.
 - `utils/slugifier.js` - Slugifier provides reusable general helpers to support large scraping runs efficiently.
+- `utils/snmp-walker.js` - Snmp Walker provides reusable general helpers to support large scraping runs efficiently.
 - `utils/stealth-browser.js` - Stealth Browser provides reusable general helpers to support large scraping runs efficiently.
+- `utils/sub-domain-diff.js` - Sub Domain Diff provides reusable dom helpers to support large scraping runs efficiently.
 - `utils/text-cleaner.js` - Text Cleaner provides reusable text helpers to support large scraping runs efficiently.
+- `utils/tftp-scanner.js` - Tftp Scanner provides reusable general helpers to support large scraping runs efficiently.
 - `utils/url-deduper.js` - Url Deduper provides reusable urls helpers to support large scraping runs efficiently.
 - `utils/url-normalizer.js` - Url Normalizer provides reusable urls helpers to support large scraping runs efficiently.
 - `utils/viewport-presets.js` - Viewport Presets provides reusable wordpress helpers to support large scraping runs efficiently.
+- `utils/vuln-severity-sorter.js` - Vuln Severity Sorter provides reusable general helpers to support large scraping runs efficiently.
+- `utils/whois-privacy-checker.js` - Whois Privacy Checker provides reusable general helpers to support large scraping runs efficiently.
 - `utils/workspace-cleaner.js` - Workspace Cleaner provides reusable spa helpers to support large scraping runs efficiently.
 
