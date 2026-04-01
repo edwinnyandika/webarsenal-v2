@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<main class="container">
+<main class="container" style="transition: opacity 0.4s var(--ease);">
   <section class="h-hero">
     <div class="reveal">
       <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">WEB-ARSENAL CONSOLIDATION PHASE</div>
@@ -20,8 +20,8 @@
       <p class="sec-p" style="margin: 2rem auto;">Combine 320+ specialized security scripts into a single, high-performance orchestration layer. Built for the modern security researcher.</p>
       
       <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 2rem;">
-        <a href="/vault" class="btn-fire">Enter the Command Vault</a>
-        <a href="/docs" class="btn-outline">Read Documentation</a>
+        <a href="/vault" class="btn-fire spa-link">Enter the Command Vault</a>
+        <a href="/docs" class="btn-outline spa-link">Read Documentation</a>
       </div>
 
       <div class="teaser-wrap reveal" style="margin-left: auto; margin-right: auto;">
@@ -61,22 +61,16 @@
     <h2>Ready to Deploy?</h2>
     <p style="margin-bottom: 3rem; font-size: 1.2rem; opacity: 0.9;">Join the elite researchers using WebArsenal for high-stakes site auditing.</p>
     <div style="display: flex; gap: 1.5rem; justify-content: center;">
-      <a href="/vault" class="btn-outline" style="border-color: #fff; color: #fff;">Open The Arsenal</a>
+      <a href="/vault" class="btn-outline spa-link" style="border-color: #fff; color: #fff;">Open The Arsenal</a>
       <a href="https://github.com/edwinnyandika/webarsenal-v2" target="_blank" class="btn-outline" style="border-color: #fff; color: #fff;">View on GitHub</a>
     </div>
   </section>
 </main>
 
 <script>
-const cursor = document.getElementById('cursor');
-document.addEventListener('mousemove', e => {
-  cursor.style.left = e.clientX + 'px'; cursor.style.top = e.clientY + 'px';
-});
-
-const reveal = new IntersectionObserver(entries => {
-  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+// Content reloading logic handled by layout.js
 </script>
+</body>
+</html>
 </body>
 </html>

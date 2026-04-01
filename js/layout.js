@@ -1,5 +1,5 @@
 /**
- * WEBARSENAL UNIFIED LAYOUT ENGINE v1.0.0
+ * WEBARSENAL UNIFIED LAYOUT ENGINE v1.1.0 (SPA EDITION)
  * (c) 2026 de{c0}de by edwin dev
  */
 
@@ -7,33 +7,35 @@ document.addEventListener('DOMContentLoaded', () => {
     initLayout();
     syncGlobalHUD();
     initTransitions();
+    initSPA();
 });
 
 function initLayout() {
-    // 1. INJECT UNIFIED HEADER
+    if (document.querySelector('nav')) return; // Avoid double injection
+
     const currentPath = window.location.pathname;
     const isVault = currentPath.includes('vault') || currentPath.includes('dashboard');
     
     const header = `
     <nav>
-        <a href="/" class="logo">Web<span>Arsenal</span></a>
+        <a href="/" class="logo spa-link">Web<span>Arsenal</span></a>
         <ul class="n-links">
-            <li><a href="/" class="${currentPath === '/' || currentPath.includes('index') ? 'active' : ''}">Home</a></li>
-            <li><a href="/vault" class="${isVault ? 'active' : ''}">Vault</a></li>
-            <li><a href="/modules" class="${currentPath.includes('modules') ? 'active' : ''}">Modules</a></li>
-            <li><a href="/docs" class="${currentPath.includes('docs') ? 'active' : ''}">Docs</a></li>
-            <li><a href="/about" class="${currentPath.includes('about') ? 'active' : ''}">About</a></li>
+            <li><a href="/" class="spa-link ${currentPath === '/' || currentPath.includes('index') ? 'active' : ''}">Home</a></li>
+            <li><a href="/vault" class="spa-link ${isVault ? 'active' : ''}">Vault</a></li>
+            <li><a href="/modules" class="spa-link ${currentPath.includes('modules') ? 'active' : ''}">Modules</a></li>
+            <li><a href="/docs" class="spa-link ${currentPath.includes('docs') ? 'active' : ''}">Docs</a></li>
+            <li><a href="/about" class="spa-link ${currentPath.includes('about') ? 'active' : ''}">About</a></li>
         </ul>
         <div class="h-hud">
             <div id="pipelineBadge" class="hud-badge" style="display:none;">Pipeline Active</div>
             <div class="hud-count">320 Modules</div>
-            ${!isVault ? '<a href="/vault" class="btn-fire" style="padding: 0.5rem 1rem; font-size: 0.6rem; margin-left:1rem;">Launch Vault</a>' : '<div class="toolkit-trigger" onclick="toggleSidebar()" id="pipelineCounter">ToolKit Builder (0)</div>'}
+            ${!isVault ? '<a href="/vault" class="btn-fire spa-link" style="padding: 0.5rem 1rem; font-size: 0.6rem; margin-left:1rem;">Launch Vault</a>' : '<div class="toolkit-trigger" onclick="toggleSidebar()" id="pipelineCounter">ToolKit Builder (0)</div>'}
         </div>
     </nav>
     <div id="cursor"></div>
+    <div id="page-loader" style="position:fixed; top:0; left:0; width:0; height:2px; background:var(--fire); z-index:10001; transition: width 0.4s ease;"></div>
     `;
 
-    // 2. INJECT UNIFIED FOOTER
     const footer = `
     <footer>
         <div class="ft-brand">WebArsenal</div>
@@ -44,7 +46,9 @@ function initLayout() {
     `;
 
     document.body.insertAdjacentHTML('afterbegin', header);
-    document.body.insertAdjacentHTML('beforeend', footer);
+    if (!document.querySelector('footer')) {
+        document.body.insertAdjacentHTML('beforeend', footer);
+    }
 
     // Init Cursor (Global)
     const cursor = document.getElementById('cursor');
@@ -64,21 +68,131 @@ function syncGlobalHUD() {
     if (pipeline.length > 0) {
         if (badge) badge.style.display = 'block';
         if (counter) counter.textContent = `ToolKit Builder (${pipeline.length})`;
+    } else {
+        if (badge) badge.style.display = 'none';
+        if (counter) counter.textContent = `ToolKit Builder (0)`;
     }
 }
 
 function initTransitions() {
     document.body.classList.add('fade-in');
-    
-    // Intersection Observer for scroll reveals
     const reveal = new IntersectionObserver(entries => {
         entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.1 });
-
     document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
 }
 
-// Global toggle for sidebar (needed for dashboard)
+// --- SPA ENGINE ---
+
+function initSPA() {
+    document.addEventListener('click', e => {
+        const link = e.target.closest('a');
+        if (link && link.href && 
+            link.href.startsWith(window.location.origin) && 
+            !link.getAttribute('target') &&
+            !link.href.includes('#')) {
+            
+            e.preventDefault();
+            const url = new URL(link.href).pathname;
+            navigateTo(url);
+        }
+    });
+
+    window.addEventListener('popstate', () => {
+        loadPage(window.location.pathname, false);
+    });
+}
+
+async function navigateTo(url) {
+    if (url === window.location.pathname) return;
+    await loadPage(url);
+    window.history.pushState({}, '', url);
+}
+
+async function loadPage(url, animate = true) {
+    const loader = document.getElementById('page-loader');
+    const main = document.querySelector('main');
+    
+    if (animate) {
+        loader.style.width = '30%';
+        main.style.opacity = '0';
+    }
+
+    try {
+        // Resolve internal paths for local file access if needed
+        let fetchUrl = url === '/' ? '/index.html' : (url.endsWith('.html') ? url : url + '.html');
+        if (fetchUrl === '/vault.html') fetchUrl = '/dashboard.html';
+
+        const response = await fetch(fetchUrl);
+        const html = await response.text();
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const newMain = doc.querySelector('main');
+
+        if (newMain) {
+            if (animate) loader.style.width = '70%';
+            
+            // Update Title
+            document.title = doc.title;
+
+            // Wait a moment for fade out
+            setTimeout(() => {
+                main.innerHTML = newMain.innerHTML;
+                main.className = newMain.className;
+                if (newMain.getAttribute('style')) {
+                    main.setAttribute('style', newMain.getAttribute('style'));
+                }
+
+                // Update Nav Active State
+                updateNavActive(url);
+
+                // Re-run Scripts
+                executeScripts(doc);
+
+                // Re-init HUD and Transitions
+                syncGlobalHUD();
+                initTransitions();
+
+                if (animate) {
+                    loader.style.width = '100%';
+                    setTimeout(() => { 
+                        loader.style.width = '0';
+                        main.style.opacity = '1';
+                    }, 400);
+                }
+            }, 300);
+        }
+    } catch (err) {
+        console.error('SPA Loading Error:', err);
+        window.location.href = url; // Fallback
+    }
+}
+
+function updateNavActive(url) {
+    document.querySelectorAll('.n-links a').forEach(a => {
+        const h = a.getAttribute('href');
+        a.classList.remove('active');
+        if (h === url || (url === '/' && h === '/') || (url === '/vault' && h === '/vault')) {
+            a.classList.add('active');
+        }
+    });
+}
+
+function executeScripts(doc) {
+    // Extract script tags and execute them
+    const scripts = doc.querySelectorAll('script');
+    scripts.forEach(oldScript => {
+        if (oldScript.src && oldScript.src.includes('layout.js')) return; // Don't re-run layout
+        
+        const newScript = document.createElement('script');
+        Array.from(oldScript.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
+        newScript.textContent = oldScript.textContent;
+        document.body.appendChild(newScript);
+        // Optional: remove them after execution if they are one-offs
+        // newScript.parentNode.removeChild(newScript); 
+    });
+}
+
 window.toggleSidebar = function() {
     const sb = document.getElementById('sidebar');
     if(sb) sb.classList.toggle('open');
