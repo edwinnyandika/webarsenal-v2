@@ -1,12 +1,44 @@
-# WebArsenal
-**Created by: de{c0}de by edwin dev**
+![WebArsenal Hero Banner](file:///c:/Users/hp/webarsenal-1/images/OIUGRK0.jpg)
+
+# 🛡️ WebArsenal v4.0.0
+**The Ultimate High-Power Security Research & Automation Arsenal**
+*Created by: de{c0}de by edwin dev*
 
 WebArsenal is a Node.js toolkit for web mirroring, scraping, auditing, exporting, integrations, and monitoring.
 
 - `v4.0.0`
-- `320` script files across `6` major categories
-- shared runtime for non-core modules, plus the original heavyweight mirror workflows in [`core/`](./core)
-- tests and GitHub Actions CI included
+- `320+` high-performance security modules
+- **Creator**: de{c0}de by edwin dev
+- **Dashboard**: [Interactive Vault](./index.html)
+
+---
+
+## ⚡ Operational Workflows
+
+### 🌍 Web Intelligence Pipeline
+```mermaid
+graph TD
+    A[Target URL] --> B{Auth Status}
+    B -- Gated --> C[Auth-Helpers: cf-clearance/cookie-cloner]
+    B -- Public --> D[Core: super-mirror/grab-playwright]
+    C --> D
+    D --> E[Scrapers: spa-scraper/api-sniffer]
+    E --> F[Analyzers: seo-auditor/xss-scanner]
+    F --> G[Exporters: to-sqlite/to-markdown]
+    G --> H[Integrations: aws-s3/notion-push]
+    H --> I[Result: 🛡️ WebArsenal Intelligence Report]
+    style I fill:#f2f0e8,stroke:#e8390e,stroke-width:2px;
+```
+
+### 📱 Mobile Security Workflow
+```mermaid
+graph LR
+    A[Mobile Binary/Source] --> B[Scrapers: bundle-miner/plist-auditor]
+    B --> C[Analyzers: mobile-endpoint-mapper/deep-link-fuzzer]
+    C --> D[Utils: proxy-rotator/ua-pool]
+    D --> E[Reporters: pdf-recon-summary/jira-ticket]
+    style E fill:#f2f0e8,stroke:#e8390e,stroke-width:2px;
+```
 
 ## Install
 
@@ -94,14 +126,20 @@ Most shared modules support the same core options:
 
 The full inventory lives in [`MODULES.md`](./MODULES.md).
 
-Category counts:
+## 🔒 The Arsenal (320+ Modules)
 
-- `core`: 20
-- `scrapers`: 80
-- `analyzers`: 80
-- `integrations`: 60
-- `monitors`: 40
-- `utils`: 40
+| Category | Count | Power | Functional Goal |
+| :--- | :--- | :--- | :--- |
+| **Analyzers** | 93 | ⚡⚡⚡⚡⚡ | Security Audits, XSS, SSRF, Cloud Misconfigs |
+| **Scrapers** | 78 | ⚡⚡⚡⚡ | Targeted Data, SPA, E-commerce, API Sniffing |
+| **Integrations** | 45 | ⚡⚡⚡ | S3, Airtable, Notion, Discord, Slack |
+| **Monitors** | 35 | ⚡⚡⚡ | Change Detection, Price Tracking, Uptime |
+| **Auth Helpers** | 35 | ⚡⚡⚡⚡⚡ | Bypassing CF, Cookie Management, JWT Brute |
+| **Exporters** | 35 | ⚡⚡ | Transformation: SQL, CSV, Markdown, WARC |
+| **Core** | 20 | ⚡⚡⚡⚡⚡ | Recursive Mirroring & Orchestration |
+| **Utils** | 76 | ⚡⚡ | Infrastructure Proxying, UA-Pool, Link Normalization |
+
+For a searchable index of every script, use the **[Command Vault Dashboard](./index.html)**.
 
 ## Development
 
@@ -133,8 +171,8 @@ npm run ci
 
 GitHub Actions is configured in [`.github/workflows/ci.yml`](./.github/workflows/ci.yml). It validates the generated module surface and runs the Node test suite on pushes and pull requests.
 
-## Notes
+## 📖 Master Command Index
+For an exhaustive, module-by-module command list, modifier letters, and power levels, see the **[MASTER_COMMAND_INDEX.md](./MASTER_COMMAND_INDEX.md)**.
 
-- Some legacy files may still exist outside the generated catalog; the supported module set is defined by [`lib/module-catalog.js`](./lib/module-catalog.js) and [`MODULES.md`](./MODULES.md).
-- Browser-heavy scripts can require additional system support depending on the environment.
-- Use the toolkit responsibly and only against targets you are allowed to inspect.
+---
+**WebArsenal v4.0.0** | Created by **de{c0}de by edwin dev** | [MIT License](./LICENSE)

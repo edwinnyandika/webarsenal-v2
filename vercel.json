@@ -1,0 +1,11 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/vault", "destination": "/dashboard.html" },
+    { "source": "/modules", "destination": "/modules.html" },
+    { "source": "/docs", "destination": "/docs.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/contact", "destination": "/contact.html" }
+  ],
+  "cleanUrls": true
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Docs — WebArsenal Security Documentation</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a09'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23e8390e' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23e8390e'/%3E%3C/svg%3E"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css">
+<style>
+/* Docs Page Specific */
+.doc-grid { display: grid; grid-template-columns: 240px 1fr; gap: 4rem; margin-top: 6rem; position: relative; }
+.doc-nav { position: sticky; top: 10rem; height: fit-content; list-style: none; overflow-y: auto; }
+.doc-nav li { margin-bottom: 2rem; border-left: 1px solid rgba(242, 240, 232, 0.05); padding-left: 1.5rem; }
+.doc-nav li h4 { font-family: var(--ff-d); font-size: 0.75rem; text-transform: uppercase; color: var(--fire); letter-spacing: 0.1em; margin-bottom: 1rem; }
+.doc-nav li a { font-size: 0.8rem; color: var(--fog); text-decoration: none; transition: 0.3s; display: block; margin-bottom: 0.5rem; }
+.doc-nav li a:hover { color: var(--fire); }
+
+.doc-content section { margin-bottom: 6rem; border-bottom: 1px solid rgba(242, 240, 232, 0.05); padding-bottom: 4rem; }
+.doc-h { font-family: var(--ff-d); font-weight: 800; font-size: 2.5rem; margin-bottom: 1.5rem; }
+.doc-p { color: var(--fog); font-size: 1.05rem; line-height: 1.8; margin-bottom: 2rem; }
+.doc-code { background: #000; border: 1px solid rgba(242, 240, 232, 0.05); padding: 1.5rem; border-radius: 4px; font-size: 0.8rem; color: #5af78e; position: relative; margin: 2rem 0; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.doc-code::after { content: 'Terminal'; position: absolute; top: -10px; right: 15px; font-size: 0.55rem; color: var(--fire); background: var(--ink); padding: 2px 8px; border: 1px solid; border-radius: 2px; }
+
+@media (max-width: 900px) {
+  .doc-grid { grid-template-columns: 1fr; }
+  .doc-nav { display: none; }
+}
+</style>
+<script src="js/layout.js"></script>
+</head>
+<body>
+
+
+<main class="container">
+  <div class="doc-grid">
+    <aside class="doc-nav">
+      <li>
+        <h4>Getting Started</h4>
+        <a href="#install">Installation</a>
+        <a href="#quickstart">Quick Start</a>
+      </li>
+      <li>
+        <h4>Core Concepts</h4>
+        <a href="#flags">CLI Flags</a>
+        <a href="#pipelines">Module Pipelines</a>
+      </li>
+      <li>
+        <h4>Security</h4>
+        <a href="#bestpractices">Best Practices</a>
+        <a href="#legal">Legal & Compliance</a>
+      </li>
+    </aside>
+
+    <div class="doc-content">
+      <section id="install" class="reveal">
+        <h2 class="doc-h">Installation</h2>
+        <p class="doc-p">WebArsenal is a Node.js-powered toolkit. Ensure you have Node.js version 18+ installed on your system before proceeding.</p>
+        <div class="doc-code">
+          git clone https://github.com/edwinnyandika/webarsenal-v2.git<br/>
+          cd webarsenal-v2<br/>
+          npm install
+        </div>
+      </section>
+
+      <section id="quickstart" class="reveal">
+        <h2 class="doc-h">Quick Start</h2>
+        <p class="doc-p">To launch a global site audit using the core super-mirror tool:</p>
+        <div class="doc-code">
+          node core/super-mirror.js --url https://target.local --concurrency 5
+        </div>
+        <p class="doc-p">This will begin mirroring the site structural components while simultaneously running header analyzers and security probes.</p>
+      </section>
+
+      <section id="flags" class="reveal">
+        <h2 class="doc-h">CLI Global Flags</h2>
+        <p class="doc-p">Every module in WebArsenal supports a unified set of interaction flags for consistent orchestration.</p>
+        <div class="glass-box">
+          <p style="margin-bottom:1rem;"><em>-u, --url</em> <span style="color:var(--fire); font-size:0.75rem;">(Required)</span> Target URL</p>
+          <p style="margin-bottom:1rem;"><em>-o, --output</em> Destination for exfiltrated data</p>
+          <p style="margin-bottom:1rem;"><em>-f, --force</em> Ignore cache and force fresh scan</p>
+          <p style="margin-bottom:1rem;"><em>-i, --interactive</em> Launch interactive CLI mode</p>
+        </div>
+      </section>
+
+      <section id="bestpractices" class="reveal">
+        <h2 class="doc-h">Module Orchestration</h2>
+        <p class="doc-p">WebArsenal is designed to be chained. Use your shell's operator logic to build powerful exfiltration pipelines.</p>
+        <div class="doc-code">
+          node scrapers/api-scraper.js -u site.com && node analyzers/cors-misconfig-advanced.js -u site.com
+        </div>
+        <p class="doc-p">By piping output from one analyzer to the next, you build a comprehensive intelligence map of your target environment.</p>
+      </section>
+    </div>
+  </div>
+</main>
+
+
+</body>
+</html>
