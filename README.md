@@ -1,4 +1,4 @@
-![WebArsenal Hero Banner](file:///c:/Users/hp/webarsenal-1/images/OIUGRK0.jpg)
+![WebArsenal Hero Banner](OIUGRK0.jpg)
 
 # 🛡️ WebArsenal v4.0.0
 **The Ultimate High-Power Security Research & Automation Arsenal**
