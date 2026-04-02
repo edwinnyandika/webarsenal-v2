@@ -1,0 +1,6 @@
+/* COOKIEBOT -- Hide banner during loader */
+  #CybotCookiebotDialog { display: none !important; }
+.mini-showreel {
+  opacity: 0;
+  will-change: opacity;
+}

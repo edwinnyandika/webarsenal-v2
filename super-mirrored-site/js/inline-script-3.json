@@ -1,0 +1,21 @@
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Made in Evolve",
+  "url": "/",
+  "description": "Made in Evolve is a digital studio that blends strategy, design, and technology to craft meaningful eCommerce experiences.",
+  "foundingDate": "2008-01-01",
+  "email": "info@madeinevolve.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Modena",
+    "addressCountry": "IT"
+  },
+  "sameAs": [
+    "https://forbes.it/2022/12/14/progetti-e-commerce-agency-settore-fashion",
+    "https://www.pambianconews.com/2022/04/01/evolve-lecommerce-agency-cresce-del-78-con-partnership-a-provvigione-342942/",
+    "https://forbes.it/2024/05/07/creativita-digitale-e-integrazione-tecnologica-unalleanza-strategica-definisce-il-futuro-digitale-di-engine",
+    "https://www.breakmagazine.it/oggi-vi-parliamo-di-una-novita-nellambito-del-digital-e-del-fashion/"
+  ],
+  "areaServed": "International"
+}

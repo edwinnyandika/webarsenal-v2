@@ -202,6 +202,29 @@ node auth-helpers/totp-generator.js      --secret MY_SHARED_SECRET
 node auth-helpers/session-replay.js      --cookies session.json --url https://dashboard.example.com
 ```
 
+### Editable Site Capture Workflow
+
+```bash
+# Record a reusable authenticated browser session profile
+node auth-helpers/login-session-recorder.js --url https://example.com/private --login-url https://example.com/login --username demo --password secret --username-selector "#username" --password-selector "#password" --submit-selector "#submit" --wait-for ".dashboard" --output-dir .\session-profile
+
+# Crawl a JS-heavy site with guided actions and save a full editable workspace
+node scrapers/browser-action-crawler.js --url https://example.com --click-selectors ".menu-toggle,.load-more" --dismiss-selectors ".cookie-accept,.modal-close" --pagination-selector ".pagination a" --route-hints "/pricing,/docs" --scroll --scroll-steps 6 --output-dir .\editable-site --open-vscode --serve --json
+
+# Validate edits, diff them against the baseline, and export a cloned package
+node utils/workspace-integrity-validator.js --dir .\editable-site --json
+node utils/workspace-diff-builder.js --dir .\editable-site --json
+node exporters/cloned-site-package-exporter.js --dir .\editable-site --json
+```
+
+Generated editable workspaces now support:
+
+- Full browser-driven capture for authenticated and JS-rendered pages
+- Rewritten local HTML, CSS, JS, images, fonts, media, iframe routes, and inline style asset references
+- Reusable session profile artifacts in `meta/`
+- Integrity and missing-asset validation before packaging
+- A packaged `package/site/` output with a browser-ready entrypoint
+
 ### Export
 
 ```bash

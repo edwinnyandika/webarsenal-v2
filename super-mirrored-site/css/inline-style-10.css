@@ -1,0 +1,23 @@
+.mini-showreel__play {
+  color: white;
+  background-color: transparent;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.mini-showreel:hover .mini-showreel__play {
+  background-color: white;
+  color: black;
+  /* Ripetiamo la transition qui per sicurezza se hai altri stili che interferiscono */
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.frame.is--mid {
+  color: white;
+  transform: scale(1);
+  transition: color 0.3s ease, transform 0.25s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.mini-showreel:hover .frame.is--mid {
+  color: #c3ff00;
+  transform: scale(0.7);
+}

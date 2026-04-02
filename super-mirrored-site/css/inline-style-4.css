@@ -1,0 +1,149 @@
+/* ------------------------- Scaling System by Osmo [https://osmo.supply/] -------------------------  */
+
+html { 
+  -webkit-font-smoothing: antialiased; 
+  text-rendering: optimizeLegibility; 
+  font-variant-ligatures: contextual common-ligatures; 
+  font-feature-settings: "kern","liga","clig","calt"; 
+}
+
+
+/* ------------------------- Reset -------------------------------------------------- */
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+
+
+svg {
+  max-width: none;
+  height: auto;
+  box-sizing: border-box;
+  vertical-align: middle;
+}
+
+a {
+  color: inherit;
+}
+
+
+/* ------------------------- Hide Scrollbar -------------------------------------------------- */
+
+body {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* Stili base per Split delle heading */
+/*
+[data-split] {
+  white-space: normal;
+}
+*/
+[data-split="heading"],
+[data-load-text]{
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform;
+}
+[data-split="heading"]{
+  white-space: normal;
+}
+
+ #CookiebotWidget { display: none !important; }
+/* FILTERING SYSTEM (Projects / Blog) */
+/* -- All filters buttons (Category, All, Reset) */
+[data-filter-target] {
+  cursor: pointer;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+[data-filter-target]:not([data-filter-target="reset"]) {
+  opacity: 0.4;
+}
+
+[data-filter-status="active"] {
+  opacity: 1 !important; /* required for specificity on category filters */
+  visibility: visible;
+  transform: scale(1);
+ /*  display: block;  */
+}
+
+/* -- same as .sb__item */
+[data-filter-name] {
+  opacity: 1;
+  transition: opacity 300ms ease, transform 300ms ease; /* Durata uguale al JS */
+  /* display: block; */
+}
+
+.sb__item[data-filter-status="active"] {
+  opacity: 1;
+  visibility: visible;
+  /* display: block; */
+}
+
+.sb__item[data-filter-status="not-active"] {
+  opacity: 0;
+  visibility: hidden;
+  /* display: none; */
+}
+
+/* .sb__item filtered out */
+[data-filter-status="not-active"]:not(.filter-btn) {
+  opacity: 0;
+  visibility: hidden;
+  /* display: none; */
+}
+/* sb__item animating */
+[data-filter-status="transition-out"] {
+  opacity: 0;
+  visibility: visible;
+  transform: scale(0.95);
+  transition: opacity 300ms ease, transform 300ms ease;
+  pointer-events: none;
+  /* display: block;  */
+}
+/* END FILTERING SYSTEM */
+
+/* PROJECTS / BLOG - hide comma on last filter button */
+.projects__filter-item:last-child .pf__comma {
+  visibility: hidden;
+}
+
+[data-filter-target][data-count=""]::after {
+	opacity: 0;
+}
+/* counter -- projects */
+[data-filter-target]::after {
+  position: absolute;
+  content: attr(data-count);
+  font-size: 10px;
+  font-weight: 500;
+  vertical-align: super;
+  opacity: 1;
+  transition: opacity .3s ease;
+  /* visibility: hidden; */
+}
+
+/* WEBFLOW EDITOR */
+/* Show in Webflow editor Elements that are hidden in frontend */
+.wf-design-mode [data-split="heading"],
+.wf-design-mode .reset-btn,
+.wf-design-mode .projects__filter-item:last-child .pf__comma {
+  visibility: visible;
+  opacity: 1;
+}

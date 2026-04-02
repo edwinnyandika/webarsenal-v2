@@ -1,0 +1,1 @@
+gsap.registerPlugin(Flip,SplitText,CustomEase,ScrollToPlugin,ScrambleTextPlugin,ScrollTrigger);

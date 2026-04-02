@@ -1,0 +1,21 @@
+{
+  "status": "ok",
+  "module": "scrapers/html-css-js-scraper",
+  "summary": {
+    "title": "Evolve | Direction, Tech, Marketing",
+    "descriptionLength": 138,
+    "canonical": "",
+    "headingCount": 12,
+    "linkCount": 102,
+    "internalLinks": 95,
+    "externalLinks": 7,
+    "imageCount": 36,
+    "missingAltCount": 24,
+    "formCount": 1,
+    "scriptCount": 21,
+    "stylesheetCount": 2,
+    "wordCount": 2737,
+    "htmlBytes": 258311,
+    "htmlSize": "252.26 KB"
+  }
+}

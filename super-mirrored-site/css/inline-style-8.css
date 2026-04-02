@@ -1,0 +1,71 @@
+/* --- STILE BASE (Comune) --- */
+.ss__image, .bottom-cta__tag {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Quando attivi (via JS), diventano visibili */
+.ss__image.is-visible, 
+.bottom-cta__tag.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.ss__bottom-cta {
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+
+/* La lista interna di base è nascosta o opaca */
+.bottom__cta-list {
+  opacity: 0; /* O il valore di default che preferisci */
+  transition: opacity 0.3s ease;
+}
+
+/* --- VERSIONE DESKTOP (sopra 768px) --- */
+@media (min-width: 769px) {
+  
+  /* Logica "Spotlight": 
+     1. Quando passo sopra il CONTENITORE PADRE, porto TUTTI i cta a opacità 0.4 */
+  .ss__cta-container:hover .ss__bottom-cta {
+    opacity: 0.4;
+  }
+
+  /* 2. Ma il singolo CTA su cui sono in HOVER torna a opacità 1 */
+  .ss__cta-container .ss__bottom-cta:hover {
+    opacity: 1;
+  }
+
+  /* Gestione hover figli desktop */
+  .ss__bottom-cta:hover .bottom__cta-list {
+    opacity: 0.65;
+    visibility: visible;
+  }
+  
+  .ss__bottom-cta:hover .bottom-cta__tag {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* --- VERSIONE MOBILE (sotto 768px) --- */
+@media (max-width: 768px) {
+
+  /* Quando un CTA ha la classe .is-active (aggiunta via JS) */
+  .ss__bottom-cta.is-active .bottom__cta-list {
+    opacity: 1 !important; /* Forza opacità 100% come richiesto */
+    visibility: visible;
+  }
+
+  /* Opzionale: Evidenziare il titolo del cta attivo su mobile */
+  .ss__bottom-cta.is-active {
+    opacity: 1;
+  }
+  
+  /* Opzionale: Sbiadire leggermente quelli non attivi su mobile? 
+     Se non lo vuoi, rimuovi questa regola */
+  .ss__bottom-cta:not(.is-active) {
+    opacity: 0.6; 
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "files.autoSave": "afterDelay",
+  "editor.formatOnSave": true,
+  "liveServer.settings.root": "/",
+  "files.exclude": {
+    "**/meta/result.json": true
+  }
+}

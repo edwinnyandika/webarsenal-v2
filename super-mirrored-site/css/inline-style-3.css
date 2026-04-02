@@ -1,0 +1,9 @@
+/* Hide elements from Webflow editor */
+/* loader */
+.wf-design-mode .loader {
+  display: none;
+}
+/* case history magnetic bar */
+.wf-design-mode .magnetic__row {
+  display: none;
+}

@@ -1,0 +1,11 @@
+@media screen and (min-width: 768px) {
+  .nav__wrapper {
+    display: grid;
+    grid-template-columns: repeat(48, minmax(0, 1fr));
+  }
+
+  /* Tutte le colonne sulla stessa riga */
+  .nav__wrapper > .nav__column {
+    grid-row: 1;
+  }
+}

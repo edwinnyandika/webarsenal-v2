@@ -1,0 +1,21 @@
+/* Hover styling */
+@media (hover: hover) {
+  .copy-email-button:hover .copy-email-icon__wrap{
+    background: rgba(34, 80, 46, 0.9);
+  }
+  .copy-email-button:hover .copy-email-text__el{
+    transform: translate(0px, -100%);
+  }
+}
+
+/* Keyboard focus styling */
+.copy-email-button:focus .copy-email-icon__wrap{
+  background: rgba(34, 80, 46, 0.9);
+}
+.copy-email-button:focus .copy-email-text__el {
+  transform: translate(0px, -100%);
+}
+
+/* 'Copied' state, when a user has clicked the button */
+[data-copy-button="copied"] .copy-email-icon__wrap{ background: #0F8E2E !important; }
+[data-copy-button="copied"] .copy-email-text__el{ transform: translate(0px, -200%) !important; }
