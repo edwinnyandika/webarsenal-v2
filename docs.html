@@ -3,163 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Knowledge Vault | De{c0}ded by Edwin Dev</title>
+  <title>Knowledge Protocol | De{c0}ded Hub v5.5.0</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .docs-container {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      padding: 40px;
-      max-width: 1400px;
-      margin: 0 auto;
-    }
-    .docs-nav {
-      position: sticky;
-      top: 40px;
-      height: fit-content;
-      padding: 25px;
-      border-radius: 16px;
-    }
-    .docs-nav h4 {
-      color: var(--primary);
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin-bottom: 20px;
-      margin-top: 30px;
-    }
-    .docs-nav h4:first-child { margin-top: 0; }
-    .docs-nav a {
-      display: block;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 0.9rem;
-      margin-bottom: 12px;
-      transition: var(--transition);
-    }
-    .docs-nav a:hover { color: var(--text); transform: translateX(5px); }
-    
-    .docs-content section {
-      margin-bottom: 80px;
-      animation: slide-up 0.6s ease-out backwards;
-    }
-    .docs-header { margin-bottom: 40px; }
-    .docs-header h1 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; margin-bottom: 10px; }
-    .docs-header p { color: var(--text-muted); font-size: 1.1rem; }
-    
-    .code-block {
-      background: #000;
-      padding: 25px;
-      border-radius: 12px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      color: #7dd3fc;
-      margin: 30px 0;
-      border: 1px solid var(--surface-border);
-      position: relative;
-    }
-    .code-block::before {
-      content: 'SHELL';
-      position: absolute;
-      top: -10px;
-      right: 20px;
-      font-size: 0.6rem;
-      background: var(--primary);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-    
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-      margin-bottom: 40px;
-    }
-  </style>
+  <script src="layout.js"></script>
 </head>
 <body>
 
-<div class="docs-container">
-  
-  <nav class="docs-nav glass">
-    <a href="dashboard.html" class="back-link">← Return to Hub</a>
-    
-    <h4>Deployment</h4>
-    <a href="#install">Installation</a>
-    <a href="#requirements">Requirements</a>
-    
-    <h4>Core Protocols</h4>
-    <a href="#execution">Module Execution</a>
-    <a href="#flags">CLI Parameters</a>
-    <a href="#reporting">Data Exfiltration</a>
-    
-    <h4>Security</h4>
-    <a href="#legal">Legal Guidelines</a>
-    <a href="#privacy">Privacy & Audit</a>
-  </nav>
+<main class="content-surface">
+  <header class="reveal" style="padding-top: 3rem; margin-bottom: 3rem;">
+    <div style="color: var(--fire); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.35em; margin-bottom: 1.5rem;">KNOWLEDGE_PROTOCOL // V5.5.0</div>
+    <h1 class="sec-h">Intelligence <span class="glow">Specs.</span></h1>
+    <p class="sec-p">Official technical documentation for the De{c0}ded WebArsenal suite. Follow these protocols for an optimized security workspace.</p>
+  </header>
 
-  <main class="docs-content">
-    <header class="docs-header">
-      <div style="color: var(--primary); font-size: 0.7rem; font-weight: 800; margin-bottom: 10px; letter-spacing: 2px;">DE{C0}DED DOCUMENTATION V5.5.0</div>
-      <h1>Knowledge <span>Protocol.</span></h1>
-      <p>Official technical specifications for the WebArsenal Advanced Security Suite.</p>
-    </header>
+  <section class="reveal glass" style="padding: 4rem; border-radius: 4px; margin-bottom: 3rem;">
+    <h2 class="sec-h" style="font-size: 1.5rem; margin-bottom: 2rem;">Deployment <span>Specifications.</span></h2>
+    <div style="font-family: var(--ff-m); background: #000; padding: 2rem; border-radius: 4px; color: #7dd3fc; font-size: 0.8rem; border-left: 3px solid var(--fire);">
+      git clone https://github.com/edwinnyandika/webarsenal-v2.git<br>
+      cd webarsenal-v2<br>
+      npm install
+    </div>
+  </section>
 
-    <section id="install">
-      <h2>Repository Deployment</h2>
-      <p style="color: var(--text-muted); margin-top: 10px;">Deploy the arsenal within a sandboxed Node.js environment.</p>
-      <div class="code-block">
-        git clone https://github.com/edwinnyandika/webarsenal-v2.git<br>
-        cd webarsenal-v2<br>
-        npm install
+  <section class="reveal" style="margin-bottom: 6rem;">
+    <h2 class="sec-h" style="font-size: 1.5rem; margin-bottom: 2rem;">Global <span>Command Flags.</span></h2>
+    <div class="glass" style="padding: 3rem; border-radius: 4px;">
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding: 1.2rem 0;">
+        <code style="color: var(--fire); font-weight: 800;">--url, -u</code>
+        <span style="color: var(--fog); font-size: 0.65rem; text-transform: uppercase;">Required Target</span>
       </div>
-    </section>
-
-    <section id="execution">
-      <h2>Advanced Execution</h2>
-      <p style="color: var(--text-muted); margin-top: 10px;">Run any of the 552 modules using the standardized Pulse orchestration logic.</p>
-      <div class="code-block">
-        # Basic Scan<br>
-        node vuln-probes/ssrf-probe.js --url https://target.com<br><br>
-        # Advanced Scan with Burp Proxy<br>
-        node vuln-probes/jwt-decoder.js --url https://api.target.com --proxy http://127.0.0.1:8080
+      <div style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--glass-border); padding: 1.2rem 0;">
+        <code style="color: var(--fire); font-weight: 800;">--proxy, -x</code>
+        <span style="color: var(--fog); font-size: 0.65rem; text-transform: uppercase;">Secure Tunnel</span>
       </div>
-    </section>
-
-    <section id="flags">
-      <h2>Global Operational Flags</h2>
-      <p style="color: var(--text-muted); margin: 10px 0 30px;">Professional CLI parameters supported by all modules.</p>
-      
-      <div class="glass" style="padding: 30px; border-radius: 16px;">
-        <div style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--surface-border);">
-          <code style="color: var(--primary);">--url, -u</code>
-          <span style="color: var(--text-muted); font-size: 0.8rem;">Mandatory target endpoint</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--surface-border);">
-          <code style="color: var(--primary);">--proxy, -x</code>
-          <span style="color: var(--text-muted); font-size: 0.8rem;">HTTP/S Proxy Tunnel</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid var(--surface-border);">
-          <code style="color: var(--primary);">--cookie, -C</code>
-          <span style="color: var(--text-muted); font-size: 0.8rem;">Raw Cookie String for Auth</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; padding: 15px 0;">
-          <code style="color: var(--primary);">--json, -j</code>
-          <span style="color: var(--text-muted); font-size: 0.8rem;">Machine-readable output</span>
-        </div>
+      <div style="display: flex; justify-content: space-between; padding: 1.2rem 0;">
+        <code style="color: var(--fire); font-weight: 800;">--json, -j</code>
+        <span style="color: var(--fog); font-size: 0.65rem; text-transform: uppercase;">Data Export</span>
       </div>
-    </section>
-
-  </main>
-</div>
+    </div>
+  </section>
+</main>
 
 </body>
 </html>

@@ -3,114 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Architect | De{c0}ded by Edwin Dev</title>
+  <title>The Architect | De{c0}ded Hub v5.5.0</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .about-container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 20px;
-    }
-    .about-hero {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 60px;
-      align-items: center;
-      margin-bottom: 120px;
-    }
-    .hero-image {
-      border-radius: 20px;
-      overflow: hidden;
-      aspect-ratio: 1;
-      border: 1px solid var(--surface-border);
-    }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(1) contrast(1.1);
-      transition: var(--transition);
-    }
-    .hero-image:hover img { filter: grayscale(0); transform: scale(1.05); }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-    }
-    .pillar-card {
-      padding: 40px;
-      border-radius: 20px;
-      animation: slide-up 0.6s ease-out backwards;
-    }
-    .pillar-card h3 {
-      font-size: 1.8rem;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-    .pillar-card p {
-      color: var(--text-muted);
-      line-height: 1.8;
-    }
-    
-    .nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 0;
-      margin-bottom: 60px;
-    }
-    .nav-header a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 600;
-    }
-  </style>
+  <script src="layout.js"></script>
 </head>
 <body>
 
-<div class="about-container">
-  
-  <header class="nav-header">
-    <div class="brand">HUB: DE{C0}DED</div>
-    <a href="dashboard.html">← Back to Command Center</a>
+<main class="content-surface">
+  <header class="reveal" style="padding-top: 3rem; margin-bottom: 3rem;">
+    <div style="color: var(--fire); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.35em; margin-bottom: 1.5rem;">ARCHITECT_IDENTITY // V5.5.0</div>
+    <h1 class="sec-h">De{c0}ded by <br><span class="glow">Edwin Dev.</span></h1>
+    <p class="sec-p">Lead architect and security researcher behind global reconnaissance orchestration. Focused on high-stakes bug bounty automation and asset inventory research.</p>
   </header>
 
-  <main>
-    <section class="about-hero">
-      <div class="hero-image glass">
-        <img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="Developer">
-      </div>
-      <div class="hero-text">
-        <div style="color: var(--primary); font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 2px;">THE ARCHITECT V5.5.0</div>
-        <h1 style="font-size: 4rem; font-weight: 800; line-height: 0.9; margin-bottom: 30px;">Edwin Dev<br><span style="color: var(--secondary);">De{c0}de Creator.</span></h1>
-        <p style="color: var(--text-muted); font-size: 1.2rem; line-height: 1.7;">Edwin is a lead security researcher specializing in automated reconnaissance and data exfiltration. WebArsenal was built to consolidate the world's most powerful security auditing Atomic Tasks into a single, unified pulse.</p>
-        <div style="margin-top: 40px;">
-          <a href="contact.html" class="glass" style="padding: 15px 40px; border-radius: 30px; color: white; text-decoration: none; font-weight: 700; border: 1px solid var(--primary); background: rgba(124, 58, 237, 0.1);">Initiate Contact</a>
-        </div>
-      </div>
-    </section>
+  <section class="reveal glass" style="padding: 4.5rem; border-radius: 4px; border-left: 4px solid var(--fire); margin-bottom: 4rem;">
+    <h2 class="sec-h" style="font-size: 2rem; margin-bottom: 1.5rem;">The <span>Mission.</span></h2>
+    <p class="sec-p" style="font-size: 1.25rem; line-height: 1.8;">WebArsenal v5.5.0 represents the pinnacle of autonomous adversarial research. We believe security is composable. By breaking down complex audits into atomic tasks, we allow researchers to build bespoke exfiltration pipelines with surgical precision and stealth.</p>
+  </section>
 
-    <div class="about-grid">
-      <div class="pillar-card glass">
-        <h3>The Genesis</h3>
-        <p>Born from a need to bridge the gap between fragmented security tools, WebArsenal evolved from a site-grabber into a 552-module powerhouse. Every script is a result of deep research into adversarial web architecture.</p>
-      </div>
-      <div class="pillar-card glass" style="animation-delay: 0.1s;">
-        <h3>The Philosophy</h3>
-        <p>We believe security is composable. By breaking down complex audits into atomic tasks, we allow researchers to build bespoke exfiltration pipelines with surgical precision and stealth.</p>
-      </div>
-      <div class="pillar-card glass" style="animation-delay: 0.2s;">
-        <h3>The Future</h3>
-        <p>The Mission continues. WebArsenal v5.5.0 Pulse marks the beginning of autonomous threat modeling and automated bug bounty orchestration at a global scale.</p>
-      </div>
+  <div class="module-grid reveal" style="padding-bottom: 6rem;">
+    <div class="module-card glass">
+      <h3>The Genesis</h3>
+      <p>From a simple site-grabber to a 552-module powerhouse. Every script is a result of deep research into adversarial web architecture.</p>
     </div>
-  </main>
-
-</div>
+    <div class="module-card glass">
+      <h3>The Reality</h3>
+      <p>A unified pulse for the modern security professional. 100% validated, professional CLI orchestration, and global scale output.</p>
+    </div>
+  </div>
+</main>
 
 </body>
 </html>

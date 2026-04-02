@@ -1,38 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Modules — WebArsenal Arsenal Catalog</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a09'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23e8390e' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23e8390e'/%3E%3C/svg%3E"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css">
-<script src="js/layout.js"></script>
-<style>
-.m-table { width: 100%; border-collapse: collapse; margin-top: 2rem; border: 1px solid rgba(242, 240, 232, 0.05); }
-.m-table th { background: var(--glass-m); text-align: left; padding: 1.5rem; font-family: var(--ff-d); font-size: 0.75rem; text-transform: uppercase; border-bottom: 1px solid var(--fire); color: var(--paper); }
-.m-table td { padding: 1.25rem 1.5rem; border-bottom: 1px solid rgba(242, 240, 232, 0.05); font-size: 0.82rem; }
-.m-code { font-family: var(--ff-m); color: #5af78e; font-size: 0.7rem; border: 1px solid rgba(90, 247, 142, 0.1); padding: 0.5rem 1rem; border-radius: 4px; background: rgba(0,0,0,0.3); }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intelligence Catalog | De{c0}ded Hub v5.5.0</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/layout.js"></script>
+  <style>
+    .m-table { width: 100%; border-collapse: collapse; margin-top: 2rem; border-radius: 4px; overflow: hidden; }
+    .m-table th { background: var(--glass); text-align: left; padding: 1.5rem; font-family: var(--ff-d); font-size: 0.7rem; text-transform: uppercase; border-bottom: 2px solid var(--fire); color: var(--paper); }
+    .m-table td { padding: 1.5rem; border-bottom: 1px solid var(--glass-border); font-size: 0.85rem; background: rgba(255,255,255,0.01); }
+    .m-code { font-family: var(--ff-m); color: #5af78e; font-size: 0.7rem; border: 1px solid rgba(90, 247, 142, 0.1); padding: 0.8rem 1.2rem; border-radius: 4px; background: rgba(0,0,0,0.5); }
+    .cat-btn { background: var(--glass); border: 1px solid var(--glass-border); padding: 0.8rem 1.6rem; border-radius: 4px; color: var(--fog); font-size: 0.7rem; font-weight: 800; cursor: pointer; text-transform: uppercase; transition: 0.3s; }
+    .cat-btn.active { color: var(--fire); border-color: var(--fire); background: var(--fire-dim); }
+  </style>
 </head>
 <body>
 
-<main class="container" style="padding-top: 10rem; transition: opacity 0.4s var(--ease);">
-  <div class="reveal">
-    <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">TOTAL ANALYTIC REPOSITORY v5.2.0</div>
-    <h1 class="sec-h">Complete <span>Module Directory.</span></h1>
-    <p class="sec-p">Explore the full surface area of the arsenal. 413 specialized security scripts for mirroring, scraping, and automated exfiltration.</p>
-  </div>
+<main class="content-surface">
+  <header class="reveal" style="padding-top: 3rem; margin-bottom: 3rem;">
+    <div style="color: var(--fire); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.35em; margin-bottom: 1.5rem;">RESOURCE_CATALOG // V5.5.0</div>
+    <h1 class="sec-h">Intelligence <span class="glow">Directory.</span></h1>
+    <p class="sec-p">A complete inventory of the 552 specialized security modules in the De{c0}ded Hub repository.</p>
+  </header>
 
-  <div class="reveal" style="margin-top: 4rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-     <input type="text" id="mSearch" placeholder="Search the Arsenal (e.g. 'xss', 'mobile', 'aws')..." style="flex:1; background: var(--glass-m); border: 1px solid rgba(242, 240, 232, 0.1); padding: 1.1rem 1.6rem; border-radius: 4px; color: var(--paper); font-family: var(--ff-m); font-size: 0.9rem; outline:none;" oninput="render(document.querySelector('.cat-btn.active').dataset.cat, this.value)">
-     <div class="v-cats" style="background:none; border:none; padding:0; position:static;">
+  <div class="reveal" style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 3rem;">
+    <input type="text" id="mSearch" class="glass" placeholder="Search the Arsenal (e.g. 'xss', 'awws')..." style="flex: 1; padding: 1.2rem 2rem; border-radius: 4px; color: var(--paper); outline: none;" oninput="render(document.querySelector('.cat-btn.active').dataset.cat, this.value)">
+    <div style="display: flex; gap: 0.8rem;">
       <button class="cat-btn active" data-cat="all" onclick="filterM('all', this)">All</button>
       <button class="cat-btn" data-cat="analyzers" onclick="filterM('analyzers', this)">Analyzers</button>
       <button class="cat-btn" data-cat="scrapers" onclick="filterM('scrapers', this)">Scrapers</button>
-      <button class="cat-btn" data-cat="integrations" onclick="filterM('integrations', this)">Integrations</button>
       <button class="cat-btn" data-cat="core" onclick="filterM('core', this)">Core</button>
     </div>
   </div>
@@ -40,50 +37,49 @@
   <table class="m-table reveal">
     <thead>
       <tr>
-        <th style="width:150px;">Category</th>
+        <th style="width: 15%;">Category</th>
         <th>Script Name</th>
         <th>CLI Blueprint</th>
       </tr>
     </thead>
     <tbody id="mBody">
-      <!-- Dynamic Data -->
+      <!-- Generated -->
     </tbody>
   </table>
 </main>
 
+<script src="js/catalog.js"></script>
 <script>
-const MODULES = [{"Category":"analyzers","Name":"a11y-checker.js"},{"Category":"analyzers","Name":"android-intent-auditor.js"},{"Category":"analyzers","Name":"ansible-vault-cracker.js"},{"Category":"analyzers","Name":"api-key-validator.js"},{"Category":"analyzers","Name":"asn-ip-extractor.js"},{"Category":"analyzers","Name":"asset-inventory.js"},{"Category":"analyzers","Name":"aws-iam-policy-auditor.js"},{"Category":"analyzers","Name":"azure-ad-app-auditor.js"},{"Category":"analyzers","Name":"azure-functions-miner.js"},{"Category":"analyzers","Name":"broken-image-checker.js"},{"Category":"analyzers","Name":"cache-poisoning-fuzzer.js"},{"Category":"analyzers","Name":"canonical-auditor.js"},{"Category":"analyzers","Name":"clickjacking-auditor.js"},{"Category":"analyzers","Name":"cloud-metadata-pivot.js"},{"Category":"analyzers","Name":"color-palette-extractor.js"},{"Category":"analyzers","Name":"content-gap-analyzer.js"},{"Category":"analyzers","Name":"cookie-attribute-auditor.js"},{"Category":"analyzers","Name":"cookie-auditor.js"},{"Category":"analyzers","Name":"cookie-security-mapper.js"},{"Category":"analyzers","Name":"core-web-vitals-probe.js"},{"Category":"analyzers","Name":"cors-misconfig-advanced.js"},{"Category":"analyzers","Name":"css-coverage-analyzer.js"},{"Category":"analyzers","Name":"dead-link-spider.js"},{"Category":"analyzers","Name":"dns-dmarc-auditor.js"},{"Category":"analyzers","Name":"dns-spf-checker.js"},{"Category":"analyzers","Name":"docker-config-auditor.js"},{"Category":"analyzers","Name":"dom-diff.js"},{"Category":"analyzers","Name":"ec2-instance-meta.js"},{"Category":"analyzers","Name":"email-spider.js"},{"Category":"analyzers","Name":"error-detail-miner.js"},{"Category":"analyzers","Name":"expo-dev-config-auditor.js"},{"Category":"analyzers","Name":"favicon-hash-finder.js"},{"Category":"analyzers","Name":"form-action-auditor.js"},{"Category":"analyzers","Name":"gcp-cloud-run-auditor.js"},{"Category":"analyzers","Name":"gcp-iam-leak-checker.js"},{"Category":"analyzers","Name":"github-secrets-miner.js"},{"Category":"analyzers","Name":"gitlab-ci-auditor.js"},{"Category":"analyzers","Name":"heading-auditor.js"},{"Category":"analyzers","Name":"hidden-directory-bruter.js"},{"Category":"analyzers","Name":"host-header-injection.js"},{"Category":"analyzers","Name":"html5-validator.js"},{"Category":"analyzers","Name":"idor-fuzzer.js"},{"Category":"analyzers","Name":"internal-link-auditor.js"},{"Category":"analyzers","Name":"invisible-param-finder.js"},{"Category":"analyzers","Name":"ios-deep-link-fuzzer.js"},{"Category":"analyzers","Name":"javascript-footprint-analyzer.js"},{"Category":"analyzers","Name":"jenkins-info-leak.js"},{"Category":"analyzers","Name":"jenkins-plugin-scanner.js"},{"Category":"analyzers","Name":"k8s-dashboard-checker.js"},{"Category":"analyzers","Name":"k8s-rbac-mapper.js"},{"Category":"analyzers","Name":"k8s-secret-exporter.js"},{"Category":"analyzers","Name":"keyword-density-analyzer.js"},{"Category":"analyzers","Name":"lambda-function-enumerator.js"},{"Category":"analyzers","Name":"lambda-metadata-hunter.js"},{"Category":"analyzers","Name":"lfi-path-traversal.js"},{"Category":"analyzers","Name":"malware-scanner.js"},{"Category":"analyzers","Name":"meta-duplication-checker.js"},{"Category":"analyzers","Name":"mobile-endpoint-mapper.js"},{"Category":"analyzers","Name":"mobile-readiness-checker.js"},{"Category":"analyzers","Name":"oauth-redirect-fuzzer.js"},{"Category":"analyzers","Name":"open-graph-auditor.js"},{"Category":"analyzers","Name":"open-redirect-v2.js"},{"Category":"analyzers","Name":"parameter-pollution-adv.js"},{"Category":"analyzers","Name":"payload-size-analyzer.js"},{"Category":"analyzers","Name":"postmessage-logger.js"},{"Category":"analyzers","Name":"prototype-pollution-finder.js"},{"Category":"analyzers","Name":"rce-fuzzer.js"},{"Category":"analyzers","Name":"readability-scorer.js"},{"Category":"analyzers","Name":"redirect-auditor.js"},{"Category":"analyzers","Name":"response-header-auditor.js"},{"Category":"analyzers","Name":"schema-validator.js"},{"Category":"analyzers","Name":"security-headers-auditor.js"},{"Category":"analyzers","Name":"security-headers-ranker.js"},{"Category":"analyzers","Name":"semantic-structure-analyzer.js"},{"Category":"analyzers","Name":"seo-auditor.js"},{"Category":"analyzers","Name":"session-timeout-checker.js"},{"Category":"analyzers","Name":"shodan-vuln-mapper.js"},{"Category":"analyzers","Name":"site-taxonomy-mapper.js"},{"Category":"analyzers","Name":"software-version-mapper.js"},{"Category":"analyzers","Name":"sqli-fuzzer.js"},{"Category":"analyzers","Name":"ssl-cipher-auditor.js"},{"Category":"analyzers","Name":"ssrf-hunter.js"},{"Category":"analyzers","Name":"ssti-auditor.js"},{"Category":"analyzers","Name":"subdomain-takeover-v2.js"},{"Category":"analyzers","Name":"sub-takeover-checker.js"},{"Category":"analyzers","Name":"tech-fingerprinter.js"},{"Category":"analyzers","Name":"terraform-drift-detector.js"},{"Category":"analyzers","Name":"tracker-radar.js"},{"Category":"analyzers","Name":"typography-analyzer.js"},{"Category":"analyzers","Name":"unused-css.js"},{"Category":"analyzers","Name":"vulnerability-fingerprinter.js"},{"Category":"analyzers","Name":"xss-fuzzer.js"},{"Category":"analyzers","Name":"xss-scanner.js"},{"Category":"auth-helpers","Name":"2captcha-auto.js"},{"Category":"auth-helpers","Name":"api-key-validator.js"},{"Category":"auth-helpers","Name":"basic-auth.js"},{"Category":"auth-helpers","Name":"cookie-cloner.js"},{"Category":"auth-helpers","Name":"jwt-extractor.js"},{"Category":"auth-helpers","Name":"mfa-code-helper.js"},{"Category":"auth-helpers","Name":"oauth-grabber.js"},{"Category":"auth-helpers","Name":"totp-generator.js"},{"Category":"core","Name":"grab.js"},{"Category":"core","Name":"grab-playwright.js"},{"Category":"core","Name":"mirror.js"},{"Category":"core","Name":"parallel-target-fuzzer.js"},{"Category":"core","Name":"recon-workflow-orchestrator.js"},{"Category":"core","Name":"super-mirror.js"},{"Category":"exporters","Name":"to-json.js"},{"Category":"exporters","Name":"to-csv.js"},{"Category":"exporters","Name":"to-markdown.js"},{"Category":"exporters","Name":"to-pdf.js"},{"Category":"integrations","Name":"discord-webhook.js"},{"Category":"integrations","Name":"slack-alerter.js"},{"Category":"monitors","Name":"uptime-monitor.js"},{"Category":"monitors","Name":"visual-regression-monitor.js"},{"Category":"reporters","Name":"pdf-recon-summary.js"},{"Category":"scrapers","Name":"google-dorker.js"},{"Category":"scrapers","Name":"shodan-dorker.js"},{"Category":"scrapers","Name":"wp-scraper.js"},{"Category":"utils","Name":"port-scanner.js"},{"Category":"utils","Name":"port-scanner-pro.js"}];
-
+const MODULES = window.WEBARSENAL_CATALOG || [];
 const mBody = document.getElementById('mBody');
 
 function render(filter = 'all', query = '') {
   if (!mBody) return;
   mBody.innerHTML = '';
   const filtered = MODULES.filter(m => {
-    const matchCat = filter === 'all' || m.Category === filter;
-    return matchCat && m.Name.toLowerCase().includes(query.toLowerCase());
-  });
+    const matchCat = filter === 'all' || m.category === filter;
+    return matchCat && m.name.toLowerCase().includes(query.toLowerCase());
+  }).slice(0, 100);
 
   filtered.forEach(m => {
     const row = document.createElement('tr');
     row.innerHTML = `
-      <td style="color:var(--fire); font-weight:800; text-transform:uppercase; font-size:0.65rem; letter-spacing:0.05em;">${m.Category}</td>
-      <td style="font-family:var(--ff-d); font-weight:800;">${m.Name}</td>
-      <td><div class="m-code">node ${m.Category}/${m.Name} --url {target}</div></td>
+      <td style="color: var(--fire); font-weight: 800; text-transform: uppercase; font-size: 0.65rem; letter-spacing: 0.05em;">${m.category}</td>
+      <td style="font-family: var(--ff-d); font-weight: 800; font-size: 1rem;">${m.name}</td>
+      <td><div class="m-code">node ${m.category}/${m.name} --url {target.com}</div></td>
     `;
     mBody.appendChild(row);
   });
 }
 
 function filterM(c, btn) {
-    document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    render(c, document.getElementById('mSearch').value);
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  render(c, document.getElementById('mSearch').value);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    render();
-});
+document.addEventListener('DOMContentLoaded', () => render());
 </script>
+
 </body>
 </html>

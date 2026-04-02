@@ -3,153 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Secure Channel | De{c0}ded by Edwin Dev</title>
+  <title>Secure Channel | De{c0}ded Hub v5.5.0</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 100px;
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      min-height: 90vh;
-      align-items: center;
-    }
-    .contact-info h1 {
-      font-size: 4.5rem;
-      font-weight: 800;
-      line-height: 0.9;
-      letter-spacing: -3px;
-      margin-bottom: 30px;
-    }
-    .contact-info p {
-      color: var(--text-muted);
-      font-size: 1.2rem;
-      line-height: 1.6;
-      max-width: 450px;
-    }
-    
-    .social-links {
-      margin-top: 60px;
-      display: grid;
-      gap: 20px;
-    }
-    .social-link {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      color: var(--text-muted);
-      text-decoration: none;
-      font-weight: 600;
-      transition: var(--transition);
-      font-family: var(--font-mono);
-      font-size: 0.9rem;
-    }
-    .social-link:hover { color: var(--primary); transform: translateX(10px); }
-    
-    .contact-form-box {
-      padding: 60px;
-      border-radius: 24px;
-    }
-    .form-group {
-      margin-bottom: 35px;
-      border-bottom: 1px solid var(--surface-border);
-      padding-bottom: 10px;
-    }
-    .form-group label {
-      display: block;
-      font-size: 0.7rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--primary);
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-    .form-group input, .form-group textarea {
-      width: 100%;
-      background: none;
-      border: none;
-      color: white;
-      font-size: 1.1rem;
-      font-family: var(--font-main);
-      outline: none;
-    }
-    .submit-btn {
-      width: 100%;
-      padding: 20px;
-      border-radius: 12px;
-      background: var(--primary);
-      color: white;
-      border: none;
-      font-weight: 800;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-    .submit-btn:hover { filter: brightness(1.2); transform: translateY(-3px); box-shadow: 0 10px 20px var(--primary-glow); }
-    
-    .nav-header {
-      position: absolute;
-      top: 40px;
-      left: 40px;
-      right: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .nav-header a { color: var(--primary); text-decoration: none; font-weight: 600; }
-  </style>
+  <script src="layout.js"></script>
 </head>
 <body>
 
-<header class="nav-header">
-  <div class="brand">HUB: DE{C0}DED</div>
-  <a href="dashboard.html">← Back to Hub</a>
-</header>
+<main class="content-surface">
+  <header class="reveal" style="padding-top: 3rem; margin-bottom: 3rem;">
+    <div style="color: var(--fire); font-size: 0.70rem; font-weight: 800; letter-spacing: 0.35em; margin-bottom: 1.5rem;">SECURE_INPUT_CHANNEL // V5.5.0</div>
+    <h1 class="sec-h">Initiate <span class="glow">Contact.</span></h1>
+    <p class="sec-p" style="max-width: 500px;">Secure, encrypted communications for bug reports, partnership inquiries, and corporate consultation.</p>
+  </header>
 
-<div class="contact-container">
-  
-  <section class="contact-info">
-    <div style="color: var(--primary); font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 2px;">SECURE INQUIRY CHANNEL</div>
-    <h1>Engage the <br><span style="color: var(--secondary);">Architect.</span></h1>
-    <p>For custom security modules, enterprise-grade reconnaissance consultation, or sensitive site auditing, use this encrypted channel.</p>
-    
-    <div class="social-links">
-      <a href="https://github.com/edwinnyandika" class="social-link" target="_blank">
-        <span>🔗</span> GitHub / @edwinnyandika
-      </a>
-      <a href="#" class="social-link">
-        <span>💬</span> Discord / WebArsenal Community
-      </a>
-      <a href="#" class="social-link">
-        <span>💼</span> LinkedIn / Edwin Dev
-      </a>
-    </div>
-  </section>
-
-  <section class="contact-form-box glass">
-    <form onsubmit="event.preventDefault(); alert('Transmission Sent.');">
-      <div class="form-group">
-        <label>Researcher Name</label>
-        <input type="text" placeholder="John Doe" required>
+  <section class="reveal glass" style="padding: 4.5rem; border-radius: 4px; max-width: 900px; margin-bottom: 6rem;">
+    <form style="display: flex; flex-direction: column; gap: 2rem;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+        <input type="text" class="glass" placeholder="NAME / ALIAS" style="padding: 1.25rem 1.8rem; border-radius: 4px; color: var(--paper); outline: none; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border);">
+        <input type="email" class="glass" placeholder="SECURE EMAIL" style="padding: 1.25rem 1.8rem; border-radius: 4px; color: var(--paper); outline: none; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border);">
       </div>
-      <div class="form-group">
-        <label>Operational Email</label>
-        <input type="email" placeholder="researcher@secure.node" required>
-      </div>
-      <div class="form-group">
-        <label>Mission Brief</label>
-        <textarea rows="4" placeholder="Describe the security objective..." required></textarea>
-      </div>
-      <button type="submit" class="submit-btn" style="background: linear-gradient(to right, var(--primary), var(--secondary));">Initialize Communication</button>
+      <textarea class="glass" placeholder="ENCRYPTED MESSAGE CONTENT" rows="6" style="padding: 1.25rem 1.8rem; border-radius: 4px; color: var(--paper); outline: none; background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border);"></textarea>
+      <button type="button" class="glass" style="padding: 1.25rem; border-radius: 4px; background: var(--fire-dim); border: 1px solid var(--fire); color: var(--fire); font-weight: 800; text-transform: uppercase; cursor: pointer; letter-spacing: 0.2em; transition: 0.4s var(--ease);">Broadcast Signal</button>
     </form>
   </section>
-
-</div>
+</main>
 
 </body>
 </html>

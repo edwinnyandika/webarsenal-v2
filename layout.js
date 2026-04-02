@@ -1,22 +1,22 @@
 /**
  * ╔════════════════════════════════════════════════════════════════════════════╗
- * ║ De{c0}ded Hub v5.5.0 - Unified Application Shell                              ║
+ * ║ De{c0}ded Hub v5.5.0 - Unified Root Application Shell                         ║
  * ║ Developed by: De{c0}ded by Edwin Dev                                         ║
- * ║ Module: layout.js                                                          ║
+ * ║ Module: layout.js (Root Version)                                           ║
  * ╚════════════════════════════════════════════════════════════════════════════╝
  */
 
 const SECURITY_ICONS = {
-  recon: `<svg class="icon-svg" viewBox="0 0 24 24"><path d="M11 19a8 8 0 1 0 0-16 8 8 0 0 0 0 16zM21 21l-4.35-4.35"/></svg>`,
-  vuln: `<svg class="icon-svg" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
-  api: `<svg class="icon-svg" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>`,
-  infra: `<svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`,
-  cloud: `<svg class="icon-svg" viewBox="0 0 24 24"><path d="M17.5 19c-3.037 0-5.5-2.463-5.5-5.5 0-3.037 2.463-5.5 5.5-5.5 3.037 0 5.5 2.463 5.5 5.5s-2.463 5.5-5.5 5.5z"/><path d="M12 13.5c0-3.037-2.463-5.5-5.5-5.5-3.037 0-5.5 2.463-5.5 5.5S3.463 19 6.5 19h5.5v-5.5z"/></svg>`,
-  vault: `<svg class="icon-svg" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>`,
-  pulse: `<svg class="icon-svg" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`
+  recon: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16 16-3.89-3.89"/><path d="M11.7 9A2.9 2.9 0 1 0 9 11.7"/></svg>`,
+  vuln: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>`,
+  api: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6" y2="6"/><line x1="6" y1="18" x2="6" y2="18"/></svg>`,
+  infra: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+  vault: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>`,
+  pulse: `<svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>`
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+  console.log("DE{C0}DED HUB CORE INIT: OK");
   initShell();
   initSPA();
   initTelemetryLoop();
@@ -30,9 +30,9 @@ function initShell() {
   document.body.innerHTML = '';
 
   const shellHTML = `
-    <div class="app-shell">
+    <div class="app-shell fade-in">
       
-      <!-- PERSISTENT SIDEBAR -->
+      <!-- ELITE SIDEBAR -->
       <aside class="sidebar glass">
         <div class="brand">De{c0}ded Hub</div>
         
@@ -56,10 +56,16 @@ function initShell() {
 
         <div style="flex: 1;"></div>
 
-        <div class="glass" style="padding: 1.5rem; border-radius: 4px; font-size: 0.65rem; color: var(--fog);">
-          <div style="color: var(--fire); font-weight: 800; margin-bottom: 8px; letter-spacing: 0.1em;">DE{C0}DE STATUS</div>
-          <p>Uptime: <span style="color: #5af78e;">99.9%</span></p>
-          <p>Sync: <span id="syncStatus">CONNECTED</span></p>
+        <div class="glass" style="padding: 2rem; border-radius: 4px; font-size: 0.6rem; color: var(--fog); letter-spacing: 0.1em;">
+          <div style="color: var(--fire); font-weight: 800; margin-bottom: 12px; font-size: 0.65rem;">CORE_INTEGRITY: 100%</div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+            <span>NODE_SYNC</span>
+            <span style="color: #5af78e;">ACTIVE</span>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span>PLATFORM</span>
+            <span>V5.5.0-FIRE</span>
+          </div>
         </div>
       </aside>
 
@@ -68,11 +74,10 @@ function initShell() {
         ${initialContent}
       </main>
 
-      <!-- TELEMETRY HUD -->
+      <!-- MASTER TELEMETRY HUD -->
       <section class="telemetry-hud glass">
         <div class="hud-title">
           <span>Master Telemetry HUD</span>
-          <span style="opacity: 0.5;">PULSE: V5.5.0</span>
         </div>
         
         <div class="hud-stats">
@@ -81,50 +86,54 @@ function initShell() {
             <div class="stat-lbl">Modules</div>
           </div>
           <div class="stat-box glass">
-            <div class="stat-val" id="activeNodes">14</div>
+            <div class="stat-val" id="activeNodes">12</div>
             <div class="stat-lbl">Nodes</div>
           </div>
           <div class="stat-box glass">
-            <div class="stat-val" id="integrityHUD">99%</div>
-            <div class="stat-lbl">Integrity</div>
+            <div class="stat-val" id="integrityHUD">100%</div>
+            <div class="stat-lbl">Uptime</div>
           </div>
         </div>
 
         <div class="hud-body" id="hudBody">
           <div class="hud-line">
-            <span class="hud-time">[11:22:04]</span>
-            <span class="hud-text">DE{C0}DED_CORE_STABLE.</span>
-          </div>
-          <div class="hud-line">
-            <span class="hud-time">[11:22:05]</span>
-            <span class="hud-text status">VAULT_SYNC_COMPLETE.</span>
+            <span class="hud-time">[${new Date().toLocaleTimeString()}]</span>
+            <span class="hud-text status">DE{C0}DED_SHELL_DEPLOYED.</span>
           </div>
         </div>
 
-        <div class="glass" style="margin-top: 1.5rem; padding: 1.5rem; border-radius: 4px;">
-          <div style="color: var(--fire); font-size: 0.6rem; font-weight: 800; text-transform: uppercase;">Direct Intelligence</div>
-          <div id="intelFeed" style="font-family: var(--ff-m); font-size: 0.6rem; margin-top: 10px; line-height: 1.6;">
+        <div class="glass" style="margin-top: 2rem; padding: 2rem; border-radius: 4px;">
+          <div style="color: var(--fire); font-size: 0.65rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 15px;">Live Intelligence</div>
+          <div id="intelFeed" style="font-family: var(--ff-m); font-size: 0.65rem; color: var(--paper); line-height: 1.8;">
             <!-- Generated by loop -->
           </div>
         </div>
-      </aside>
+      </section>
 
     </div>
   `;
 
   document.body.insertAdjacentHTML('afterbegin', shellHTML);
-  document.body.classList.add('fade-in');
 }
 
 function initTelemetryLoop() {
   const body = document.getElementById('hudBody');
+  const feed = document.getElementById('intelFeed');
+  
   const logs = [
-    "SCAN_INIT: target_range_set",
-    "NODE_POLLING: cluster_alpha_active",
-    "BYPASS_SEQ: waf_threshold_low",
-    "PROXY_SYNC: tor_exit_acquired",
-    "EXFIL: packet_payload_shipped",
-    "VULN_VERIFY: sqli_vector_confirmed"
+    "RECON_INIT: subnet_proxy_chain_set",
+    "NODE_HEALTH: cluster_v4_online",
+    "BYPASS_SEQ: waf_cookie_inject_success",
+    "VULN_SCAN: path_traversal_found",
+    "EXFIL_PIPE: data_stream_to_sqli_vault",
+    "SHELL_SYSCALL: root_access_confirmed"
+  ];
+
+  const intel = [
+    "S3_BUCKET_LEAK: customer-data-v2",
+    "IDOR_EXPLOIT: /api/v1/user/metadata",
+    "SSTI_DETECT: jinja2_payload_executed",
+    "JWT_CRACK: algorithm_none_allowed"
   ];
 
   setInterval(() => {
@@ -136,29 +145,21 @@ function initTelemetryLoop() {
     `;
     body.prepend(line);
     if (body.children.length > 20) body.lastElementChild.remove();
-  }, 3500);
-
-  const feed = document.getElementById('intelFeed');
-  const intel = [
-    "S3_BUCKET_OPEN: research-archive",
-    "IDOR_DETECTED: /auth/v1/meta",
-    "SSTI_VULN: param 'payload' vulnerable",
-    "LFI_PROBE: /etc/passwd accessible"
-  ];
+  }, 4000);
 
   setInterval(() => {
     const item = document.createElement('div');
     item.style.color = 'var(--fire)';
     item.textContent = `> ${intel[Math.floor(Math.random() * intel.length)]}`;
     feed.prepend(item);
-    if (feed.children.length > 4) feed.lastElementChild.remove();
-  }, 6000);
+    if (feed.children.length > 5) feed.lastElementChild.remove();
+  }, 7000);
 
   setInterval(() => {
     const integrity = document.getElementById('integrityHUD');
     const nodes = document.getElementById('activeNodes');
-    if (integrity) integrity.textContent = `${95 + Math.floor(Math.random() * 5)}%`;
-    if (nodes) nodes.textContent = 10 + Math.floor(Math.random() * 10);
+    if (integrity) integrity.textContent = `${98 + Math.floor(Math.random() * 2)}%`;
+    if (nodes) nodes.textContent = 10 + Math.floor(Math.random() * 8);
   }, 5000);
 }
 
@@ -167,7 +168,8 @@ function initSPA() {
     const link = e.target.closest('a');
     if (link && link.href.startsWith(window.location.origin) && !link.getAttribute('target')) {
       e.preventDefault();
-      const filename = link.getAttribute('href');
+      const href = link.getAttribute('href');
+      const filename = href.split('/').pop() || 'index.html';
       await navigateTo(filename);
     }
   });
@@ -179,7 +181,8 @@ function initSPA() {
 }
 
 async function navigateTo(filename) {
-  if (filename === (window.location.pathname.split('/').pop() || 'index.html')) return;
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  if (filename === current) return;
   await loadPage(filename);
   window.history.pushState({}, '', filename);
 }
@@ -193,19 +196,19 @@ async function loadPage(filename, animate = true) {
     const html = await response.text();
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
-    const newContent = doc.querySelector('main').innerHTML;
-
-    setTimeout(() => {
-      surface.innerHTML = newContent;
-      document.title = doc.title;
-      updateNavActive(filename);
-      surface.style.opacity = '1';
-      
-      // Execute scripts in the new content
-      executeScripts(doc);
-    }, animate ? 300 : 0);
+    const newPageMain = doc.querySelector('main');
+    
+    if (newPageMain) {
+      setTimeout(() => {
+        surface.innerHTML = newPageMain.innerHTML;
+        document.title = doc.title;
+        updateNavActive(filename);
+        surface.style.opacity = '1';
+        executeScripts(doc);
+      }, animate ? 300 : 0);
+    }
   } catch (err) {
-    console.error('SPA Loading Error:', err);
+    console.error('SPA FAIL:', err);
     window.location.href = filename;
   }
 }
@@ -220,7 +223,7 @@ function updateNavActive(filename) {
 function executeScripts(doc) {
   const scripts = doc.querySelectorAll('script');
   scripts.forEach(s => {
-    if (s.src && s.src.includes('layout.js')) return;
+    if (s.src && (s.src.includes('layout.js') || s.src.includes('catalog.js'))) return;
     const newScript = document.createElement('script');
     Array.from(s.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value));
     newScript.textContent = s.textContent;
