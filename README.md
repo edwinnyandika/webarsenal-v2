@@ -18,7 +18,7 @@
 <br/>
 
 [![Version](https://img.shields.io/badge/version-v5.5.0--Pulse-7c3aed?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/edwinnyandika/webarsenal-v2/releases)
-[![Modules](https://img.shields.io/badge/modules-552+-00cc88?style=for-the-badge&logo=buffer&logoColor=white)](MODULES.md)
+[![Modules](https://img.shields.io/badge/modules-570+-00cc88?style=for-the-badge&logo=buffer&logoColor=white)](MODULES.md)
 [![License](https://img.shields.io/badge/license-MIT-ff4400?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-v18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Stars](https://img.shields.io/github/stars/edwinnyandika/webarsenal-v2?style=for-the-badge&color=ffd700&logo=github)](https://github.com/edwinnyandika/webarsenal-v2/stargazers)
@@ -38,7 +38,7 @@
 
 ## 🧠 What is WebArsenal?
 
-**WebArsenal v5.5.0 "Pulse"** is an enterprise-grade, modular Node.js toolkit built for horizontal and vertical reconnaissance, recursive site mirroring, and automated vulnerability research. Consolidating over **552+ specialized security scripts**, it provides a unified orchestration layer for the modern security researcher.
+**WebArsenal v5.5.0 "Pulse"** is an enterprise-grade, modular Node.js toolkit built for horizontal and vertical reconnaissance, recursive site mirroring, and automated vulnerability research. Consolidating over **570+ specialized security scripts**, it provides a unified orchestration layer for the modern security researcher.
 
 Built for **developers** who need data at scale, **SEO engineers** running audits, **data engineers** building pipelines, and **security researchers** mapping attack surfaces on authorized targets.
 

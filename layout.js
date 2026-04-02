@@ -82,7 +82,7 @@ function initShell() {
         
         <div class="hud-stats">
           <div class="stat-box glass">
-            <div class="stat-val">552</div>
+            <div class="stat-val">570</div>
             <div class="stat-lbl">Modules</div>
           </div>
           <div class="stat-box glass">

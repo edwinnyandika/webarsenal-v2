@@ -1,15 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-/**
- * ╔════════════════════════════════════════════════════════════════════════════╗
- * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
- * ║ De{c0}ded by Edwin Dev                                                      ║
- * ║ Module: internal-host-mapper.js                                                          ║
- * ╚════════════════════════════════════════════════════════════════════════════╝
- */
-
-
-
 
 const { getModuleById } = require('../lib/module-catalog');
 const { runModuleCli } = require('../lib/module-runner');
