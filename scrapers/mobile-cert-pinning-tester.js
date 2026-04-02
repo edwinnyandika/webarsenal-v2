@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: mobile-cert-pinning-tester.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═════════════════════════════════════════════════════════════════╗
  * ║  WebArsenal: mobile-cert-pinning-tester.js                       ║
  * ║  Category: scrapers                                             ║

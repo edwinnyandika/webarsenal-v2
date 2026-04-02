@@ -1,4 +1,14 @@
 'use strict';
+/**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: generate-modules.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
 
 const fs = require('fs');
 const path = require('path');

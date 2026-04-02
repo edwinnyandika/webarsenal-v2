@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: grab-playwright.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═══════════════════════════════════════════════════════════════╗
  * ║        SITE EXTRACTOR PLAYWRIGHT  v3.0.0 — Headless Crawler    ║
  * ║  Playwright Stealth · Queue · Asset Injection · Snapshots    ║

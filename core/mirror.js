@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: mirror.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═══════════════════════════════════════════════════════════════╗
  * ║        SITE MIRROR LIGHT  v3.0.0  — Fast CLI Scraper           ║
  * ║  Website-scraper based · Depth Control · Filter · Sitemap    ║

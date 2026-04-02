@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: k8s-pod-exec-tester.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═════════════════════════════════════════════════════════════════╗
  * ║  WebArsenal: k8s-pod-exec-tester.js                              ║
  * ║  Category: analyzers                                            ║

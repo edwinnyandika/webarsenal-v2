@@ -1,108 +1,5 @@
 <div align="center">
 
-<!-- BANNER -->
-<img src="images/OIUGRK0.jpg" alt="WebArsenal Banner" width="100%" />
-
-<br>
-
-# 🛡️ WebArsenal v5.0.0
-**The Ultimate High-Power Security Research & Automation Arsenal**
-*Architected by: de{c0}de by edwin dev*
-
-WebArsenal is an enterprise-grade, modular Node.js toolkit designed for horizontal and vertical reconnaissance, recursive site mirroring, and automated vulnerability exfiltration. Consolidating over **320+ specialized security scripts**, it provides a unified orchestration layer for the modern security researcher.
-
----
-
-## ⚡ High-Power Strategic Workflows
-
-### 🦅 Deep Reconnaissance Pipeline (Advanced)
-```mermaid
-graph TD
-    A[Target Domain] --> B{Discovery Phase}
-    B -- Passive --> C[Censys/Shodan/Crt.sh Miner]
-    B -- Active --> D[Recursive Subdomain Bruter]
-    C --> E[Attack Surface Map]
-    D --> E
-    E --> F{Analysis Phase}
-    F --> G[XSS Fuzzer]
-    F --> H[SSRF Hunter]
-    F --> I[LFI Path Traverals]
-    G --> J[Orchestration Layer]
-    H --> J
-    I --> J
-    J --> K[🛡️ WebArsenal Master Report]
-    style K fill:#f2f0e8,stroke:#e8390e,stroke-width:2px;
-```
-
-### 📦 Exfiltration & Environment Mirroring
-```mermaid
-graph LR
-    A[Target URL] --> B[super-mirror.js]
-    B --> C[Recursive Crawler]
-    C --> D[Asset Harvester]
-    D --> E{Auth Bypass}
-    E -- Success --> F[pro-mirror.js]
-    E -- Gated --> G[cookie-cloner.js]
-    G --> F
-    F --> H[Local Clone: site-mirrored/]
-    style H fill:#f2f0e8,stroke:#e8390e,stroke-width:2px;
-```
-
----
-
-## 🔒 The Arsenal Inventory (320+ Modules)
-
-| Category | Count | Power | Functional Goal | CLI Example |
-| :--- | :--- | :--- | :--- | :--- |
-| **Analyzers** | 93 | ⚡⚡⚡⚡⚡ | Security Audits, XSS, SSRF | `node analyzers/xss-fuzzer.js` |
-| **Scrapers** | 78 | ⚡⚡⚡⚡ | Targeted Data, API Sniffing | `node scrapers/api-scraper.js` |
-| **Integrations** | 45 | ⚡⚡⚡ | S3, Airtable, Notion | `node integrations/aws-s3-uploader.js` |
-| **Monitors** | 35 | ⚡⚡⚡ | Change Detection, Uptime | `node monitors/change-detector.js` |
-| **Auth Helpers** | 35 | ⚡⚡⚡⚡⚡ | Bypassing CF, JWT Brute | `node auth-helpers/cf-bypass.js` |
-| **Exporters** | 35 | ⚡⚡ | SQL, CSV, Markdown, WARC | `node exporters/to-sqlite.js` |
-| **Core** | 20 | ⚡⚡⚡⚡⚡ | Recursive Mirroring | `node core/super-mirror.js` |
-| **Utils** | 76 | ⚡⚡ | Proxy-Rotator, UA-Pool | `node utils/proxy-rotator.js` |
-
----
-
-## 🛠️ Operational Entrypoints
-
-### 🚀 The Master Entrypoint
-For full-spectrum orchestration across multiple modules, use the **Master Runner**:
-```bash
-node reporters/final-master-runner.js --target example.com --workflow recon-full
-```
-
-### 🧬 Core Command Suite
-```bash
-node core/super-mirror.js --url target.com --output ./mirrored
-node analyzers/subdomain-takeover-v2.js --url target.com
-```
-
----
-
-## 💻 The Digital Commander (Interactive Vault)
-
-WebArsenal features a built-in **Interactive Command Vault** (SPA) for building complex execution chains.
-
-- **Real-Time Search**: Filter modules via `Ctrl+K`.
-- **Live Intelligence Feed**: Monitor simulated reconnaissance alerts in the sidebar.
-- **Pipeline Builder**: Chain modules and exfiltrate the final CLI command.
-
-[**Launch The Command Vault**](file:///c:/Users/hp/webarsenal-1/index.html)
-
----
-
-## 📜 Development & CI
-
-WebArsenal is built for scale and reliability:
-- **Module Generator**: `npm run generate:modules`
-- **Surface Validation**: `npm run validate:modules`
-- **CI/CD**: Fully integrated GitHub Actions for autonomous testing.
-<div align="center">
-
-<br/>
-
 ```
 ██╗    ██╗███████╗██████╗      █████╗ ██████╗ ███████╗███████╗███╗   ██╗ █████╗ ██╗
 ██║    ██║██╔════╝██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██╔════╝████╗  ██║██╔══██╗██║
@@ -112,35 +9,38 @@ WebArsenal is built for scale and reliability:
  ╚══╝╚══╝ ╚══════╝╚═════╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝
 ```
 
-### **The Full-Stack Web Intelligence & Security Research Toolkit**
-*320 battle-hardened modules · Extraction · Recon · Analysis · Bug Hunting · Cloud Integration*
+# 🛡️ De{c0}ded WebArsenal v5.5.0 `"Pulse"`
+
+**The Ultimate High-Power Security Research & Automation Arsenal**
+
+*Architected by [De{c0}ded by Edwin Dev](https://github.com/edwinnyandika)*
 
 <br/>
 
-[![Version](https://img.shields.io/badge/version-v4.0.0-ff4400?style=for-the-badge)](https://github.com/edwinnyandika/webarsenal-v2/releases)
-[![Modules](https://img.shields.io/badge/modules-320-ff4400?style=for-the-badge)](MODULES.md)
-[![License](https://img.shields.io/badge/license-MIT-00cc88?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/version-v5.5.0--Pulse-7c3aed?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/edwinnyandika/webarsenal-v2/releases)
+[![Modules](https://img.shields.io/badge/modules-552+-00cc88?style=for-the-badge&logo=buffer&logoColor=white)](MODULES.md)
+[![License](https://img.shields.io/badge/license-MIT-ff4400?style=for-the-badge)](LICENSE)
 [![Node](https://img.shields.io/badge/node-v18%2B-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)](https://nodejs.org)
 [![Stars](https://img.shields.io/github/stars/edwinnyandika/webarsenal-v2?style=for-the-badge&color=ffd700&logo=github)](https://github.com/edwinnyandika/webarsenal-v2/stargazers)
 [![CI](https://img.shields.io/github/actions/workflow/status/edwinnyandika/webarsenal-v2/ci.yml?style=for-the-badge&label=CI&logo=githubactions&logoColor=white)](https://github.com/edwinnyandika/webarsenal-v2/actions)
 
 <br/>
 
-[⚡ Quick Start](#-quick-start) · [🗺️ Modules](#-module-map) · [🔥 Scenarios](#-real-world-scenarios) · [🛡️ Bug Hunter Mode](#-bug-hunter-mode) · [📖 Full Docs](MODULES.md)
+[⚡ Quick Start](#-quick-start) · [🗺️ Module Map](#%EF%B8%8F-module-map) · [🔥 Workflows](#-strategic-workflows) · [🛡️ Bug Hunter Mode](#%EF%B8%8F-bug-hunter-mode) · [💻 Dashboard](#-the-decd-hub) · [📖 Full Docs](MODULES.md)
+
+<br/>
+
+> *"The web is your database. WebArsenal is your query engine."*
 
 </div>
 
 ---
 
-## 🧠 What is WebArsenal v2?
+## 🧠 What is WebArsenal?
 
-**WebArsenal v2** is the most complete Node.js toolkit for full-stack web intelligence. 320 focused modules covering every phase — from deep site mirroring and data extraction to security surface mapping and cloud integration.
+**WebArsenal v5.5.0 "Pulse"** is an enterprise-grade, modular Node.js toolkit built for horizontal and vertical reconnaissance, recursive site mirroring, and automated vulnerability research. Consolidating over **552+ specialized security scripts**, it provides a unified orchestration layer for the modern security researcher.
 
-Built for **developers** who need data at scale, **SEO engineers** running audits, **data engineers** building pipelines, and **security researchers** mapping attack surface on authorized targets.
-
-```
-"The web is your database. WebArsenal is your query engine."
-```
+Built for **developers** who need data at scale, **SEO engineers** running audits, **data engineers** building pipelines, and **security researchers** mapping attack surfaces on authorized targets.
 
 ---
 
@@ -160,26 +60,104 @@ node core/super-mirror.js --help
 ## 🗺️ Module Map
 
 ```
-webarsenal-v2/
-├── 📁 core/            20 modules  · Heavy-duty site mirrors & downloaders
-├── 📁 scrapers/        80 modules  · Targeted data extraction (SPAs, APIs, social)
-├── 📁 analyzers/       80 modules  · DOM, SEO, JS, security surface analysis
-├── 📁 auth-helpers/               · Auth bypass, cookie cloning, token tools
-├── 📁 exporters/                  · Format conversion (SQLite, CSV, WARC, MD)
-├── 📁 integrations/    60 modules  · Cloud push (S3, Notion, Airtable, Slack)
-├── 📁 monitors/        40 modules  · Change detection, cron jobs, webhooks
-├── 📁 utils/           40 modules  · Proxy rotation, rate limiting, UA spoofing
-├── 📁 reporters/                  · Report generation
-├── 📁 tools/                      · Security scanning helpers
-├── 📁 lib/                        · Shared runtime & module catalog
-└── 📁 test/                       · CI test suite
+webarsenal/
+├── 📁 vuln-probes/       185 modules  · Active vulnerability probing (XSS, SSRF, LFI, SQLi)
+├── 📁 api-security/       92 modules  · GraphQL, REST, gRPC audits & fuzzing
+├── 📁 recon/              91 modules  · DNS, subdomains, certificate transparency, OSINT
+├── 📁 infrastructure/    108 modules  · Kubernetes, Docker, ElasticSearch, cloud infra
+├── 📁 analyzers/         100+ modules · Security audits, DOM analysis, JS surface mapping
+├── 📁 scrapers/           80+ modules · SPA scrapers, API sniffers, targeted extraction
+├── 📁 cloud/              64 modules  · S3, IAM, metadata probing
+├── 📁 auth-helpers/                   · Auth bypass, cookie cloning, token tools
+├── 📁 exporters/                      · Format conversion (SQLite, CSV, WARC, Markdown)
+├── 📁 integrations/       60 modules  · Cloud push (S3, Notion, Airtable, Slack)
+├── 📁 monitors/           40 modules  · Change detection, cron jobs, webhooks
+├── 📁 utils/              40 modules  · Proxy rotation, rate limiting, UA spoofing
+├── 📁 reporters/                      · Report generation & master orchestration
+├── 📁 core/               25 modules  · Recursive mirroring & heavy-duty downloaders
+└── 📁 lib/                            · Shared runtime & module catalog
 ```
 
 Full module inventory → [MODULES.md](MODULES.md)
 
 ---
 
-## 🔥 Core Usage
+## 🔒 Arsenal Inventory
+
+| Category | Modules | Power | Purpose | Example |
+| :--- | :---: | :---: | :--- | :--- |
+| **Vuln Probes** | 185 | ⚡⚡⚡⚡⚡ | Active vulnerability probing | `node vuln-probes/ssrf-probe.js` |
+| **API Security** | 92 | ⚡⚡⚡⚡⚡ | GraphQL, REST, gRPC audits | `node api-security/graphql-probe.js` |
+| **Infrastructure** | 108 | ⚡⚡⚡⚡ | K8s, Docker, ElasticSearch | `node infrastructure/elasticsearch-checker.js` |
+| **Analyzers** | 100+ | ⚡⚡⚡⚡⚡ | Security audits, XSS, SSRF | `node analyzers/xss-fuzzer.js` |
+| **Recon** | 91 | ⚡⚡⚡⚡ | DNS, subdomains, OSINT | `node recon/dns-brute-forcer.js` |
+| **Scrapers** | 80+ | ⚡⚡⚡⚡ | Targeted data, API sniffing | `node scrapers/api-scraper.js` |
+| **Cloud** | 64 | ⚡⚡⚡⚡ | S3, IAM, metadata probing | `node cloud/s3-bucket-tester.js` |
+| **Core Utilities** | 25 | ⚡⚡⚡⚡⚡ | Recursive mirroring | `node core/super-mirror.js` |
+
+---
+
+## 🔥 Strategic Workflows
+
+### 🦅 Deep Reconnaissance Pipeline
+
+```mermaid
+graph TD
+    A[Target Domain] --> B{Discovery Phase}
+    B -- Passive --> C[Censys / Shodan / Crt.sh Miner]
+    B -- Active --> D[Recursive Subdomain Bruter]
+    C --> E[Attack Surface Map]
+    D --> E
+    E --> F{Analysis Phase}
+    F --> G[XSS Fuzzer]
+    F --> H[SSRF Hunter]
+    F --> I[LFI Path Traversal]
+    G --> J[Orchestration Layer]
+    H --> J
+    I --> J
+    J --> K[🛡️ WebArsenal Master Report]
+    style K fill:#020617,stroke:#7c3aed,stroke-width:2px,color:#fff
+```
+
+### 📦 Site Mirroring & Environment Cloning
+
+```mermaid
+graph LR
+    A[Target URL] --> B[super-mirror.js]
+    B --> C[Recursive Crawler]
+    C --> D[Asset Harvester]
+    D --> E{Auth Check}
+    E -- Open --> F[pro-mirror.js]
+    E -- Gated --> G[cookie-cloner.js]
+    G --> F
+    F --> H[Local Clone: site-mirrored/]
+    style H fill:#020617,stroke:#7c3aed,stroke-width:2px,color:#fff
+```
+
+---
+
+## 🚀 The Master Entrypoint
+
+For full-spectrum orchestration across multiple modules:
+
+```bash
+node reporters/final-master-runner.js --target example.com --workflow recon-full
+```
+
+### 🧬 Universal Command Flags
+
+Standardized across all 552 modules in the De{c0}ded suite:
+
+| Flag | Alias | Description |
+| :--- | :--- | :--- |
+| `--proxy` | `-x` | Tunnel traffic through Burp Suite / OWASP ZAP |
+| `--cookie` | `-C` | Inject raw session cookies |
+| `--headers-json` | `-H` | Inject custom HTTP headers as JSON |
+| `--json` | `-j` | Pure machine-readable output |
+
+---
+
+## 💻 Core Usage
 
 ### Site Mirroring
 
@@ -195,7 +173,7 @@ node core/pro-mirror.js --url https://example.com --depth 3 --screenshots
 # SPA (React/Vue) — waits for JS hydration
 node scrapers/spa-scraper.js --url https://app.example.com --wait-for '#root'
 
-# E-commerce prices
+# E-commerce price scraper
 node scrapers/ecommerce-scraper.js --url https://store.com --selector '.price'
 
 # API endpoint sniffer — captures XHR/fetch traffic
@@ -255,10 +233,10 @@ node monitors/job-scheduler.js    --url https://example.com --cron "0 * * * *"
 ### Infrastructure Utils
 
 ```bash
-node utils/proxy-rotator.js     --list proxies.txt --test
-node utils/rate-limiter.js      --rps 2 --script scrapers/spa-scraper.js --url https://example.com
-node utils/url-normalizer.js    --url "https://example.com?b=2&a=1#section"
-node utils/ua-spoofing.js       --count 10
+node utils/proxy-rotator.js   --list proxies.txt --test
+node utils/rate-limiter.js    --rps 2 --script scrapers/spa-scraper.js --url https://example.com
+node utils/url-normalizer.js  --url "https://example.com?b=2&a=1#section"
+node utils/ua-spoofing.js     --count 10
 ```
 
 ---
@@ -274,7 +252,7 @@ node integrations/aws-s3-uploader.js --dir ./super-mirrored-site --bucket backup
 node integrations/slack-alerter.js --webhook HOOK --message "Mirror complete ✓" --execute
 ```
 
-### SPA Price Monitor → Discord
+### SPA Price Monitor → Discord Alert
 
 ```bash
 node scrapers/spa-scraper.js --url https://shop.example.com --wait-for '.product-list'
@@ -283,7 +261,7 @@ node monitors/change-detector.js --url https://shop.example.com --xpath "//span[
 node monitors/discord-webhook.js --webhook YOUR_DISCORD_HOOK
 ```
 
-### Full SEO Pipeline → Notion
+### Full SEO Audit Pipeline → Notion
 
 ```bash
 node analyzers/seo-auditor.js --url https://mybusiness.com --output audit.json
@@ -295,17 +273,19 @@ node integrations/notion-sync.js --input audit.json --db YOUR_NOTION_DB --execut
 
 ## 🛡️ Bug Hunter Mode
 
-> WebArsenal is used by security researchers on **authorized** bug bounty targets. The `analyzers/`, `auth-helpers/`, and `tools/` directories have dedicated modules for recon, surface mapping, and vulnerability detection.
+> WebArsenal is used by security researchers on **authorized** bug bounty targets. The `analyzers/`, `vuln-probes/`, `auth-helpers/`, and `recon/` directories contain dedicated modules for surface mapping, recon, and vulnerability detection.
 
-**⚠️ AUTHORIZED USE ONLY. Only run security modules against systems you own or have explicit written permission to test. Valid contexts: HackerOne, Bugcrowd, Intigriti, YesWeHack, owned systems, private programs.**
+**⚠️ AUTHORIZED USE ONLY. Only run security modules against systems you own or have explicit written permission to test.**
 
-### Security-Relevant Modules
+> Valid contexts: HackerOne · Bugcrowd · Intigriti · YesWeHack · Owned systems · Private programs
+
+### Security Modules
 
 ```bash
 # Detect exposed secrets and API keys in JS bundles
 node analyzers/js-analyzer.js --url https://target.com
 
-# Check for missing/misconfigured security headers
+# Check for missing or misconfigured security headers
 node analyzers/security-headers.js --url https://target.com
 
 # CORS misconfiguration detector
@@ -317,19 +297,17 @@ node analyzers/tech-detector.js --url https://target.com
 # Enumerate API endpoints from JavaScript bundles
 node scrapers/api-sniffer.js --url https://target.com
 
-# Full endpoint crawl
+# Full endpoint crawl with depth control
 node scrapers/endpoint-crawler.js --url https://target.com --depth 4 --output endpoints.json
 
 # Subdomain asset mapper
 node analyzers/subdomain-mapper.js --domain target.com
 ```
 
-### Coming in v5: Full Bug Hunter Expansion
+### Roadmap: Upcoming Bug Hunter Expansion
 
-See [ABOUT.md](ABOUT.md) for the complete roadmap. Planned additions:
-
-| New Directory | Modules |
-|---|---|
+| Directory | Planned Modules |
+| :--- | :--- |
 | `security/recon/` | Passive subdomain enum, certificate transparency, OSINT collectors |
 | `security/scanners/` | Header checks, CORS, open redirect, subdomain takeover, secrets |
 | `security/fuzzing/` | Parameter discovery, directory bruteforce, endpoint fuzzing |
@@ -338,32 +316,54 @@ See [ABOUT.md](ABOUT.md) for the complete roadmap. Planned additions:
 
 ---
 
+## 💻 The De{c0}ded HUB
+
+WebArsenal ships with a built-in **High-Fidelity Command Vault** — a single-page dashboard with a glassmorphic dark UI.
+
+- **⌨️ Real-Time Search** — Filter all 552 modules instantly via `Ctrl+K`
+- **📡 Live Telemetry HUD** — Monitor simulated scan activity in a terminal-style display
+- **🎨 Glassmorphic UI** — High-end aesthetic using `backdrop-filter: blur(12px)` on a deep dark canvas
+
+[**→ Launch The De{c0}ded HUB**](file:///c:/Users/hp/webarsenal-1/dashboard.html)
+
+---
+
 ## 🛠️ Development
 
 ```bash
 npm run generate:modules   # Regenerate shared module wrappers
-npm run validate:modules   # Validate every module loads correctly
+npm run validate:modules   # Validate every module loads correctly (100% Pass)
 npm test                   # Run test suite
-npm run ci                 # Full local CI
+npm run ci                 # Full local CI simulation
 ```
 
-CI runs on every push → [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
+CI runs automatically on every push → [`.github/workflows/ci.yml`](.github/workflows/ci.yml)
 
 ---
 
-## 📦 Dependencies
+## 📦 Core Dependencies
 
-`puppeteer` · `playwright` · `cheerio` · `axios` · `sqlite3` · `aws-sdk` · `node-cron` · `sharp`
+| Package | Purpose |
+| :--- | :--- |
+| `puppeteer` | Headless Chrome automation |
+| `playwright` | Cross-browser scraping & testing |
+| `cheerio` | Fast server-side HTML parsing |
+| `axios` | HTTP client for all requests |
+| `sqlite3` | Local data storage & export |
+| `aws-sdk` | S3 and cloud integration |
+| `node-cron` | Scheduled monitoring jobs |
+| `sharp` | Image processing & screenshot diffs |
 
 ---
 
 ## ⚖️ Legal & Ethics
 
-- ✅ Own or have **explicit written permission** to test every target
-- ✅ Respect `robots.txt` and server rate limits
-- ✅ Follow responsible disclosure for any security findings
-- ❌ No unauthorized access, data theft, or abuse
-- ❌ No circumvention of legal protections
+| ✅ Do | ❌ Don't |
+| :--- | :--- |
+| Only test systems you own or have explicit written permission to test | No unauthorized access or intrusion |
+| Respect `robots.txt` and server rate limits | No data theft or exfiltration from unauthorized targets |
+| Follow responsible disclosure for any security findings | No circumvention of legal access controls |
+| Operate within your bug bounty program's scope | No abuse, harassment, or denial-of-service |
 
 ---
 
@@ -375,10 +375,14 @@ MIT © [Edwin Nyandika](https://github.com/edwinnyandika) — see [LICENSE](LICE
 
 <div align="center">
 
-**Built by de{c0}de by Edwin Dev**
+**Built with precision by De{c0}ded by Edwin Dev**
 
-[⭐ Star this repo](https://github.com/edwinnyandika/webarsenal-v2) · [🐛 Issues](https://github.com/edwinnyandika/webarsenal-v2/issues) · [🌐 Live Site](https://webarsenal-v2.vercel.app)
+[⭐ Star this repo](https://github.com/edwinnyandika/webarsenal-v2) · [🐛 Report an Issue](https://github.com/edwinnyandika/webarsenal-v2/issues) · [🌐 Live Site](https://webarsenal-v2.vercel.app) · [📖 Full Docs](MODULES.md)
 
-*A ⭐ helps more developers and security researchers find this toolkit.*
+*A ⭐ helps more developers and security researchers discover this toolkit.*
+
+<br/>
+
+**WebArsenal v5.5.0 "Pulse"** — *552 modules. One arsenal.*
 
 </div>

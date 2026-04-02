@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: pro-mirror.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═══════════════════════════════════════════════════════════════╗
  * ║     WEB MIRROR PRO  v3.0.0  — SPA-Optimized Full Cloner        ║
  * ║  Puppeteer Rendering · Scroll · Concurrent · Deep Recursive  ║

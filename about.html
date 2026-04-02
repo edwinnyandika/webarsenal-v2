@@ -1,65 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>About — The Architect of WebArsenal</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230a0a09'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23e8390e' stroke-width='1.5'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23e8390e'/%3E%3C/svg%3E"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="style.css">
-<script src="js/layout.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Architect | De{c0}ded by Edwin Dev</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+    .hero-image {
+      border-radius: 20px;
+      overflow: hidden;
+      aspect-ratio: 1;
+      border: 1px solid var(--surface-border);
+    }
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: grayscale(1) contrast(1.1);
+      transition: var(--transition);
+    }
+    .hero-image:hover img { filter: grayscale(0); transform: scale(1.05); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+    .pillar-card {
+      padding: 40px;
+      border-radius: 20px;
+      animation: slide-up 0.6s ease-out backwards;
+    }
+    .pillar-card h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: var(--primary);
+    }
+    .pillar-card p {
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+    
+    .nav-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      margin-bottom: 60px;
+    }
+    .nav-header a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body>
 
-<main class="container" style="transition: opacity 0.4s var(--ease);">
-  <section class="a-hero reveal" style="min-height: 80vh; display: flex; align-items: center; position: relative; overflow: hidden; padding-top: 10rem;">
-    <img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="The Architect" style="position: absolute; right: 0; top: 0; width: 60%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(1); z-index: -1;">
-    <div style="max-width: 700px;">
-      <div style="color: var(--fire); font-size: 0.7rem; letter-spacing:0.35em; margin-bottom:1.5rem; font-weight:800;">MISSION & VISION v5.2.0</div>
-      <h1 class="sec-h">Architecting <br/><span>Digital Sovereignty.</span></h1>
-      <p class="sec-p">WebArsenal wasn't built to just scrape data. It was built to empower researchers to understand the full structural complexity of the modern web through automated, high-precision security orchestration.</p>
-    </div>
-  </section>
+<div class="about-container">
+  
+  <header class="nav-header">
+    <div class="brand">HUB: DE{C0}DED</div>
+    <a href="dashboard.html">← Back to Command Center</a>
+  </header>
 
-  <section class="pillar-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem; margin: 6rem 0;">
-    <div class="p-card reveal glass-box">
-      <div class="f-icon-container">
-        <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+  <main>
+    <section class="about-hero">
+      <div class="hero-image glass">
+        <img src="images/digital-art-style-illustration-graphic-designer.jpg" alt="Developer">
       </div>
-      <h3 style="font-family: var(--ff-d); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; color: var(--fire);">The Genesis</h3>
-      <p style="color: var(--fog);">Born from a need to consolidate fragmented tools, WebArsenal evolved from a simple site-grabber into a 413-module powerhouse. Every script is a result of years of research into web architecture.</p>
-    </div>
-    <div class="p-card reveal glass-box" style="transition-delay: 0.1s;">
-      <div class="f-icon-container">
-        <svg class="icon-svg icon-fire" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+      <div class="hero-text">
+        <div style="color: var(--primary); font-size: 0.7rem; font-weight: 800; margin-bottom: 15px; letter-spacing: 2px;">THE ARCHITECT V5.5.0</div>
+        <h1 style="font-size: 4rem; font-weight: 800; line-height: 0.9; margin-bottom: 30px;">Edwin Dev<br><span style="color: var(--secondary);">De{c0}de Creator.</span></h1>
+        <p style="color: var(--text-muted); font-size: 1.2rem; line-height: 1.7;">Edwin is a lead security researcher specializing in automated reconnaissance and data exfiltration. WebArsenal was built to consolidate the world's most powerful security auditing Atomic Tasks into a single, unified pulse.</p>
+        <div style="margin-top: 40px;">
+          <a href="contact.html" class="glass" style="padding: 15px 40px; border-radius: 30px; color: white; text-decoration: none; font-weight: 700; border: 1px solid var(--primary); background: rgba(124, 58, 237, 0.1);">Initiate Contact</a>
+        </div>
       </div>
-      <h3 style="font-family: var(--ff-d); font-weight: 800; font-size: 2rem; margin-bottom: 1.5rem; color: var(--fire);">The Philosophy</h3>
-      <p style="color: var(--fog);">We believe security is composable. By breaking down complex audits into atomic tasks, we allow researchers to build bespoke exfiltration pipelines with surgical precision.</p>
+    </section>
+
+    <div class="about-grid">
+      <div class="pillar-card glass">
+        <h3>The Genesis</h3>
+        <p>Born from a need to bridge the gap between fragmented security tools, WebArsenal evolved from a site-grabber into a 552-module powerhouse. Every script is a result of deep research into adversarial web architecture.</p>
+      </div>
+      <div class="pillar-card glass" style="animation-delay: 0.1s;">
+        <h3>The Philosophy</h3>
+        <p>We believe security is composable. By breaking down complex audits into atomic tasks, we allow researchers to build bespoke exfiltration pipelines with surgical precision and stealth.</p>
+      </div>
+      <div class="pillar-card glass" style="animation-delay: 0.2s;">
+        <h3>The Future</h3>
+        <p>The Mission continues. WebArsenal v5.5.0 Pulse marks the beginning of autonomous threat modeling and automated bug bounty orchestration at a global scale.</p>
+      </div>
     </div>
-  </section>
+  </main>
 
-  <section class="reveal" style="padding: 8rem 0; border-top: 1px solid rgba(242, 240, 232, 0.05);">
-     <h2 class="sec-h">Meet the <span>Architect.</span></h2>
-     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 6rem; align-items: center;">
-        <div class="glass-box" style="padding: 0; overflow: hidden; border-radius: 8px;">
-           <img src="images/digital-art-style-illustration-graphic-designer.jpg" style="width: 100%; filter: grayscale(1); display:block;" alt="Edwin Dev">
-        </div>
-        <div>
-           <h3 style="font-family: var(--ff-d); font-size: 2.5rem; font-weight: 800; margin-bottom: 2rem;">Edwin Dev <span style="color: var(--fire); font-size: 1rem; vertical-align: middle;">de{c0}de creator</span></h3>
-           <p style="color: var(--fog); font-size: 1.1rem; line-height: 1.8;">Edwin is a lead security researcher and tool developer specializing in automated reconnaissance and data exfiltration. He built WebArsenal to solve the problem of fragmented security tooling.</p>
-           <div style="margin-top: 3rem; display: flex; gap: 2rem; flex-wrap:wrap;">
-              <a href="https://github.com/edwinnyandika" target="_blank" class="btn-outline">GitHub Profile</a>
-              <a href="contact.html" class="btn-fire spa-link">Contact Edwin</a>
-           </div>
-        </div>
-     </div>
-  </section>
-</main>
+</div>
 
-<script>
-// Content handled by layout.js
-</script>
 </body>
 </html>

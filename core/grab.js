@@ -1,5 +1,15 @@
 #!/usr/bin/env node
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: grab.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+
+
+/**
  * ╔═══════════════════════════════════════════════════════════════╗
  * ║        SITE GRABBER PRO  v3.0.0  — Parallel Deep Crawler       ║
  * ║  Stealth · BFS Queue · CSS Rewriting · Sitemap · Reports     ║

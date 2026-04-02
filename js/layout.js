@@ -1,4 +1,12 @@
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: layout.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+/**
  * WEBARSENAL UNIFIED LAYOUT ENGINE v1.2.0 (UNIVERSAL NAVIGATION)
  * (c) 2026 de{c0}de by edwin dev
  */

@@ -1,4 +1,12 @@
 /**
+ * ╔════════════════════════════════════════════════════════════════════════════╗
+ * ║ WebArsenal v5.5.0 "Pulse" - Advanced Security Suite                          ║
+ * ║ De{c0}ded by Edwin Dev                                                      ║
+ * ║ Module: catalog.js                                                          ║
+ * ╚════════════════════════════════════════════════════════════════════════════╝
+ */
+
+/**
  * WEBARSENAL GLOBAL CATALOG v5.5.0
  * (c) 2026 de{c0}de by edwin dev
  */
